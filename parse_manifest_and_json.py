@@ -34,12 +34,23 @@ IGNORING = [
     'chrome.extension.onConnect',  # deprecated
     'chrome.windows.WINDOW_ID_NONE',  # implemented but not read from schema
     'chrome.windows.WINDOW_ID_CURRENT',  # implemented but not read from schema
-    'chrome.extension.lastError'  # deprecated
+    'chrome.extension.lastError',  # deprecated
+    # Told in IRC we support these..
+    'chrome.extension.inIncognitoContext',
+    'chrome.runtime.setUninstallUrl',
 ]
 
 # An easy way to spot apps.
 APP_PERMISSIONS = [
     'syncFileSystem',  # https://developer.chrome.com/apps/syncFileSystem
+]
+
+APP_APIS = [
+    'chrome.gcm.register',
+    'chrome.gcm.onMessage',
+    'chrome.app.runtime',
+    'chrome.power.requestKeepAwake',
+    'chrome.system.memory'
 ]
 
 PERMISSIONS = [
@@ -70,6 +81,7 @@ PERMISSIONS = [
     'storage',
     'topSites',
     'webNavigation',
+    'windows',
     'unlimitedStorage'  # Well technically everything is unlimited right now.
 ]
 
@@ -121,6 +133,11 @@ class Extension:
         for permission in APP_PERMISSIONS:
             if permission in self.manifest.get('permissions', []):
                 app = True
+
+        for api in APP_APIS:
+            if api in self.apis:
+                app = True
+
         return app
 
     def process(self):
