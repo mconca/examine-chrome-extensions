@@ -73,6 +73,7 @@ PERMISSIONS = [
     'i18n',
     'management',
     'nativeMessaging',
+    'omnibox',
     'tabs',
     'webRequest',
     'webRequestBlocking',
