@@ -1,0 +1,216 @@
+Importer stats
+--------------
+  71870 75.14% success
+  23722 24.80% apps
+     56 0.06% error
+
+   5515 7.67% missing_permissions
+   6861 9.55% missing_apis
+
+  62792 87.37% easy_conversion
+
+Missing APIs
+------------
+   1370 chrome.desktopCapture.chooseDesktopMedia
+    548 chrome.permissions.request
+    462 chrome.declarativeContent.onPageChanged
+    457 chrome.declarativeContent.PageStateMatcher
+    446 chrome.declarativeContent.ShowPageAction
+    427 chrome.devtools.panels
+    361 chrome.identity.getAuthToken
+    349 chrome.proxy.settings
+    342 chrome.management.setEnabled
+    320 chrome.permissions.remove
+    319 chrome.management.launchApp
+    292 chrome.devtools.inspectedWindow
+    291 chrome.desktopCapture.cancelChooseDesktopMedia
+    288 chrome.permissions.contains
+    243 chrome.management.uninstall
+    217 chrome.management.onInstalled
+    187 chrome.runtime.error
+    186 chrome.identity.launchWebAuthFlow
+    173 chrome.tts.speak
+    167 chrome.identity.removeCachedAuthToken
+    158 chrome.management.onUninstalled
+    150 chrome.browsingData.remove
+    142 chrome.management.onEnabled
+    141 chrome.tabs.cr_tabs_TabClosed_listeners_added
+    141 chrome.tabs.cr_tabs_TabCreated_listeners_added
+    141 chrome.tabs.cr_tabs_TabSelectionChanged_listeners_added
+    141 chrome.tabs.hasOwnProperty
+    128 chrome.identity.getProfileUserInfo
+    126 chrome.devtools.network
+    120 chrome.management.onDisabled
+    115 chrome.extension.onMessageExternal
+    109 chrome.manifest.content_scripts
+     94 chrome.downloads.onDeterminingFilename
+     92 chrome.extension.onClicked
+     78 chrome.proxy.onProxyError
+     78 chrome.experimental.cookies
+     76 chrome.identity.getRedirectURL
+     74 chrome.tts.stop
+     72 chrome.extension.callbacks
+     72 chrome.extension.lastId
+     71 chrome.storage.managed
+     63 chrome.privacy.services
+     59 chrome.manifest.version
+     59 chrome.privacy.network
+     58 chrome.pageCapture.saveAsMHTML
+     56 chrome.tabCapture.capture
+     56 chrome.permissions.onAdded
+     53 chrome.tts.getVoices
+     46 chrome.permissions.getAll
+     46 chrome.browsingData.removeCache
+     45 chrome.permissions.onRemoved
+     44 chrome.d.ts
+     43 chrome.debugger.attach
+     43 chrome.storage.set
+     42 chrome.debugger.sendCommand
+     39 chrome.extension.connectNative
+     37 chrome.debugger.onEvent
+     37 chrome.debugger.detach
+     36 chrome.privacy.websites
+     33 chrome.i18n._getL10nData
+     33 chrome.i18n._setL10nData
+     33 chrome.tts.isSpeaking
+     31 chrome.identity.onSignInChanged
+     31 chrome.webRequest.MAX_HANDLER_BEHAVIOR_CHANGED_CALLS_PER_10_MINUTES
+     26 chrome.fontSettings.getFontList
+     26 chrome.contentSettings.javascript
+     25 chrome.extension.onConnectExternal
+     25 chrome.storage.get
+     24 chrome.debugger.onDetach
+     23 chrome.webstore.install
+     23 chrome.input.ime
+     23 chrome.contentSettings.popups
+     21 chrome.cast.media
+     21 chrome.browsingData.removeHistory
+     20 chrome.contentSettings.cookies
+     20 chrome.system.cpu
+     20 chrome.cast.SessionRequest
+     20 chrome.runtime.onUninstalled
+     20 chrome.declarativeWebRequest.onRequest
+     20 chrome.cast.ApiConfig
+     19 chrome.cast.requestSession
+     19 chrome.system.display
+     19 chrome.browsingData.removeDownloads
+     18 chrome.tabs.TAB_ID_NONE
+     18 chrome.system.storage
+     18 chrome.cast.initialize
+     18 chrome.browsingData.removeCookies
+     17 chrome.declarativeWebRequest.RequestMatcher
+     17 chrome.webRequest.ResourceType
+     16 chrome.browserAction.show
+     16 chrome.settings.uuuid
+     16 chrome.extension.getVersion
+     16 chrome.contextMenus.ACTION_MENU_TOP_LEVEL_LIMIT
+     16 chrome.contentSettings.images
+     15 chrome.ttsEngine.onStop
+     15 chrome.tabs.executeScriptAsync
+     15 chrome.ttsEngine.onSpeak
+     15 chrome.privacy.IPHandlingPolicy
+     15 chrome.runtime.lasterror
+     15 chrome.tabs.executeScriptInFrame
+
+Missing permissions
+-------------------
+   1383 desktopCapture
+    625 clipboardRead
+    625 declarativeContent
+    511 proxy
+    490 geolocation
+    463 browsingData
+    348 contentSettings
+    278 tts
+    232 system.cpu
+    158 privacy
+    157 debugger
+    153 pageCapture
+    144 identity.email
+    121 tabCapture
+    107 sessions
+     80 downloads.shelf
+     57 fontSettings
+     53 unlimited_storage
+     39 ttsEngine
+     36 system.storage
+     32 input
+     30 fileBrowserHandler
+     29 system.display
+     26 declarativeWebRequest
+     18 system.memory
+     14 processes
+     11 power
+      8 audioCapture
+      7 
+      7 {u'socket': [u'tcp-connect', u'tcp-listen']}
+      7 videoCapture
+      7 printerProvider
+      6 location
+      5 webview
+      5 fileSystem
+      5 enterprise.platformKeys
+      4 create
+      4 experimental
+      4 infobars
+      4 {u'fileSystem': [u'write']}
+      4 signedInDevices
+      4 wallpaper
+      3 networkingPrivate
+      3 dial
+      3 cast.streaming
+      3 app
+      3 mdns
+      3 cast
+      3 streamsPrivate
+      3 keybinding
+      2 bookmarkManagerPrivate
+      2 certificateProvider
+      2 preferencesPrivate
+      2 activetabs
+      2 enterprise.deviceAttributes
+      2 {u'fileSystem': [u'write', u'retainEntries', u'directory']}
+      2 usb
+      2 *
+      2 dns
+      2 tab
+      2 audio
+      1 *//yousonnik.ru/*
+      1 all_frames
+      1 webR/equestBlocking
+      1 offroad
+      1 hid
+      1 @ant-sites-string-list@
+      1 newtab
+      1 accessibilityFeatures.read
+      1 activeTab1
+      1 t
+      1 .entireweb.com
+      1 accessibilityPrivate
+      1 externally_connectable
+      1 brailleDisplayPrivate
+      1 alwaysOnTopWindows
+      1 Storage
+      1 mangement
+      1 clipboardWrite 
+      1 https:ajax.googleapis.com/
+      1 *.facebook.com/*
+      1 dataReductionProxy
+      1 desktopCapturePrivate
+      1 enterprise.platformKeysPrivate
+      1 popup
+      1 copresence
+      1 accessibilityFeatures.modify
+      1 platformKeys
+      1 beamrise
+      1 Tabs
+      1 http//gosnapshot.com/snapshot
+      1 s
+      1 urls
+      1 https: //*/*
+      1 commandLinePrivate
+      1 system
+      1 sienium
+      1 virtualKeyboardPrivate
+      1 www.bgu.ac.il
+      1 none

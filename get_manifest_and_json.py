@@ -66,7 +66,7 @@ def examine(directory):
     return count
 
 
-def get_extension(id):
+def get_extension(id, download=True):
     id = id.strip()
     if not id:
         return
@@ -81,8 +81,10 @@ def get_extension(id):
         print 'Manifest %s already exists, skipping' % id
         return
 
-    print 'Downloading...', id
+
     destfile = os.path.join(dest, id + '.crx')
+
+    print 'Downloading...', id
     try:
         req = download_file(
             destfile,

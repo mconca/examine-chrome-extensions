@@ -55,7 +55,8 @@ APP_APIS = [
     'chrome.power.requestKeepAwake',
     'chrome.system.memory',
     'chrome.app.runtime',
-    'chrome.app.window'
+    'chrome.app.window',
+    'chrome.management.launchApp'
 ]
 
 PERMISSIONS = [
@@ -92,7 +93,7 @@ PERMISSIONS = [
 ]
 
 # Max number of addons to parse, None is all of them.
-#LIMIT = 50000
+LIMIT = 50
 LIMIT = None
 
 schemas = json.load(open('schemas.json', 'r'))
@@ -119,10 +120,8 @@ def lookup_schema(api):
 
 class Extension:
 
-    def __init__(self, filename):
+    def __init__(self, manifest_file, apis_file):
         self.type = 'extension'
-        manifest_file = filename
-        apis_file = filename.replace('extensions/manifests', 'extensions/apis')
         if not os.path.exists(apis_file):
             raise ValueError('Missing API file')
 
@@ -179,10 +178,12 @@ if __name__=='__main__':
 
         importer['total'] += 1
         full = os.path.abspath(os.path.join('extensions/manifests', filename))
+        apis_file = full.replace('extensions/manifests', 'extensions/apis')
+
 
         # Filter out ones that fail to import.
         try:
-            ext = Extension(full)
+            ext = Extension(full, apis_file)
         except ValueError:
             importer['error'] += 1
             continue
