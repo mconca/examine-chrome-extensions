@@ -38,11 +38,14 @@ IGNORING = [
     # Told in IRC we support these..
     'chrome.extension.inIncognitoContext',
     'chrome.runtime.setUninstallUrl',
+    # Obvious urls...
+    'chrome.googlecode.com',
 ]
 
 # An easy way to spot apps.
 APP_PERMISSIONS = [
     'syncFileSystem',  # https://developer.chrome.com/apps/syncFileSystem
+    'gcm',
 ]
 
 APP_APIS = [
@@ -50,7 +53,9 @@ APP_APIS = [
     'chrome.gcm.onMessage',
     'chrome.app.runtime',
     'chrome.power.requestKeepAwake',
-    'chrome.system.memory'
+    'chrome.system.memory',
+    'chrome.app.runtime',
+    'chrome.app.window'
 ]
 
 PERMISSIONS = [
