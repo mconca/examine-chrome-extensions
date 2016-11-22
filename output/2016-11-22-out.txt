@@ -1,179 +1,170 @@
 Importer stats
 --------------
-  59409 62.11% success
-  24041 25.13% apps
-  12142 12.69% themes
+  57804 60.43% success
+  25647 26.81% apps
+  12141 12.69% themes
      56 0.06% error
 
-   5463 9.20% missing_permissions
-   6541 11.01% missing_apis
-  10341 17.41% missing_manifests
+   5242 9.07% missing_permissions
+   6309 10.91% missing_apis
+   7799 13.49% missing_manifests
 
-  43931 73.95% easy_conversion
+  44716 77.36% easy_conversion
 
 Missing APIs
 ------------
-   1369 chrome.desktopCapture.chooseDesktopMedia
-    533 chrome.permissions.request
-    458 chrome.declarativeContent.onPageChanged
-    454 chrome.declarativeContent.PageStateMatcher
-    443 chrome.declarativeContent.ShowPageAction
-    427 chrome.devtools.panels
-    360 chrome.identity.getAuthToken
-    346 chrome.proxy.settings
-    311 chrome.permissions.remove
-    292 chrome.devtools.inspectedWindow
-    291 chrome.desktopCapture.cancelChooseDesktopMedia
-    272 chrome.permissions.contains
-    221 chrome.management.setEnabled
-    187 chrome.runtime.error
-    185 chrome.identity.launchWebAuthFlow
-    182 chrome.management.onInstalled
-    168 chrome.tts.speak
-    167 chrome.identity.removeCachedAuthToken
-    146 chrome.browsingData.remove
+   1355 chrome.desktopCapture.chooseDesktopMedia
+    472 chrome.permissions.request
+    454 chrome.declarativeContent.onPageChanged
+    450 chrome.declarativeContent.PageStateMatcher
+    439 chrome.declarativeContent.ShowPageAction
+    406 chrome.devtools.panels
+    345 chrome.identity.getAuthToken
+    334 chrome.proxy.settings
+    294 chrome.permissions.remove
+    288 chrome.desktopCapture.cancelChooseDesktopMedia
+    274 chrome.devtools.inspectedWindow
+    218 chrome.permissions.contains
+    214 chrome.management.setEnabled
+    185 chrome.runtime.error
+    177 chrome.identity.launchWebAuthFlow
+    177 chrome.management.onInstalled
+    164 chrome.tts.speak
+    160 chrome.identity.removeCachedAuthToken
     141 chrome.tabs.cr_tabs_TabClosed_listeners_added
     141 chrome.tabs.cr_tabs_TabCreated_listeners_added
     141 chrome.tabs.cr_tabs_TabSelectionChanged_listeners_added
     141 chrome.tabs.hasOwnProperty
-    128 chrome.identity.getProfileUserInfo
-    126 chrome.management.onUninstalled
-    126 chrome.devtools.network
-    115 chrome.management.onEnabled
-    109 chrome.manifest.content_scripts
-    107 chrome.extension.onMessageExternal
-     99 chrome.management.uninstall
-     94 chrome.downloads.onDeterminingFilename
-     94 chrome.management.onDisabled
+    133 chrome.browsingData.remove
+    123 chrome.identity.getProfileUserInfo
+    122 chrome.management.onUninstalled
+    114 chrome.devtools.network
+    111 chrome.management.onEnabled
+    106 chrome.manifest.content_scripts
+     94 chrome.extension.onMessageExternal
+     92 chrome.management.uninstall
      92 chrome.extension.onClicked
-     78 chrome.experimental.cookies
-     76 chrome.proxy.onProxyError
-     76 chrome.identity.getRedirectURL
-     71 chrome.storage.managed
+     91 chrome.downloads.onDeterminingFilename
+     91 chrome.management.onDisabled
+     74 chrome.proxy.onProxyError
+     73 chrome.identity.getRedirectURL
+     71 chrome.experimental.cookies
      71 chrome.tts.stop
+     70 chrome.storage.managed
      61 chrome.privacy.services
-     59 chrome.manifest.version
-     57 chrome.privacy.network
-     56 chrome.tabCapture.capture
-     54 chrome.pageCapture.saveAsMHTML
-     51 chrome.permissions.onAdded
-     50 chrome.tts.getVoices
-     46 chrome.browsingData.removeCache
+     56 chrome.manifest.version
+     56 chrome.privacy.network
+     54 chrome.tabCapture.capture
+     48 chrome.tts.getVoices
+     46 chrome.pageCapture.saveAsMHTML
+     44 chrome.browsingData.removeCache
      43 chrome.d.ts
-     43 chrome.debugger.attach
      43 chrome.storage.set
-     42 chrome.debugger.sendCommand
-     40 chrome.permissions.onRemoved
-     38 chrome.extension.connectNative
-     38 chrome.permissions.getAll
-     37 chrome.debugger.onEvent
-     37 chrome.debugger.detach
-     34 chrome.privacy.websites
+     41 chrome.debugger.attach
+     40 chrome.debugger.sendCommand
+     36 chrome.extension.connectNative
+     35 chrome.debugger.onEvent
+     35 chrome.debugger.detach
+     34 chrome.permissions.getAll
      33 chrome.i18n._getL10nData
+     33 chrome.privacy.websites
      33 chrome.i18n._setL10nData
-     31 chrome.identity.onSignInChanged
-     31 chrome.webRequest.MAX_HANDLER_BEHAVIOR_CHANGED_CALLS_PER_10_MINUTES
+     30 chrome.webRequest.MAX_HANDLER_BEHAVIOR_CHANGED_CALLS_PER_10_MINUTES
      30 chrome.tts.isSpeaking
-     26 chrome.fontSettings.getFontList
-     25 chrome.storage.get
-     24 chrome.contentSettings.javascript
-     24 chrome.debugger.onDetach
-     22 chrome.webstore.install
+     29 chrome.identity.onSignInChanged
+     24 chrome.fontSettings.getFontList
+     24 chrome.storage.get
+     23 chrome.permissions.onAdded
+     23 chrome.debugger.onDetach
      21 chrome.cast.media
-     21 chrome.input.ime
-     21 chrome.contentSettings.popups
-     20 chrome.system.cpu
+     21 chrome.webstore.install
+     20 chrome.input.ime
      20 chrome.cast.SessionRequest
      20 chrome.runtime.onUninstalled
      20 chrome.declarativeWebRequest.onRequest
+     20 chrome.contentSettings.popups
      20 chrome.cast.ApiConfig
      19 chrome.cast.requestSession
      19 chrome.browsingData.removeHistory
-     19 chrome.system.display
-     18 chrome.contentSettings.cookies
+     19 chrome.system.cpu
+     18 chrome.contentSettings.javascript
      18 chrome.cast.initialize
-     18 chrome.browsingData.removeDownloads
      18 chrome.browsingData.removeCookies
-     17 chrome.tabs.TAB_ID_NONE
      17 chrome.declarativeWebRequest.RequestMatcher
-     17 chrome.webRequest.ResourceType
+     17 chrome.browsingData.removeDownloads
      16 chrome.browserAction.show
-     16 chrome.settings.uuuid
+     16 chrome.tabs.TAB_ID_NONE
+     16 chrome.system.display
+     16 chrome.permissions.onRemoved
      16 chrome.extension.getVersion
+     16 chrome.webRequest.ResourceType
      15 chrome.system.storage
      15 chrome.tabs.executeScriptAsync
+     15 chrome.contentSettings.cookies
      15 chrome.contextMenus.ACTION_MENU_TOP_LEVEL_LIMIT
      15 chrome.privacy.IPHandlingPolicy
-     15 chrome.runtime.lasterror
-     15 chrome.tabs.executeScriptInFrame
      14 chrome.example.echo
-     14 chrome.settings.get
-     14 chrome.runtime.Port
-     14 chrome.contentSettings.images
+     14 chrome.runtime.lasterror
      14 chrome.extension.onConnectExternal
+     14 chrome.tabs.executeScriptInFrame
      13 chrome.ttsEngine.onStop
-     13 chrome.settings.set
+     13 chrome.ttsEngine.onSpeak
+     13 chrome.extension.version_
+     13 chrome.runtime.Port
+     12 chrome._tabInfo.notice
+     12 chrome._tabInfo.gatherFrameInfo
 
 Missing permissions
 -------------------
-   3033 chrome_url_overrides
-   1916 externally_connectable
-   1605 offline_enabled
-   1382 desktopCapture
-   1137 key
-   1062 incognito
-    817 optional_permissions
-    620 clipboardRead
-    616 declarativeContent
-    510 proxy
-    488 devtools_page
-    476 geolocation
-    465 chrome_settings_overrides
-    457 browsingData
-    446 oauth2
-    348 contentSettings
-    289 version_name
-    275 tts
-    249 converted_from_user_script
-    232 system.cpu
-    190 sandbox
-    184 container
-    158 applications
-    158 privacy
-    156 debugger
-    151 pageCapture
-    150 api_console_project_id
-    144 identity.email
-    120 tabCapture
-    118 background_page
-     91 sessions
-     79 downloads.shelf
-     54 fontSettings
-     52 unlimited_storage
-     39 ttsEngine
-     36 system.storage
-     35 developer
-     32 input
-     30 fileBrowserHandler
-     29 system.display
+   2839 chrome_url_overrides
+   1838 externally_connectable
+   1368 desktopCapture
+    927 incognito
+    763 optional_permissions
+    600 declarativeContent
+    565 clipboardRead
+    493 proxy
+    468 devtools_page
+    456 chrome_settings_overrides
+    437 geolocation
+    429 browsingData
+    423 oauth2
+    339 contentSettings
+    260 tts
+    248 converted_from_user_script
+    228 system.cpu
+    183 sandbox
+    177 container
+    154 applications
+    150 debugger
+    149 api_console_project_id
+    148 privacy
+    140 pageCapture
+    138 identity.email
+    117 background_page
+    110 tabCapture
+     77 sessions
+     66 downloads.shelf
+     50 unlimited_storage
+     48 fontSettings
+     38 ttsEngine
+     34 developer
+     31 system.storage
+     31 input
      26 container_info
-     26 declarativeWebRequest
-     22 input_components
-     20 current_locale
+     25 system.display
+     24 fileBrowserHandler
+     24 declarativeWebRequest
+     21 input_components
      19 tts_engine
-     18 system.memory
-     17 default_icon
-     17 requirements
-     14 processes
-     13 signature
+     16 requirements
+     13 system.memory
      13 shortname
-     12 run_at
-     12 launch
-     12 file_browser_handlers
-     11 power
+     12 processes
+     11 launch
+     11 file_browser_handlers
      10 all_frames
-     10 nacl_modules
-     10 authors
+     10 power
       9 intents
       9 id
       8 
@@ -184,21 +175,23 @@ Missing permissions
       8 short_name 
       7 {u'socket': [u'tcp-connect', u'tcp-listen']}
       7 minimum_opera_version
-      7 chrome_ui_overrides
       7 videoCapture
+      7 nacl_modules
+      7 current_locale
       7 default_local
       7 printerProvider
       7 icon
       6 location
+      6 chrome_ui_overrides
       6 tuid
       6 urls
       6 persistent
       6 whitelisted_content
-      5 _bars
       5 webview
       5 launch_path
       5 update_hit_url
       5 fileSystem
+      5 signature
       5 enterprise.platformKeys
       5 tbid
       4 mime_types
@@ -207,8 +200,6 @@ Missing permissions
       4 automation
       4 start_url
       4 experimental
-      4 infobars
-      4 {u'fileSystem': [u'write']}
       4 signedInDevices
       4 display
       4 orientation
@@ -216,67 +207,67 @@ Missing permissions
       4 short_description
       3 accId
       3 Short name
+      3 networkingPrivate
+      3 system_indicator
+      3 minimum_edge_version
+      3 debug
+      3 first_hit_url
+      3 cast.streaming
+      3 dial
+      3 search_url
+      3 default_popup
 
 Missing manifests
 -------------------
-   3033 chrome_url_overrides
-   1916 externally_connectable
-   1605 offline_enabled
-   1382 desktopCapture
-   1137 key
-   1062 incognito
-    817 optional_permissions
-    620 clipboardRead
-    616 declarativeContent
-    510 proxy
-    488 devtools_page
-    476 geolocation
-    465 chrome_settings_overrides
-    457 browsingData
-    446 oauth2
-    348 contentSettings
-    289 version_name
-    275 tts
-    249 converted_from_user_script
-    232 system.cpu
-    190 sandbox
-    184 container
-    158 applications
-    158 privacy
-    156 debugger
-    151 pageCapture
-    150 api_console_project_id
-    144 identity.email
-    120 tabCapture
-    118 background_page
-     91 sessions
-     79 downloads.shelf
-     54 fontSettings
-     52 unlimited_storage
-     39 ttsEngine
-     36 system.storage
-     35 developer
-     32 input
-     30 fileBrowserHandler
-     29 system.display
+   2839 chrome_url_overrides
+   1838 externally_connectable
+   1368 desktopCapture
+    927 incognito
+    763 optional_permissions
+    600 declarativeContent
+    565 clipboardRead
+    493 proxy
+    468 devtools_page
+    456 chrome_settings_overrides
+    437 geolocation
+    429 browsingData
+    423 oauth2
+    339 contentSettings
+    260 tts
+    248 converted_from_user_script
+    228 system.cpu
+    183 sandbox
+    177 container
+    154 applications
+    150 debugger
+    149 api_console_project_id
+    148 privacy
+    140 pageCapture
+    138 identity.email
+    117 background_page
+    110 tabCapture
+     77 sessions
+     66 downloads.shelf
+     50 unlimited_storage
+     48 fontSettings
+     38 ttsEngine
+     34 developer
+     31 system.storage
+     31 input
      26 container_info
-     26 declarativeWebRequest
-     22 input_components
-     20 current_locale
+     25 system.display
+     24 fileBrowserHandler
+     24 declarativeWebRequest
+     21 input_components
      19 tts_engine
-     18 system.memory
-     17 default_icon
-     17 requirements
-     14 processes
-     13 signature
+     16 requirements
+     13 system.memory
      13 shortname
-     12 run_at
-     12 launch
-     12 file_browser_handlers
-     11 power
+     12 processes
+     11 launch
+     11 file_browser_handlers
      10 all_frames
-     10 nacl_modules
-     10 authors
+     10 power
       9 intents
       9 id
       8 
@@ -287,21 +278,23 @@ Missing manifests
       8 short_name 
       7 {u'socket': [u'tcp-connect', u'tcp-listen']}
       7 minimum_opera_version
-      7 chrome_ui_overrides
       7 videoCapture
+      7 nacl_modules
+      7 current_locale
       7 default_local
       7 printerProvider
       7 icon
       6 location
+      6 chrome_ui_overrides
       6 tuid
       6 urls
       6 persistent
       6 whitelisted_content
-      5 _bars
       5 webview
       5 launch_path
       5 update_hit_url
       5 fileSystem
+      5 signature
       5 enterprise.platformKeys
       5 tbid
       4 mime_types
@@ -310,8 +303,6 @@ Missing manifests
       4 automation
       4 start_url
       4 experimental
-      4 infobars
-      4 {u'fileSystem': [u'write']}
       4 signedInDevices
       4 display
       4 orientation
@@ -319,3 +310,12 @@ Missing manifests
       4 short_description
       3 accId
       3 Short name
+      3 networkingPrivate
+      3 system_indicator
+      3 minimum_edge_version
+      3 debug
+      3 first_hit_url
+      3 cast.streaming
+      3 dial
+      3 search_url
+      3 default_popup

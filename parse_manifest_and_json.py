@@ -48,7 +48,11 @@ IGNORING = [
 APP_PERMISSIONS = [
     'syncFileSystem',  # https://developer.chrome.com/apps/syncFileSystem
     'gcm',
-    'offline_enabled'
+]
+
+APP_MANIFESTS = [
+    'offline_enabled',
+    'fileBrowserHandler'
 ]
 
 APP_APIS = [
@@ -92,7 +96,7 @@ PERMISSIONS = [
     'topSites',
     'webNavigation',
     'windows',
-    'unlimitedStorage'  # Well technically everything is unlimited right now.
+    'unlimitedStorage',  # Well technically everything is unlimited right now.
 ]
 
 MANIFEST = [
@@ -117,7 +121,16 @@ MANIFEST = [
     'options_page',  # not officially marked as deprecated but close
     'short_name',  # we don't really care about this one
     'clipboardWrite',
-    'sessions'
+    'sessions',
+    # Bogus....
+    'version_name',
+    'geolocation',
+    'clipboardRead',
+    'desktopCapture',
+    'key',
+    'default_icon',
+    'run_at',
+    'authors'
 ]
 
 # Max number of addons to parse, None is all of them.
@@ -164,6 +177,10 @@ class Extension:
         app = 'app' in self.manifest
         for permission in APP_PERMISSIONS:
             if permission in self.manifest.get('permissions', []):
+                app = True
+
+        for manifest in self.manifest.keys():
+            if manifest in APP_MANIFESTS:
                 app = True
 
         for api in APP_APIS:
