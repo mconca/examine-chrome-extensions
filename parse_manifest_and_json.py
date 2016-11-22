@@ -124,9 +124,6 @@ MANIFEST = [
     'sessions',
     # Bogus....
     'version_name',
-    'geolocation',
-    'clipboardRead',
-    'desktopCapture',
     'key',
     'default_icon',
     'run_at',
