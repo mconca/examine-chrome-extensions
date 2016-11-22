@@ -9,6 +9,7 @@ importer = Counter({
     'success': 0,
     'error': 0,
     'apps': 0,
+    'themes': 0,
     'missing_apis': 0,
     'missing_permissions': 0,
     'easy_conversion': 0
@@ -16,6 +17,7 @@ importer = Counter({
 
 apis_counter = Counter()
 permissions_counter = Counter()
+manifests_counter = Counter()
 
 IGNORING = [
     'chrome.storage.local',  # implemented but not read from schema
@@ -46,6 +48,7 @@ IGNORING = [
 APP_PERMISSIONS = [
     'syncFileSystem',  # https://developer.chrome.com/apps/syncFileSystem
     'gcm',
+    'offline_enabled'
 ]
 
 APP_APIS = [
@@ -92,8 +95,33 @@ PERMISSIONS = [
     'unlimitedStorage'  # Well technically everything is unlimited right now.
 ]
 
+MANIFEST = [
+    'name',
+    'manifest_version',
+    'version',
+    'update_url',
+    'description',
+    'permissions',
+    'icons',
+    'background',
+    'homepage_url',  # we support developers now
+    'author',
+    'page_action',
+    'minimum_chrome_version',  # not relevant and in applications key
+    'content_scripts',
+    'browser_action',
+    'web_accessible_resources',
+    'content_security_policy',
+    'default_locale',
+    'options_ui',
+    'options_page',  # not officially marked as deprecated but close
+    'short_name',  # we don't really care about this one
+    'clipboardWrite',
+    'sessions'
+]
+
 # Max number of addons to parse, None is all of them.
-LIMIT = 50
+#LIMIT = 500
 LIMIT = None
 
 schemas = json.load(open('schemas.json', 'r'))
@@ -130,11 +158,10 @@ class Extension:
         self.manifest = json.loads(data)
         data = codecs.open(apis_file, 'r', 'utf-8-sig').read()
         self.apis = json.loads(data)
-        self.missing = {'apis': [], 'permissions': []}
+        self.missing = {'apis': [], 'permissions': [], 'manifests': []}
 
     def is_app(self):
         app = 'app' in self.manifest
-        # https://developer.chrome.com/apps/syncFileSystem
         for permission in APP_PERMISSIONS:
             if permission in self.manifest.get('permissions', []):
                 app = True
@@ -145,13 +172,21 @@ class Extension:
 
         return app
 
+    def is_theme(self):
+        return 'theme' in self.manifest
+
     def process(self):
         if self.is_app():
             self.type = 'app'
             return
 
+        if self.is_theme():
+            self.type = 'theme'
+            return
+
         self.find_missing_apis()
         self.find_missing_permissions()
+        self.find_missing_manifests()
 
     def find_missing_apis(self):
         for api in self.apis:
@@ -167,6 +202,12 @@ class Extension:
                 if isinstance(permission, dict):
                     permission = str(permission)
                 self.missing['permissions'].append(permission)
+
+    def find_missing_manifests(self):
+        for key in self.manifest.keys():
+            if (key not in MANIFEST
+                and key not in PERMISSIONS):
+                self.missing['manifests'].append(key)
 
 
 if __name__=='__main__':
@@ -195,6 +236,11 @@ if __name__=='__main__':
             importer['apps'] += 1
             continue
 
+        # Filter out themes.
+        if ext.type == 'theme':
+            importer['themes'] += 1
+            continue
+
         exts.append(ext)
         importer['success'] += 1
 
@@ -211,7 +257,13 @@ if __name__=='__main__':
             importer['missing_permissions'] += 1
             permissions_counter.update(ext.missing['permissions'])
 
-        if not ext.missing['permissions'] and not ext.missing['apis']:
+        if ext.missing['manifests']:
+            importer['missing_manifests'] += 1
+            permissions_counter.update(ext.missing['manifests'])
+
+        if (not ext.missing['permissions']
+            and not ext.missing['apis']
+            and not ext.missing['manifests']):
             importer['easy_conversion'] += 1
 
     print 'Importer stats'
@@ -228,6 +280,7 @@ if __name__=='__main__':
     print
     display('missing_permissions', 'success')
     display('missing_apis', 'success')
+    display('missing_manifests', 'success')
     print
     display('easy_conversion', 'success')
 
@@ -239,6 +292,12 @@ if __name__=='__main__':
 
     print
     print 'Missing permissions'
+    print '-------------------'
+    for k, v in permissions_counter.most_common(100):
+        print ' {:6d} {}'.format(v, k)
+
+    print
+    print 'Missing manifests'
     print '-------------------'
     for k, v in permissions_counter.most_common(100):
         print ' {:6d} {}'.format(v, k)
