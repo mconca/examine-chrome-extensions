@@ -2,6 +2,7 @@ Importer stats
 --------------
   59409 62.11% success
   24041 25.13% apps
+  12142 12.69% themes
      56 0.06% error
 
    5463 9.20% missing_permissions

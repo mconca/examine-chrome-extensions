@@ -276,6 +276,7 @@ if __name__=='__main__':
 
     display('success', 'total')
     display('apps', 'total')
+    display('themes', 'total')
     display('error', 'total')
     print
     display('missing_permissions', 'success')
