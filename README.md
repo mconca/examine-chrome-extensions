@@ -32,3 +32,14 @@ Then finally run:
     python parse_manifest_and_json.py
 
 And you should get some output.
+
+Examine just one extension
+--------------------------
+
+Will grab extension from the Chrome store, unpack it and see what it's missing:
+
+    python parse_extension.py https://chrome.google.com/webstore/detail/adblock-for-youtube/cmedhionkhpnakcndndgjdbohmhepckk/
+    Manifest keys missing
+      optional_permissions
+    Try the add-on using:
+      web-ext run -v -s /var/folders/h5/cbsbsk_j0f984db_n771zwz00000gn/T/tmpyop_kj
