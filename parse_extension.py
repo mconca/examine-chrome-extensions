@@ -13,7 +13,9 @@ from utils import download_file, examine, unzip_file
 
 def get_chrome_addon(source):
     dest = tempfile.mkdtemp()
-    id = source.split('/')[-2]
+    id = source.split('/')[-1]
+    if source.endswith('/'):
+        id = source.split('/')[-2]
     url = 'https://clients2.google.com/service/update2/crx?response=redirect&prodversion=46.0&x=id%3D' + id + '%26uc'
     destfile = os.path.join(dest, id + '.zip')
     download_file(destfile, url)

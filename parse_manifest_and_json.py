@@ -42,6 +42,8 @@ IGNORING = [
     'chrome.runtime.setUninstallUrl',
     # Obvious urls...
     'chrome.googlecode.com',
+    # Doesn't exist...
+    'chrome.browserAction.show'
 ]
 
 # An easy way to spot apps.

@@ -1,3 +1,10 @@
+Installation
+------------
+
+    git clone https://github.com/andymckay/examine-chrome-extensions
+    cd examine-chrome-extensions
+    pip install -r requirements.txt
+
 Examine lots of extensions
 --------------------------
 
