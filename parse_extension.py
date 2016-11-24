@@ -39,15 +39,15 @@ if __name__=='__main__':
     ext.process()
 
     if ext.missing['apis']:
-        print 'APIs missing'
+        print 'APIs missing:'
         print ' ' + ', '.join(ext.missing['apis'])
 
     if ext.missing['permissions']:
-        print 'Permissions missing'
+        print 'Permissions missing:'
         print ' ' + ', '.join(ext.missing['permissions'])
 
     if ext.missing['manifests']:
-        print 'Manifest keys missing'
+        print 'Manifest keys missing:'
         print ' ' + ', '.join(ext.missing['manifests'])
 
     if (not ext.missing['permissions']
