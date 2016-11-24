@@ -131,11 +131,13 @@ MANIFEST = [
 ]
 
 # Max number of addons to parse, None is all of them.
-#LIMIT = 500
+LIMIT = 500
 LIMIT = None
 
 schemas = json.load(open('schemas.json', 'r'))
 
+
+data_counter = Counter()
 
 def lookup_schema(api):
     if api in IGNORING:
@@ -163,7 +165,6 @@ class Extension:
         if not os.path.exists(apis_file):
             raise ValueError('Missing API file')
 
-        self.id = filename.split('/')[-1]
         data = codecs.open(manifest_file, 'r', 'utf-8-sig').read()
         self.manifest = json.loads(data)
         data = codecs.open(apis_file, 'r', 'utf-8-sig').read()
@@ -218,6 +219,13 @@ class Extension:
                 self.missing['permissions'].append(permission)
 
     def find_missing_manifests(self):
+        for k, v in self.manifest.items():
+            if isinstance(v, list):
+                for item in v:
+                    if 'data:' in item:
+                        data_counter.update([item])
+                        print self.id
+
         for key in self.manifest.keys():
             if (key not in MANIFEST
                 and key not in PERMISSIONS):
@@ -300,6 +308,12 @@ if __name__=='__main__':
     display('easy_conversion', 'success')
 
     print
+    print 'Data count'
+    print '----------'
+    for k, v in data_counter.most_common(100):
+        print ' {:6d} {}'.format(v, k)
+    print
+
     print 'Missing APIs'
     print '------------'
     for k, v in apis_counter.most_common(100):
