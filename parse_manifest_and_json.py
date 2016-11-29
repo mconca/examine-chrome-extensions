@@ -278,7 +278,6 @@ if __name__=='__main__':
     for ext in exts:
         if ext.missing['apis']:
             importer['missing_apis'] += 1
-            print ext.missing['apis']
             apis_counter.update(ext.missing['apis'])
 
         if ext.missing['permissions']:
