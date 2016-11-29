@@ -31,6 +31,8 @@ IGNORING = [
     'chrome.app.getDetails',  # deprecated
     'chrome.tabs.getAllInWindow',  # deprecated
     'chrome.tabs.sendRequest', # deprecated
+    'chrome.tabs.getSelected',  # this is different in Firefox
+    'chrome.tabs.onSelectionChanged',  # this is different in Firefox
     'chrome.runtime.onInstalled',  # implemented but not read from schema
     'chrome.extension.connect', # deprecated
     'chrome.extension.onConnect',  # deprecated
@@ -139,23 +141,26 @@ LIMIT = None
 schemas = json.load(open('schemas.json', 'r'))
 
 
-data_counter = Counter()
-
 def lookup_schema(api):
     if api in IGNORING:
         return True
 
     api = api.split('.')[1:]
-    found = None
+    entry = None
+
     try:
-        return schemas[api[0]]['functions'][api[1]]
+        entry = schemas[api[0]]['functions'][api[1]]
     except KeyError:
         pass
 
-    try:
-        return schemas[api[0]]['events'][api[1]]
-    except KeyError:
-        pass
+    if not entry:
+        try:
+            entry = schemas[api[0]]['events'][api[1]]
+        except KeyError:
+            pass
+
+    if entry:
+        return entry['supported']
 
     return False
 
@@ -167,11 +172,17 @@ class Extension:
         if not os.path.exists(apis_file):
             raise ValueError('Missing API file')
 
+        self.manifest_filename = manifest_file
+
         data = codecs.open(manifest_file, 'r', 'utf-8-sig').read()
         self.manifest = json.loads(data)
         data = codecs.open(apis_file, 'r', 'utf-8-sig').read()
         self.apis = json.loads(data)
         self.missing = {'apis': [], 'permissions': [], 'manifests': []}
+
+    def get_id(self):
+        if 'extensions/manifests' in self.manifest_filename:
+            return os.path.splitext(os.path.basename(self.manifest_filename))[0]
 
     def is_app(self):
         app = 'app' in self.manifest
@@ -221,13 +232,6 @@ class Extension:
                 self.missing['permissions'].append(permission)
 
     def find_missing_manifests(self):
-        for k, v in self.manifest.items():
-            if isinstance(v, list):
-                for item in v:
-                    if 'data:' in item:
-                        data_counter.update([item])
-                        print self.id
-
         for key in self.manifest.keys():
             if (key not in MANIFEST
                 and key not in PERMISSIONS):
@@ -244,7 +248,6 @@ if __name__=='__main__':
         importer['total'] += 1
         full = os.path.abspath(os.path.join('extensions/manifests', filename))
         apis_file = full.replace('extensions/manifests', 'extensions/apis')
-
 
         # Filter out ones that fail to import.
         try:
@@ -275,6 +278,7 @@ if __name__=='__main__':
     for ext in exts:
         if ext.missing['apis']:
             importer['missing_apis'] += 1
+            print ext.missing['apis']
             apis_counter.update(ext.missing['apis'])
 
         if ext.missing['permissions']:
@@ -283,7 +287,7 @@ if __name__=='__main__':
 
         if ext.missing['manifests']:
             importer['missing_manifests'] += 1
-            permissions_counter.update(ext.missing['manifests'])
+            manifests_counter.update(ext.missing['manifests'])
 
         if (not ext.missing['permissions']
             and not ext.missing['apis']
@@ -309,13 +313,6 @@ if __name__=='__main__':
     print
     display('easy_conversion', 'success')
 
-    print
-    print 'Data count'
-    print '----------'
-    for k, v in data_counter.most_common(100):
-        print ' {:6d} {}'.format(v, k)
-    print
-
     print 'Missing APIs'
     print '------------'
     for k, v in apis_counter.most_common(100):
@@ -330,5 +327,5 @@ if __name__=='__main__':
     print
     print 'Missing manifests'
     print '-------------------'
-    for k, v in permissions_counter.most_common(100):
+    for k, v in manifests_counter.most_common(100):
         print ' {:6d} {}'.format(v, k)
