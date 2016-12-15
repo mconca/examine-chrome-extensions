@@ -22,11 +22,24 @@ def get_chrome_addon(source):
     return destfile
 
 
+def get_addon(source):
+    dest = tempfile.mkdtemp()
+    id = source.split('/')[-1]
+    if source.endswith('/'):
+        id = source.split('/')[-2]
+    destfile = os.path.join(dest, id)
+    download_file(destfile, source)
+    return destfile
+
+
 if __name__=='__main__':
     source = sys.argv[1]
     if source.startswith('https://chrome.google.com/webstore/detail'):
         # Its an add-on on the chrome store, let's get it.
         filename = get_chrome_addon(source)
+    if source.startswith('https://addons.mozilla.org/firefox/downloads/'):
+        # Its an add-on on amo, let's get it.
+        filename = get_addon(source)
     else:
         raise ValueError('Unknown file source.')
 
