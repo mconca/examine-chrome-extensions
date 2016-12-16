@@ -37,7 +37,7 @@ if __name__=='__main__':
     if source.startswith('https://chrome.google.com/webstore/detail'):
         # Its an add-on on the chrome store, let's get it.
         filename = get_chrome_addon(source)
-    if source.startswith('https://addons.mozilla.org/firefox/downloads/'):
+    elif source.startswith('https://addons.mozilla.org/firefox/downloads/'):
         # Its an add-on on amo, let's get it.
         filename = get_addon(source)
     else:

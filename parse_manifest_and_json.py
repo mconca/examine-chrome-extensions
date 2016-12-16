@@ -18,6 +18,7 @@ importer = Counter({
 apis_counter = Counter()
 permissions_counter = Counter()
 manifests_counter = Counter()
+custom_counter = Counter()
 
 IGNORING = [
     'chrome.storage.local',  # implemented but not read from schema
@@ -215,6 +216,7 @@ class Extension:
         self.find_missing_apis()
         self.find_missing_permissions()
         self.find_missing_manifests()
+        self.find_custom()
 
     def find_missing_apis(self):
         for api in self.apis:
@@ -236,6 +238,10 @@ class Extension:
             if (key not in MANIFEST
                 and key not in PERMISSIONS):
                 self.missing['manifests'].append(key)
+
+    def find_custom(self):
+        pass
+
 
 
 if __name__=='__main__':
@@ -328,3 +334,10 @@ if __name__=='__main__':
     print '-------------------'
     for k, v in manifests_counter.most_common(100):
         print ' {:6d} {}'.format(v, k)
+
+    if custom_counter:
+        print
+        print 'Custom counter'
+        print '--------------'
+        for k, v in custom_counter.most_common(100):
+            print ' {:6d} {}'.format(len(v), k)
