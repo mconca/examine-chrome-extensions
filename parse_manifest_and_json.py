@@ -4,6 +4,11 @@ import json
 import pprint
 import os
 
+# See whats missing in a Chrome extension from getting it working in Firefox.
+#
+# This only really makes sense for Chrome extensions since everything on AMO
+# should work on Firefox, right?
+
 importer = Counter({
     'total': 0,
     'success': 0,
@@ -19,6 +24,12 @@ apis_counter = Counter()
 permissions_counter = Counter()
 manifests_counter = Counter()
 custom_counter = Counter()
+custom_counter['externally_connectable'] = 0
+custom_counter['externally_connectable_ids'] = []
+custom_counter['externally_connectable_matches'] = []
+custom_counter['externally_connectable_accepts_tls_channel_id'] = 0
+custom_counter['externally_connectable_ids_*'] = 0
+custom_counter['externally_connectable_matches_*'] = 0
 
 IGNORING = [
     'chrome.storage.local',  # implemented but not read from schema
@@ -123,7 +134,7 @@ MANIFEST = [
     'content_security_policy',
     'default_locale',
     'options_ui',
-    'options_page',  # not officially marked as deprecated but close
+    #'options_page',  # not officially marked as deprecated but close
     'short_name',  # we don't really care about this one
     'clipboardWrite',
     'sessions',
@@ -240,20 +251,34 @@ class Extension:
                 self.missing['manifests'].append(key)
 
     def find_custom(self):
-        pass
-
+        if 'externally_connectable' in self.manifest:
+            custom_counter['externally_connectable'] += 1
+            if 'ids' in self.manifest['externally_connectable']:
+                ids = self.manifest['externally_connectable'].get('ids')
+                custom_counter['externally_connectable_ids'].append(ids)
+                if '*' in ids:
+                    custom_counter['externally_connectable_ids_*'] += 1
+            if 'matches' in self.manifest['externally_connectable']:
+                ms = self.manifest['externally_connectable'].get('matches')
+                custom_counter['externally_connectable_matches'].append(ms)
+                if '<all_urls>' in ms:
+                    custom_counter['externally_connectable_matches_*'] += 1
+            if 'accepts_tls_channel_id' in self.manifest['externally_connectable']:
+                custom_counter['externally_connectable_accepts_tls_channel_id'] += 1
 
 
 if __name__=='__main__':
     k = 0
     exts = []
-    for filename in os.listdir('extensions/manifests'):
+    for filename in os.listdir('extensions/chrome-manifests'):
         if not filename.endswith('.json'):
             continue
 
         importer['total'] += 1
-        full = os.path.abspath(os.path.join('extensions/manifests', filename))
-        apis_file = full.replace('extensions/manifests', 'extensions/apis')
+        full = os.path.abspath(
+            os.path.join('extensions/chrome-manifests', filename))
+        apis_file = full.replace(
+            'extensions/chrome-manifests', 'extensions/chrome-apis')
 
         # Filter out ones that fail to import.
         try:
@@ -339,5 +364,10 @@ if __name__=='__main__':
         print
         print 'Custom counter'
         print '--------------'
-        for k, v in custom_counter.most_common(100):
-            print ' {:6d} {}'.format(len(v), k)
+        for k, v in sorted(custom_counter.most_common(100)):
+            if isinstance(v, list):
+                avg = sum([len(i) for i in v])/len(v)
+                print ' {:6d} {} average'.format(avg, k)
+                v = len(v)
+
+            print ' {:6d} {}'.format(v, k)

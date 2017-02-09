@@ -7,8 +7,20 @@ import tempfile
 
 import requests
 
+from jinja2 import Environment, FileSystemLoader
+
 from parse_manifest_and_json import Extension
 from utils import download_file, examine, unzip_file
+
+NOTES = {
+    'manifest': {
+        'options_page': 'Use options_ui instead. Works in <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions/manifest.json/options_ui">Firefox</a> and <a href="https://developer.chrome.com/extensions/optionsV2">Chrome</a>.',
+    },
+    'permissions': {
+        'unlimitedStorage': 'All storage is currently unlimited, see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1282972">this bug</a>.',
+    },
+    'apis': {}
+}
 
 
 def get_chrome_addon(source):
@@ -32,27 +44,7 @@ def get_addon(source):
     return destfile
 
 
-if __name__=='__main__':
-    source = sys.argv[1]
-    if source.startswith('https://chrome.google.com/webstore/detail'):
-        # Its an add-on on the chrome store, let's get it.
-        filename = get_chrome_addon(source)
-    elif source.startswith('https://addons.mozilla.org/firefox/downloads/'):
-        # Its an add-on on amo, let's get it.
-        filename = get_addon(source)
-    else:
-        raise ValueError('Unknown file source.')
-
-    assert os.path.exists(filename)
-
-    filedir = unzip_file(filename)
-    manifest_file = os.path.join(filedir, 'manifest.json')
-    api_file = os.path.join(filedir, 'apis.json')
-    json.dump(examine(filedir), open(api_file, 'w'))
-
-    ext = Extension(manifest_file, api_file)
-    ext.process()
-
+def format_text(ext):
     if ext.missing['apis']:
         print 'APIs missing:'
         print ' ' + ', '.join(ext.missing['apis'])
@@ -72,3 +64,48 @@ if __name__=='__main__':
 
     print 'Try the add-on using: '
     print ' web-ext run -v -s {}'.format(filedir)
+
+
+def format_html(ext, source):
+    env = Environment(loader=FileSystemLoader('.'))
+    template = env.get_template('report.html')
+    data = {
+        'ext': ext,
+        'source': source,
+        'notes': NOTES
+    }
+    html = template.render(data)
+    open('index.html', 'w').write(html.encode('utf-8'))
+
+
+if __name__=='__main__':
+    output = sys.argv[1].strip()
+    assert output in ['text', 'html'], 'Format invalid: {}'.format(output)
+
+    source = sys.argv[2]
+    if source.startswith('https://chrome.google.com/webstore/detail'):
+        # Its an add-on on the chrome store, let's get it.
+        filename = get_chrome_addon(source)
+    elif source.startswith('https://addons.mozilla.org/firefox/downloads/'):
+        # Its an add-on on amo, let's get it.
+        filename = get_addon(source)
+    else:
+        raise ValueError('Unknown file source.')
+
+    assert os.path.exists(filename)
+
+    filedir = unzip_file(filename)
+    manifest_file = os.path.join(filedir, 'manifest.json')
+    api_file = os.path.join(filedir, 'apis.json')
+    json.dump(examine(filedir), open(api_file, 'w'))
+
+    ext = Extension(manifest_file, api_file)
+    ext.process()
+
+    if output == 'text':
+        format_text(ext)
+    elif output == 'html':
+        # This is just a quick prototype.
+        format_html(ext, source)
+    else:
+        raise ValueError('Unknown format.')

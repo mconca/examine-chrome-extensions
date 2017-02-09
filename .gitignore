@@ -1,2 +1,4 @@
-extensions/manifests/*.json
-extensions/apis/*.json
+extensions/chrome-manifests/*.json
+extensions/chrome-apis/*.json
+extensions/firefox-manifests/*.json
+extensions/firefox-apis/*.json

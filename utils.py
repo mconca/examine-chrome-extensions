@@ -8,6 +8,7 @@ from zipfile import ZipFile
 def download_file(filename, url):
     # NOTE the stream=True parameter
     r = requests.get(url, stream=True)
+    r.raise_for_status()
     with open(filename, 'wb') as f:
         for chunk in r.iter_content(chunk_size=1024):
             if chunk: # filter out keep-alive new chunks
@@ -17,13 +18,14 @@ def download_file(filename, url):
 
 def unzip_file(destfile):
     destdir = os.path.dirname(destfile)
+    print destdir
     with ZipFile(destfile, 'r') as zippy:
         zippy.extractall(destdir)
 
     return destdir
 
 
-regex = re.compile('chrome\.(\w+)\.(\w+)')
+regex = re.compile('(chrome|browser)\.(\w+)\.(\w+)')
 
 
 def find(filename):
