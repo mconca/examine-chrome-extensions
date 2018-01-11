@@ -138,6 +138,9 @@ FAKE_BROWSER = [
     'browser.realVersion.split',   # ???
     'browser.version.split',   # ???
     'browser.name.toLowerCase',   # jQuery
+    'browswer.js.map',   # AWS
+    'chrome.js.map',  # AWS
+    'browser.pipe.aria.microsoft',  # Skype
 ]
 
 IGNORING = IGNORING + FAKE_BROWSER
@@ -151,6 +154,7 @@ IGNORING = IGNORING + [
     'browser.runtime.lastError',   # implemented in 48
     'chrome.storage.managed',   # implemented in 57
     'chrome.storage.managed.get',   # implemented in 57
+    'chrome.privacy.network',  # implemented in 54
     'chrome.privacy.network.networkPredictionEnabled',  # implemented in 54
     'chrome.privacy.network.peerConnectionEnabled',  # implemented in 55
     'chrome.privacy.network.webRTCIPHandlingPolicy',  # implement in 54
@@ -197,6 +201,7 @@ PERMISSIONS = [
     'bookmarks',
     'browserAction',
     'clipboardWrite',
+    'clipboardRead',
     'contextMenus',
     'cookies',
     'commands',
