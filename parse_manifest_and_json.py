@@ -1,13 +1,17 @@
 import codecs
 from collections import Counter
-import json
-import pprint
+import json, csv
+#import pprint
 import os
 
 # See whats missing in a Chrome extension from getting it working in Firefox.
 #
 # This only really makes sense for Chrome extensions since everything on AMO
 # should work on Firefox, right?
+
+# Max number of addons to parse, None is all of them.
+#LIMIT = 5000
+LIMIT = None
 
 importer = Counter({
     'total': 0,
@@ -18,7 +22,8 @@ importer = Counter({
     'missing_apis': 0,
     'missing_permissions': 0,
     'easy_conversion': 0,
-    'browser_namespace': 0
+    'browser_namespace': 0,
+    'no_apis': 0
 })
 
 apis_counter = Counter()
@@ -67,6 +72,96 @@ IGNORING = [
     'chrome.webRequest.MAX_HANDLER_BEHAVIOR_CHANGED_CALLS_PER_10_MINUTES',  # implemented but not read from schema
 ]
 
+# August, 2017
+# The schemas.json file is very old and does not reflect what is currently
+# implemented. The script that generated that file is in another project
+# called arewewebextensionsyet, but it is very out of date as well. So
+# I'm just adding in things I know have landed here.
+IGNORING = IGNORING + [
+    'chrome.extension.onMessage.addListener',   # deprecated
+    'chrome.extension.onRequest.addListener',  # deprecated
+    'chrome.extension.onConnect.addListener',  # deprecated
+    'chrome.extension.lastError.message',   # deprecated
+    'chrome.extension.onRequestExternal.addListener',  # deprecated
+    'chrome.tabs.onSelectionChanged.addListener',  # deprecated
+    'chrome.tabs.onActiveChanged.addListener',  # deprecated
+    'chrome.storage.local.get',
+    'chrome.storage.local.set',
+    'chrome.storage.local.remove',
+    'chrome.storage.local.clear',
+    'chrome.storage.sync.get',
+    'chrome.storage.sync.set',
+    'chrome.storage.sync.remove',
+    'chrome.storage.sync.clear',
+    'chrome.runtime.lastError.message',
+    'chrome.runtime.onInstalled',
+    'chrome.runtime.onMessageExternal',  # implemented in 54
+    'chrome.runtime.onMessageExternal.addListener',   # implemented in 54
+    'chrome.runtime.onConnectExternal.addListener',  # implemented in 54
+    'chrome.management.getAll',   # implemented in 55
+    'chrome.management.setEnabled',   # implemented in 55
+    'chrome.management.get',   # implemented in 56
+    'chrome.permissions.request',  # implemented in 55
+    'chrome.permissions.remove',  # implemented in 55
+    'chrome.permissions.contains',  # implemented in 55
+    'chrome.webNavigation.onCreatedNavigationTarget.addListener', # implemented in 54
+    'chrome.devtools.panels',  # implemented in 54
+    'chrome.devtools.panels.create',  # implemented in 54
+    'chrome.devtools.inspectedWindow.tabId',  # implemented in 54
+    'chrome.devtools.panels.elements', # implemented in 56
+    'chrome.devtools.panels.themeName', # implemented in 55
+    'chrome.runtime.error',   # not a real API (ext macro, maybe)
+    'chrome.tabs.cr_tabs_TabClosed_listeners_added',  # not a real API (ext macro, maybe)
+    'chrome.tabs.cr_tabs_TabCreated_listeners_added',  # not a real API (ext macro, maybe)
+    'chrome.tabs.cr_tabs_TabSelectionChanged_listeners_added',  # not a real API (ext macro, maybe)
+    'chrome.tabs.hasOwnProperty'  # not a real API (ext macro, maybe)
+]
+
+# November, 2017
+# Additional API to ignore. With this update, I let the browser
+# namespace come through, but some libraries, like angular.js,
+# also have a broswer namespace that we need to ignore.
+FAKE_BROWSER = [
+    'browser.defer',   # angular.js
+    'browser.defer.cancel',   # angular.js
+    'browser.defer.flush',   # angular.js
+    'browser.driver.getCurrentUrl',   # angular.js
+    'browser.params.browser',    # angular.js
+    'browser.deferredFns.length',    # angular.js
+    'browser.tabs.getAll',    # kango library
+    'browser.event.DOCUMENT_COMPLETE',  # kango library
+    'browser.event.TAB_CHANGED',    # kango library
+    'browser.event.BEFORE_NAVIGATE',    # kango library
+    'browser.part.js',    # kango library
+    'browser.oldsafari.version',    # Safari
+    'browser.tabs.broadcastMessage',   # Opera?
+    'browser.realVersion.split',   # ???
+    'browser.version.split',   # ???
+    'browser.name.toLowerCase',   # jQuery
+]
+
+IGNORING = IGNORING + FAKE_BROWSER
+IGNORING = IGNORING + [
+    'browser.storage.local.get',   # implemented in 48
+    'browser.storage.local.remove',   # implemented in 48
+    'browser.storage.local.set',   # implemented in 48
+    'browser.storage.local',    # implemented in 48
+    'browser.storage.sync.set',   # implemented in 53
+    'browser.storage.sync.get',   # implemented in 53
+    'browser.runtime.lastError',   # implemented in 48
+    'chrome.storage.managed',   # implemented in 57
+    'chrome.storage.managed.get',   # implemented in 57
+    'chrome.privacy.network.networkPredictionEnabled',  # implemented in 54
+    'chrome.privacy.network.peerConnectionEnabled',  # implemented in 55
+    'chrome.privacy.network.webRTCIPHandlingPolicy',  # implement in 54
+    'chrome.privacy.services.passwordSavingEnabled',  # implemented in 56
+    'chrome.privacy.websites.firstPartyIsolate',  # implemented in 58
+    'chrome.privacy.websites.hyperlinkAuditingEnabled',  # implemented in 54
+    'chrome.privacy.websites.referrersEnabled',  # implemented in 56
+    'chrome.privacy.websites.resistFingerprinting',  # implemented in 58
+    'chrome.privacy.websites.trackingProtectionMode'  # implemented in 57
+]
+
 # An easy way to spot apps.
 APP_PERMISSIONS = [
     'syncFileSystem',  # https://developer.chrome.com/apps/syncFileSystem
@@ -86,7 +181,12 @@ APP_APIS = [
     'chrome.system.memory',
     'chrome.app.runtime',
     'chrome.app.window',
-    'chrome.management.launchApp'
+    'chrome.management.launchApp',
+    'chrome.app.runtime.onLaunched',
+    'chrome.app.window.create',
+    'chrome.identity.getAuthToken',
+    'chrome.identity.removeCachedAuthToken',
+    'chrome.identity.getProfileUserInfo'
 ]
 
 PERMISSIONS = [
@@ -120,9 +220,21 @@ PERMISSIONS = [
     'webNavigation',
     'windows',
     'unlimitedStorage',  # Well technically everything is unlimited right now.
+    'proxy',
+    'browsingData',
+    'sessions',
+    'geolocation',
+    'privacy'
 ]
 
 MANIFEST = [
+    'chrome_url_overrides',
+    'incognito',
+    'optional_permissions',
+    'chrome_settings_overrides',
+    'devtools_page',
+    'applications',
+    'developer',
     'name',
     'manifest_version',
     'version',
@@ -141,9 +253,10 @@ MANIFEST = [
     'content_security_policy',
     'default_locale',
     'options_ui',
-    #'options_page',  # not officially marked as deprecated but close
+    'options_page',  # not officially marked as deprecated but close
     'short_name',  # we don't really care about this one
     'clipboardWrite',
+    'clipboardRead',
     'sessions',
     # Bogus....
     'version_name',
@@ -152,10 +265,6 @@ MANIFEST = [
     'run_at',
     'authors'
 ]
-
-# Max number of addons to parse, None is all of them.
-LIMIT = 5000
-LIMIT = None
 
 schemas = json.load(open('schemas.json', 'r'))
 dict_schemas = {}
@@ -195,6 +304,9 @@ def get_schema_entry(api):
 
 
 def lookup_schema(api, platform):
+    if api in FAKE_BROWSER:
+        return True
+
     usage_counter[api] += 1
 
     if api in IGNORING:
@@ -211,7 +323,8 @@ def lookup_schema(api, platform):
 
 class Extension:
 
-    def __init__(self, manifest_file, apis_file):
+    def __init__(self, manifest_file, apis_file, dets_file):
+        self.no_apis = False
         self.type = 'extension'
         if not os.path.exists(apis_file):
             raise ValueError('Missing API file')
@@ -222,6 +335,12 @@ class Extension:
         self.manifest = json.loads(data)
         data = codecs.open(apis_file, 'r', 'utf-8-sig').read()
         self.apis = json.loads(data)
+        data = codecs.open(dets_file, 'r', 'utf-8-sig').read()
+        self.details = json.loads(data)
+        self.details.update({'Portable':'No', 'Missing API':[], 'Missing Permissions':[], 'Missing Manifest Keys':[]})
+
+        if len(self.apis) == 0:
+            self.no_apis = True
         self.usesBrowserNS = False
         for api in self.apis:
             if api.startswith('browser.'):
@@ -327,10 +446,11 @@ if __name__=='__main__':
         full = os.path.abspath(
             os.path.join('extensions/chrome-manifests', filename))
         apis_file = full.replace('chrome-manifests', 'chrome-apis')
+        dets_file = full.replace('chrome-manifests', 'chrome-details')
 
         # Filter out ones that fail to import.
         try:
-            ext = Extension(full, apis_file)
+            ext = Extension(full, apis_file, dets_file)
         except ValueError:
             importer['error'] += 1
             continue
@@ -354,26 +474,55 @@ if __name__=='__main__':
         if LIMIT and k >= LIMIT:
             break
 
+    # Set up the CSV headers (assume first extension is like all others)
+    print('Writing CSV file...')
+    fieldnames = exts[0].details.keys()
+    csv_outfile = open('chrome-webstore-details.csv', 'w', newline='')
+    writer = csv.DictWriter(csv_outfile, delimiter=',', fieldnames=fieldnames,
+                            restval='', quoting=csv.QUOTE_ALL)
+    writer.writeheader()
+
     for ext in exts:
+        if ext.details and ext.details['Users']:
+            # Do a little cleanup on users to make the CSV easier to manipulate
+            users = ext.details['Users'].split()[0]
+            users = users.replace(',', '')
+            ext.details['Users'] = int(users.replace('+', ''))
+
         if ext.missing['apis']:
             importer['missing_apis'] += 1
             apis_counter.update(ext.missing['apis'])
+            ext.details['Missing API'].extend(ext.missing['apis'])
 
         if ext.missing['permissions']:
             importer['missing_permissions'] += 1
             permissions_counter.update(ext.missing['permissions'])
+            ext.details['Missing Permissions'].extend(ext.missing['permissions'])
 
         if ext.missing['manifests']:
             importer['missing_manifests'] += 1
             manifests_counter.update(ext.missing['manifests'])
+            ext.details['Missing Manifest Keys'].extend(ext.missing['manifests'])
 
         if (not ext.missing['permissions']
             and not ext.missing['apis']
             and not ext.missing['manifests']):
             importer['easy_conversion'] += 1
+            ext.details['Portable'] = 'Yes'
 
         if ext.usesBrowserNS:
             importer['browser_namespace'] += 1
+
+        if ext.no_apis:
+            importer['no_apis'] += 1
+
+        try:
+            writer.writerow(ext.details)
+        except:
+            # Usually fails because of a charset issue
+            print('Couldn\'t write row: ', ext.details)
+
+
 
     print('Importer stats')
     print('--------------')
@@ -394,7 +543,8 @@ if __name__=='__main__':
     display('missing_manifests', 'extensions')
     print()
     display('easy_conversion', 'extensions')
-    display('browser_namespace', 'total')
+    display('browser_namespace', 'extensions')
+    display('no_apis', 'extensions')
 
     print()
     print('Chrome API coverage')
