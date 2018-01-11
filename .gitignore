@@ -1,6 +1,5 @@
 extensions/chrome-manifests/*.json
 extensions/chrome-apis/*.json
-<<<<<<< HEAD
 extensions/chrome-details/*.json
 extensions/firefox-manifests/*.json
 extensions/firefox-apis/*.json
@@ -8,7 +7,3 @@ extensions/firefox-details/*.json
 __pycache__/*
 temp/*
 *.pyc
-=======
-extensions/firefox-manifests/*.json
-extensions/firefox-apis/*.json
->>>>>>> 26ba9b23f7381c493b0219ab31bfb629185c3964
