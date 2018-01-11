@@ -11,18 +11,20 @@ import os
 
 importer = Counter({
     'total': 0,
-    'success': 0,
+    'extensions': 0,
     'error': 0,
     'apps': 0,
     'themes': 0,
     'missing_apis': 0,
     'missing_permissions': 0,
-    'easy_conversion': 0
+    'easy_conversion': 0,
+    'browser_namespace': 0
 })
 
 apis_counter = Counter()
 permissions_counter = Counter()
 manifests_counter = Counter()
+usage_counter = Counter()
 custom_counter = Counter()
 custom_counter['externally_connectable'] = 0
 custom_counter['externally_connectable_ids'] = []
@@ -30,6 +32,7 @@ custom_counter['externally_connectable_matches'] = []
 custom_counter['externally_connectable_accepts_tls_channel_id'] = 0
 custom_counter['externally_connectable_ids_*'] = 0
 custom_counter['externally_connectable_matches_*'] = 0
+custom_counter['file:'] = 0
 
 IGNORING = [
     'chrome.storage.local',  # implemented but not read from schema
@@ -49,7 +52,7 @@ IGNORING = [
     'chrome.extension.connect', # deprecated
     'chrome.extension.onConnect',  # deprecated
     'chrome.windows.WINDOW_ID_NONE',  # implemented but not read from schema
-    'chrome.windows.WINDOW_ID_CURRENT',  # implemented but not read from schema
+    'chrome.windows.WINDOW_ID_CURRENT',
     'chrome.extension.lastError',  # deprecated
     # Told in IRC we support these..
     'chrome.extension.inIncognitoContext',
@@ -57,7 +60,11 @@ IGNORING = [
     # Obvious urls...
     'chrome.googlecode.com',
     # Doesn't exist...
-    'chrome.browserAction.show'
+    'chrome.browserAction.show',
+    # https://dxr.mozilla.org/mozilla-central/source/toolkit/components/extensions/schemas/web_request.json#33
+    'chrome.webRequest.ResourceType', # implemented but not read from schema
+    # https://dxr.mozilla.org/mozilla-central/source/toolkit/components/extensions/schemas/web_request.json#26
+    'chrome.webRequest.MAX_HANDLER_BEHAVIOR_CHANGED_CALLS_PER_10_MINUTES',  # implemented but not read from schema
 ]
 
 # An easy way to spot apps.
@@ -147,32 +154,57 @@ MANIFEST = [
 ]
 
 # Max number of addons to parse, None is all of them.
-LIMIT = 500
+LIMIT = 5000
 LIMIT = None
 
 schemas = json.load(open('schemas.json', 'r'))
+dict_schemas = {}
+
+for k, schema in schemas:
+    dict_schemas[k] = schema
 
 
-def lookup_schema(api):
-    if api in IGNORING:
-        return True
+def get_api(api):
+    if 'devtools' in api:
+        temp = api.split('.')[1:]
+        if len(temp) > 2:
+            api = ('.'.join([temp[0], temp[1]]), temp[2])
+        else:
+            api = temp
+    else:
+        api = api.split('.')[1:]
+    return api
 
-    api = api.split('.')[1:]
+
+def get_schema_entry(api):
     entry = None
+    api_split = get_api(api)
 
     try:
-        entry = schemas[api[0]]['functions'][api[1]]
+        entry = dict_schemas[api_split[0]]['schema']['functions'][api_split[1]]
     except KeyError:
         pass
 
     if not entry:
         try:
-            entry = schemas[api[0]]['events'][api[1]]
+            entry = dict_schemas[api_split[0]]['schema']['events'][api_split[1]]
         except KeyError:
             pass
 
-    if entry:
-        return entry['supported']
+    return entry
+
+
+def lookup_schema(api, platform):
+    usage_counter[api] += 1
+
+    if api in IGNORING:
+        return True
+
+    schema_entry = get_schema_entry(api)
+    api_entry = dict_schemas.get(get_api(api)[0])
+
+    if api_entry and schema_entry and platform in api_entry.get('platform', []):
+        return schema_entry['supported']
 
     return False
 
@@ -190,6 +222,10 @@ class Extension:
         self.manifest = json.loads(data)
         data = codecs.open(apis_file, 'r', 'utf-8-sig').read()
         self.apis = json.loads(data)
+        self.usesBrowserNS = False
+        for api in self.apis:
+            if api.startswith('browser.'):
+                self.usesBrowserNS = True
         self.missing = {'apis': [], 'permissions': [], 'manifests': []}
 
     def get_id(self):
@@ -202,7 +238,7 @@ class Extension:
             if permission in self.manifest.get('permissions', []):
                 app = True
 
-        for manifest in self.manifest.keys():
+        for manifest in list(self.manifest.keys()):
             if manifest in APP_MANIFESTS:
                 app = True
 
@@ -231,7 +267,7 @@ class Extension:
 
     def find_missing_apis(self):
         for api in self.apis:
-            found = lookup_schema(api)
+            found = lookup_schema(api, 'desktop')
             if not found:
                 self.missing['apis'].append(api)
 
@@ -245,7 +281,7 @@ class Extension:
                 self.missing['permissions'].append(permission)
 
     def find_missing_manifests(self):
-        for key in self.manifest.keys():
+        for key in list(self.manifest.keys()):
             if (key not in MANIFEST
                 and key not in PERMISSIONS):
                 self.missing['manifests'].append(key)
@@ -266,6 +302,19 @@ class Extension:
             if 'accepts_tls_channel_id' in self.manifest['externally_connectable']:
                 custom_counter['externally_connectable_accepts_tls_channel_id'] += 1
 
+        for permission in self.manifest.get('permissions', []):
+            if isinstance(permission, dict):
+                continue
+
+            if permission.startswith('file:'):
+                custom_counter['file:'] += 1
+                continue
+
+    def get_url(self):
+        url = 'https://chrome.google.com/webstore/detail/'
+        id = self.manifest_filename.split('/')[-1].split('.json')[0]
+        return url + id
+
 
 if __name__=='__main__':
     k = 0
@@ -277,8 +326,7 @@ if __name__=='__main__':
         importer['total'] += 1
         full = os.path.abspath(
             os.path.join('extensions/chrome-manifests', filename))
-        apis_file = full.replace(
-            'extensions/chrome-manifests', 'extensions/chrome-apis')
+        apis_file = full.replace('chrome-manifests', 'chrome-apis')
 
         # Filter out ones that fail to import.
         try:
@@ -300,7 +348,7 @@ if __name__=='__main__':
             continue
 
         exts.append(ext)
-        importer['success'] += 1
+        importer['extensions'] += 1
 
         k += 1
         if LIMIT and k >= LIMIT:
@@ -324,50 +372,80 @@ if __name__=='__main__':
             and not ext.missing['manifests']):
             importer['easy_conversion'] += 1
 
-    print 'Importer stats'
-    print '--------------'
+        if ext.usesBrowserNS:
+            importer['browser_namespace'] += 1
+
+    print('Importer stats')
+    print('--------------')
 
     def display(k, divisor):
         v = importer[k]
         pct = (v / float(importer[divisor])) * 100
-        print ' {:6d} {:3.2f}% {}'.format(v, pct, k)
+        print((' {:6d} {:3.2f}% {}'.format(v, pct, k)))
 
-    display('success', 'total')
+    display('total', 'total')
+    display('extensions', 'total')
     display('apps', 'total')
     display('themes', 'total')
     display('error', 'total')
-    print
-    display('missing_permissions', 'success')
-    display('missing_apis', 'success')
-    display('missing_manifests', 'success')
-    print
-    display('easy_conversion', 'success')
+    print()
+    display('missing_permissions', 'extensions')
+    display('missing_apis', 'extensions')
+    display('missing_manifests', 'extensions')
+    print()
+    display('easy_conversion', 'extensions')
+    display('browser_namespace', 'total')
 
-    print 'Missing APIs'
-    print '------------'
+    print()
+    print('Chrome API coverage')
+    print('-------------------')
+
+    for size in [100, 250]:
+        topTotal = topCovered = size
+        for k, v in usage_counter.most_common(topTotal):
+            if apis_counter[k] > 0:
+                topCovered -= 1
+        pct = (float(topCovered) / float(topTotal)) * 100
+        print((' {:6d} {:3.2f}% top {} API'.format(topCovered, pct, topTotal)))
+
+    ct = 0
+    print()
+    print('Top API usage')
+    print('------------')
+    for k, v in usage_counter.most_common(250):
+        ct += 1
+        if (apis_counter[k] > 0):
+            need = '-'
+        else:
+            need = '+'
+        print(' {:3d}'.format(ct), ' {:6d} {} {}'.format(v, need, k))
+
+    print()
+    print('Missing APIs')
+    print('------------')
     for k, v in apis_counter.most_common(100):
-        print ' {:6d} {}'.format(v, k)
+        print((' {:6d} {}'.format(v, k)))
 
-    print
-    print 'Missing permissions'
-    print '-------------------'
+    print()
+    print('Missing permissions')
+    print('-------------------')
     for k, v in permissions_counter.most_common(100):
-        print ' {:6d} {}'.format(v, k)
+        print((' {:6d} {}'.format(v, k)))
 
-    print
-    print 'Missing manifests'
-    print '-------------------'
+    print()
+    print('Missing manifests')
+    print('-------------------')
     for k, v in manifests_counter.most_common(100):
-        print ' {:6d} {}'.format(v, k)
+        print((' {:6d} {}'.format(v, k)))
 
-    if custom_counter:
-        print
-        print 'Custom counter'
-        print '--------------'
+    if False: #custom_counter:
+        print()
+        print('Custom counter')
+        print('--------------')
         for k, v in sorted(custom_counter.most_common(100)):
             if isinstance(v, list):
                 avg = sum([len(i) for i in v])/len(v)
-                print ' {:6d} {} average'.format(avg, k)
+                print((' {:6d} {} average'.format(avg, k)))
                 v = len(v)
 
-            print ' {:6d} {}'.format(v, k)
+            print((' {:6d} {}'.format(v, k)))
