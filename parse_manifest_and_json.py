@@ -1,7 +1,6 @@
 import codecs
 from collections import Counter
 import json, csv
-#import pprint
 import os
 
 # See whats missing in a Chrome extension from getting it working in Firefox.
@@ -12,6 +11,9 @@ import os
 # Max number of addons to parse, None is all of them.
 #LIMIT = 5000
 LIMIT = None
+
+AMO_name_set = set()
+check_name_on_AMO = True
 
 importer = Counter({
     'total': 0,
@@ -114,7 +116,8 @@ IGNORING = IGNORING + [
     'chrome.tabs.cr_tabs_TabClosed_listeners_added',  # not a real API (ext macro, maybe)
     'chrome.tabs.cr_tabs_TabCreated_listeners_added',  # not a real API (ext macro, maybe)
     'chrome.tabs.cr_tabs_TabSelectionChanged_listeners_added',  # not a real API (ext macro, maybe)
-    'chrome.tabs.hasOwnProperty'  # not a real API (ext macro, maybe)
+    'chrome.tabs.hasOwnProperty',  # not a real API (ext macro, maybe)
+    'chrome.browserAction.set'   # not a real API (ext macro, maybe)
 ]
 
 # November, 2017
@@ -325,6 +328,23 @@ def lookup_schema(api, platform):
 
     return False
 
+def is_name_on_AMO(chromeName):
+    if len(AMO_name_set) == 0:
+        # First time thru, build the name database
+        for filename in os.listdir('extensions/firefox-details'):
+            if not filename.endswith('.json'):
+                continue
+
+            full = os.path.abspath(os.path.join('extensions/firefox-details', filename))
+            res = codecs.open(full, 'r', 'utf-8-sig').read()
+            fxdets = json.loads(res)
+            AMO_name_set.add(fxdets['Name'])
+
+    if chromeName in AMO_name_set:
+        return 'yes'
+    else:
+        return 'no'
+
 
 class Extension:
 
@@ -342,7 +362,8 @@ class Extension:
         self.apis = json.loads(data)
         data = codecs.open(dets_file, 'r', 'utf-8-sig').read()
         self.details = json.loads(data)
-        self.details.update({'Portable':'No', 'Missing API':[], 'Missing Permissions':[], 'Missing Manifest Keys':[]})
+        self.details.update({'Portable':'No', 'Name on AMO':'Unknown', 'Missing API':[],
+                             'Missing Permissions':[], 'Missing Manifest Keys':[]})
 
         if len(self.apis) == 0:
             self.no_apis = True
@@ -351,6 +372,9 @@ class Extension:
             if api.startswith('browser.'):
                 self.usesBrowserNS = True
         self.missing = {'apis': [], 'permissions': [], 'manifests': []}
+
+        if check_name_on_AMO:
+            self.details['Name on AMO'] = is_name_on_AMO(self.details['Name'])
 
     def get_id(self):
         if 'extensions/manifests' in self.manifest_filename:
