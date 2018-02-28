@@ -9,6 +9,7 @@ importer = Counter({
     'extensions': 0,
     'error': 0,
     'browser_namespace': 0,
+    'browser_style': 0,
     'no_apis': 0
 })
 
@@ -24,6 +25,14 @@ MAN_IGNORE = [
 'version'
 ]
 
+# Maifest entries where browser_style is permitted
+STYLE_SET = [
+'browser_action',
+'page_action',
+'sidebar_action',
+'options_ui'
+]
+
 # Max number of addons to parse, None is all of them.
 #LIMIT = 5000
 LIMIT = None
@@ -32,6 +41,7 @@ class Extension:
 
     def __init__(self, manifest_file, apis_file):
         self.type = 'extension'
+        self.usesBrowserStyle = False
         self.usesBrowserNS = False
         self.no_apis = False
         if not os.path.exists(apis_file):
@@ -73,6 +83,11 @@ class Extension:
             if man not in MAN_IGNORE:
                 manifests_counter[man] += 1
 
+                # Let's count how many extentions use browser_style
+                if man in STYLE_SET:
+                    if ('browser_style' in self.manifest[man]) and (self.manifest[man]['browser_style'] == True):
+                        self.usesBrowserStyle = True
+
 
 if __name__=='__main__':
     k = 0
@@ -105,6 +120,8 @@ if __name__=='__main__':
             importer['browser_namespace'] += 1
         if ext.no_apis:
             importer['no_apis'] += 1
+        if ext.usesBrowserStyle:
+            importer['browser_style'] += 1
 
     print('Importer stats')
     print('--------------')
@@ -118,6 +135,7 @@ if __name__=='__main__':
     display('extensions', 'total')
     display('error', 'total')
     display('browser_namespace', 'total')
+    display('browser_style', 'total')
     display('no_apis', 'total')
 
     ct = 0
