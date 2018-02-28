@@ -7,7 +7,7 @@ import sys
 from lxml import html
 from utils import download_file, examine, unzip_file
 
-#LIMIT = 50
+#LIMIT = 1000
 LIMIT = None
 
 unzip = True
