@@ -49,7 +49,11 @@ if __name__=='__main__':
             dets_file = full.replace('firefox-manifests', 'firefox-details')
             data = codecs.open(dets_file, 'r', 'utf-8-sig').read()
             res = json.loads(data)
-            print(res['Name'])
+            print(res['Name'], end='')
+            for p in sorted(ext.manifest.get('permissions', [])):
+                if p != 'theme':
+                    print(',', p, end='')
+            print()
 
         k += 1
         if LIMIT and k >= LIMIT:
