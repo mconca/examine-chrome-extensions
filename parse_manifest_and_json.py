@@ -12,8 +12,9 @@ import os
 #LIMIT = 5000
 LIMIT = None
 
-AMO_name_set = set()
+write_csv_file = True
 check_name_on_AMO = True
+AMO_name_set = set()
 
 importer = Counter({
     'total': 0,
@@ -504,12 +505,13 @@ if __name__=='__main__':
             break
 
     # Set up the CSV headers (assume first extension is like all others)
-    print('Writing CSV file...')
-    fieldnames = exts[0].details.keys()
-    csv_outfile = open('chrome-webstore-details.csv', 'w', newline='')
-    writer = csv.DictWriter(csv_outfile, delimiter=',', fieldnames=fieldnames,
-                            restval='', quoting=csv.QUOTE_ALL)
-    writer.writeheader()
+    if write_csv_file:
+        print('Writing CSV file...')
+        fieldnames = exts[0].details.keys()
+        csv_outfile = open('chrome-webstore-details.csv', 'w', newline='')
+        writer = csv.DictWriter(csv_outfile, delimiter=',', fieldnames=fieldnames,
+                                restval='', quoting=csv.QUOTE_ALL)
+        writer.writeheader()
 
     for ext in exts:
         if ext.details and ext.details['Users']:
@@ -545,11 +547,12 @@ if __name__=='__main__':
         if ext.no_apis:
             importer['no_apis'] += 1
 
-        try:
-            writer.writerow(ext.details)
-        except:
-            # Usually fails because of a charset issue
-            print('Couldn\'t write row: ', ext.details)
+        if write_csv_file:
+            try:
+                writer.writerow(ext.details)
+            except:
+                # Usually fails because of a charset issue
+                print('Couldn\'t write row in CSV file')
 
 
 
