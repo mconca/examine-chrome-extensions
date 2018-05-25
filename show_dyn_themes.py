@@ -8,6 +8,46 @@ import os
 #LIMIT = 5000
 LIMIT = None
 
+perms = [
+    "<all_urls>",
+    "activeTab",
+    "alarms",
+    "background",
+    "bookmarks",
+    "browserSettings",
+    "browsingData",
+    "contentSettings",
+    "contextMenus",
+    "contextualIdentities",
+    "cookies",
+    "debugger",
+    "dns",
+    "downloads",
+    "downloads.open",
+    "find",
+    "geolocation",
+    "history",
+    "identity",
+    "idle",
+    "management",
+    "menus",
+    "nativeMessaging",
+    "notifications",
+    "pageCapture",
+    "pkcs11",
+    "privacy",
+    "proxy",
+    "sessions",
+    "storage",
+    "tabHide",
+    "tabs",
+#    "theme",
+    "topSites",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking"
+]
+
 class Extension:
 
     def __init__(self, manifest_file, apis_file):
@@ -29,8 +69,12 @@ class Extension:
 
 if __name__=='__main__':
     k = 0
-    print('Dynamic Themes on AMO')
-    print('---------------------')
+    # Output header for CSV
+    print('Name', end='')
+    for header in perms:
+        print(',', header, end='')
+    print()
+
     for filename in os.listdir('extensions/firefox-manifests'):
         if not filename.endswith('.json'):
             continue
@@ -50,9 +94,24 @@ if __name__=='__main__':
             data = codecs.open(dets_file, 'r', 'utf-8-sig').read()
             res = json.loads(data)
             print(res['Name'], end='')
-            for p in sorted(ext.manifest.get('permissions', [])):
-                if p != 'theme':
-                    print(',', p, end='')
+
+            ext_perms = ext.manifest.get('permissions', [])
+            if 'theme' in ext_perms:
+                ext_perms.remove('theme')
+
+            for p in perms:
+                if p in ext_perms:
+                    print(',1', end='')
+                    ext_perms.remove(p)
+                else:
+                    print(',0', end='')
+
+            # If anything is left, they are likely a host permissions.
+            # Print them out so we can check.
+            if ext_perms:
+                for rem in ext_perms:
+                    print(',', rem, end='')
+
             print()
 
         k += 1
