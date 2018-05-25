@@ -7,7 +7,7 @@ import sys
 from lxml import html
 from utils import download_file, examine, unzip_file
 
-#LIMIT = 1000
+#LIMIT = 10
 LIMIT = None
 
 unzip = True
@@ -57,6 +57,7 @@ def get_extension(id, url, _type, download=True):
         return
 
     dest = tempfile.mkdtemp(dir=myTmp)
+    os.chmod(dest, stat.S_IWRITE)
     os.chdir(dest)
     destfile = os.path.join(dest, id + '.zip')
 
