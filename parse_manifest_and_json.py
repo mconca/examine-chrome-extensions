@@ -88,6 +88,7 @@ IGNORING = IGNORING + [
     'chrome.extension.onRequestExternal.addListener',  # deprecated
     'chrome.tabs.onSelectionChanged.addListener',  # deprecated
     'chrome.tabs.onActiveChanged.addListener',  # deprecated
+    'chrome.storage.set',
     'chrome.storage.local.get',
     'chrome.storage.local.set',
     'chrome.storage.local.remove',
@@ -100,6 +101,7 @@ IGNORING = IGNORING + [
     'chrome.runtime.onInstalled',
     'chrome.runtime.onMessageExternal',  # implemented in 54
     'chrome.runtime.onMessageExternal.addListener',   # implemented in 54
+    'chrome.runtime.onConnectExternal',  #implemented in 54
     'chrome.runtime.onConnectExternal.addListener',  # implemented in 54
     'chrome.management.getAll',   # implemented in 55
     'chrome.management.setEnabled',   # implemented in 55
@@ -107,6 +109,7 @@ IGNORING = IGNORING + [
     'chrome.permissions.request',  # implemented in 55
     'chrome.permissions.remove',  # implemented in 55
     'chrome.permissions.contains',  # implemented in 55
+    'chrome.permissions.getAll',  # implemented in 55
     'chrome.webNavigation.onCreatedNavigationTarget.addListener', # implemented in 54
     'chrome.devtools.panels',  # implemented in 54
     'chrome.devtools.panels.create',  # implemented in 54
@@ -153,9 +156,12 @@ IGNORING = IGNORING + [
     'browser.storage.local.remove',   # implemented in 48
     'browser.storage.local.set',   # implemented in 48
     'browser.storage.local',    # implemented in 48
+    'browser.storage.local.clear',  # implemented in 45
+    'browser.storage.sync',  # implemented in 53
     'browser.storage.sync.set',   # implemented in 53
     'browser.storage.sync.get',   # implemented in 53
     'browser.runtime.lastError',   # implemented in 48
+    'browser.runtime.id',  # implemented in 45
     'chrome.storage.managed',   # implemented in 57
     'chrome.storage.managed.get',   # implemented in 57
     'chrome.privacy.network',  # implemented in 54
@@ -167,7 +173,11 @@ IGNORING = IGNORING + [
     'chrome.privacy.websites.hyperlinkAuditingEnabled',  # implemented in 54
     'chrome.privacy.websites.referrersEnabled',  # implemented in 56
     'chrome.privacy.websites.resistFingerprinting',  # implemented in 58
-    'chrome.privacy.websites.trackingProtectionMode'  # implemented in 57
+    'chrome.privacy.websites.trackingProtectionMode',  # implemented in 57
+    'chrome.tabs.discard',  # implemented in 58
+    'chrome.devtools.network.onNavigated',  # implemented in 54
+    'chrome.devtools.network.getHAR',  # implemented in 60
+    'chrome.devtools.network.onRequestFinished'  # implemented in 60
 ]
 
 # An easy way to spot apps.
