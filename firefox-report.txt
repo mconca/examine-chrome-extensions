@@ -1,0 +1,801 @@
+Writing CSV file...
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Couldn't write row in CSV file
+Importer stats
+--------------
+  11114 100.00% total
+  11018 99.14% extensions
+     96 0.86% error
+   4859 43.72% browser_namespace
+   1387 12.48% browser_style
+   2186 19.67% no_apis
+
+Top API Usage
+------------
+   1    4273 tabs.create
+   2    4052 tabs.query
+   3    3825 runtime.onMessage.addListener
+   4    3764 storage.local.get
+   5    3681 storage.local.set
+   6    3396 runtime.sendMessage
+   7    2722 browserAction.onClicked.addListener
+   8    2592 extension.getURL
+   9    2034 tabs.sendMessage
+  10    1748 tabs.executeScript
+  11    1711 runtime.onInstalled.addListener
+  12    1693 tabs.onUpdated.addListener
+  13    1557 i18n.getMessage
+  14    1530 contextMenus.create
+  15    1505 tabs.update
+  16    1474 runtime.getManifest
+  17    1309 browserAction.setIcon
+  18    1293 runtime.lastError
+  19    1213 tabs.remove
+  20    1129 notifications.create
+  21    1093 runtime.setUninstallURL
+  22    1042 browserAction.setBadgeText
+  23    1028 extension.getBackgroundPage
+  24    1014 tabs.onActivated.addListener
+  25    1011 storage.sync.get
+  26     973 storage.onChanged.addListener
+  27     967 storage.sync.set
+  28     882 contextMenus.onClicked.addListener
+  29     837 tabs.get
+  30     749 runtime.openOptionsPage
+  31     749 windows.create
+  32     733 tabs.onRemoved.addListener
+  33     717 webRequest.onBeforeRequest.addListener
+  34     707 runtime.getURL
+  35     702 browserAction.setBadgeBackgroundColor
+  36     641 browserAction.setTitle
+  37     599 runtime.onConnect.addListener
+  38     575 runtime.connect
+  39     530 runtime.id
+  40     522 storage.local
+  41     510 tabs.onCreated.addListener
+  42     504 storage.local.remove
+  43     453 pageAction.show
+  44     439 notifications.clear
+  45     435 tabs.reload
+  46     434 downloads.download
+  47     434 windows.update
+  48     427 windows.getCurrent
+  49     398 commands.onCommand.addListener
+  50     385 notifications.onClicked.addListener
+  51     374 windows.getAll
+  52     363 webRequest.onHeadersReceived.addListener
+  53     348 webRequest.onBeforeSendHeaders.addListener
+  54     340 contextMenus.removeAll
+  55     335 tabs.insertCSS
+  56     334 cookies.getAll
+  57     332 alarms.onAlarm.addListener
+  58     330 storage.local.clear
+  59     328 alarms.create
+  60     303 storage.sync
+  61     301 windows.onFocusChanged.addListener
+  62     296 runtime.lastError.message
+  63     257 runtime.onMessage.removeListener
+  64     244 runtime.onMessageExternal.addListener
+  65     240 browserAction.setPopup
+  66     240 pageAction.onClicked.addListener
+  67     231 runtime.reload
+  68     229 i18n.getUILanguage
+  69     223 runtime.onStartup.addListener
+  70     222 runtime.getBackgroundPage
+  71     218 cookies.get
+  72     214 tabs.getCurrent
+  73     213 runtime.getPlatformInfo
+  74     212 cookies.set
+  75     202 windows.onRemoved.addListener
+  76     201 tabs.onUpdated.removeListener
+  77     198 runtime.getBrowserInfo
+  78     192 windows.remove
+  79     186 contextMenus.remove
+  80     185 webRequest.onCompleted.addListener
+  81     182 contextMenus.update
+  82     176 runtime.connectNative
+  83     175 pageAction.setIcon
+  84     174 menus.create
+  85     173 cookies.remove
+  86     153 webNavigation.onCommitted.addListener
+  87     152 tabs.captureVisibleTab
+  88     150 runtime.onInstalled
+  89     149 pageAction.hide
+  90     147 storage.sync.remove
+  91     146 webNavigation.onCompleted.addListener
+  92     146 tabs.move
+  93     142 runtime.sendNativeMessage
+  94     141 windows.get
+  95     140 browserAction.disable
+  96     139 pageAction.setTitle
+  97     133 webRequest.onBeforeRequest.removeListener
+  98     133 menus.onClicked.addListener
+  99     131 extension.getViews
+ 100     129 browserAction.enable
+ 101     127 windows.WINDOW_ID_CURRENT
+ 102     126 management.getSelf
+ 103     125 notifications.onButtonClicked.addListener
+ 104     123 webNavigation.onBeforeNavigate.addListener
+ 105     120 notifications.onClosed.addListener
+ 106     116 downloads.onChanged.addListener
+ 107     109 tabs.onReplaced.addListener
+ 108     108 permissions.request
+ 109     106 windows.WINDOW_ID_NONE
+ 110     105 windows.onCreated.addListener
+ 111     104 app.runtime
+ 112     100 alarms.clear
+ 113      98 bookmarks.getTree
+ 114      98 cookies.onChanged.addListener
+ 115      97 tabs.onRemoved.removeListener
+ 116      97 bookmarks.create
+ 117      95 downloads.search
+ 118      93 runtime.onMessageExternal
+ 119      93 commands.getAll
+ 120      93 omnibox.onInputEntered.addListener
+ 121      93 bookmarks.search
+ 122      92 webRequest.onErrorOccurred.addListener
+ 123      92 storage.sync.clear
+ 124      87 runtime.onMessage
+ 125      85 tabs.onAttached.addListener
+ 126      84 history.search
+ 127      83 sidebarAction.open
+ 128      81 management.getAll
+ 129      80 contextMenus.onClicked.removeListener
+ 130      80 webRequest.onAuthRequired.addListener
+ 131      77 webRequest.onBeforeRedirect.addListener
+ 132      75 permissions.contains
+ 133      73 history.deleteUrl
+ 134      72 windows.getLastFocused
+ 135      71 theme.update
+ 136      69 proxy.register
+ 137      68 tabs.onUpdated
+ 138      67 commands.update
+ 139      66 webRequest.onHeadersReceived.removeListener
+ 140      66 tabs.onDetached.addListener
+ 141      66 tabs.onMoved.addListener
+ 142      64 runtime.onUpdateAvailable.addListener
+ 143      63 omnibox.onInputChanged.addListener
+ 144      63 tabs.removeCSS
+ 145      62 webRequest.onBeforeSendHeaders.removeListener
+ 146      61 topSites.get
+ 147      61 storage.managed.get
+ 148      60 sessions.getRecentlyClosed
+ 149      59 tabs.getSelected
+ 150      59 sessions.restore
+ 151      59 bookmarks.remove
+ 152      59 downloads.onCreated.addListener
+ 153      58 webNavigation.onDOMContentLoaded.addListener
+ 154      58 browserAction.openPopup
+ 155      57 storage.onChanged.removeListener
+ 156      57 omnibox.setDefaultSuggestion
+ 157      56 extension.sendRequest
+ 158      56 pageAction.setPopup
+ 159      56 tabs.onCreated.removeListener
+ 160      55 extension.inIncognitoContext
+ 161      55 tabs.getZoom
+ 162      55 webNavigation.onHistoryStateUpdated.addListener
+ 163      54 webRequest.onResponseStarted.addListener
+ 164      53 devtools.panels.create
+ 165      52 browserAction.getBadgeText
+ 166      50 identity.launchWebAuthFlow
+ 167      50 proxy.settings.set
+ 168      50 commands.reset
+ 169      50 downloads.cancel
+ 170      49 bookmarks.getSubTree
+ 171      49 bookmarks.getChildren
+ 172      48 devtools.inspectedWindow.tabId
+ 173      48 downloads.erase
+ 174      48 app.getDetails
+ 175      47 bookmarks.onCreated.addListener
+ 176      47 webNavigation.onCreatedNavigationTarget.addListener
+ 177      47 idle.onStateChanged.addListener
+ 178      47 webNavigation.getAllFrames
+ 179      47 tabs.connect
+ 180      45 permissions.remove
+ 181      45 alarms.clearAll
+ 182      44 tabs.duplicate
+ 183      44 bookmarks.onRemoved.addListener
+ 184      43 downloads.onChanged.removeListener
+ 185      43 webRequest.filterResponseData
+ 186      43 extension.onMessage.addListener
+ 187      42 bookmarks.update
+ 188      41 identity.getRedirectURL
+ 189      41 management.setEnabled
+ 190      41 proxy.onProxyError.addListener
+ 191      41 notifications.update
+ 192      41 sidebarAction.setPanel
+ 193      40 bookmarks.get
+ 194      40 extension.sendMessage
+ 195      39 contextualIdentities.query
+ 196      38 tabs.setZoom
+ 197      38 tabs.onActivated.removeListener
+ 198      38 webRequest.onBeforeRequest
+ 199      37 menus.removeAll
+ 200      37 runtime.onConnect.removeListener
+ 201      36 storage.managed
+ 202      35 browserAction.onClicked.removeListener
+ 203      34 proxy.settings.get
+ 204      34 management.onEnabled.addListener
+ 205      34 bookmarks.onChanged.addListener
+ 206      34 runtime.onConnectExternal.addListener
+ 207      34 extension.onRequest.addListener
+ 208      33 browsingData.remove
+ 209      33 tabs.discard
+ 210      33 sidebarAction.close
+ 211      32 menus.remove
+ 212      32 proxy.unregister
+ 213      31 oldsafari.version
+ 214      31 webNavigation.onErrorOccurred.addListener
+ 215      31 webRequest.onCompleted.removeListener
+ 216      31 webNavigation.onCommitted.removeListener
+ 217      30 tabs.onHighlighted.addListener
+ 218      30 webRequest.onSendHeaders.addListener
+ 219      30 tabs.onUpdated.hasListener
+ 220      29 webRequest.onBeforeRequest.hasListener
+ 221      29 tabs.TAB_ID_NONE
+ 222      29 management.onUninstalled.addListener
+ 223      29 windows.onRemoved.removeListener
+ 224      29 extension.lastError
+ 225      28 history.getVisits
+ 226      28 management.onInstalled.addListener
+ 227      28 management.onDisabled.addListener
+ 228      28 tabs.sendRequest
+ 229      28 devtools.inspectedWindow.eval
+ 230      27 history.addUrl
+ 231      27 webNavigation.onCreatedNavigationTarget
+ 232      27 storage.onChanged
+ 233      27 webRequest.handlerBehaviorChanged
+ 234      26 permissions.getAll
+ 235      26 tabs.onActivated
+ 236      26 storage.sync.QUOTA_BYTES_PER_ITEM
+ 237      26 menus.update
+ 238      25 sessions.getTabValue
+ 239      25 sessions.setTabValue
+ 240      25 privacy.network.webRTCIPHandlingPolicy
+ 241      25 webRequest.ResourceType
+ 242      25 privacy.network.networkPredictionEnabled
+ 243      25 idle.queryState
+ 244      25 pageAction.getTitle
+ 245      24 bookmarks.removeTree
+ 246      24 browserAction.getTitle
+ 247      24 i18n.getAcceptLanguages
+ 248      24 bookmarks.move
+ 249      23 webRequest.onAuthRequired.removeListener
+ 250      23 runtime.requestUpdateCheck
+
+Top API Categories
+------------
+   1    6835 tabs
+   2    5740 runtime
+   3    4615 storage
+   4    3923 browserAction
+   5    2948 extension
+   6    1568 i18n
+   7    1542 contextMenus
+   8    1345 windows
+   9    1312 webRequest
+  10    1122 notifications
+  11     550 cookies
+  12     476 downloads
+  13     472 pageAction
+  14     439 commands
+  15     438 webNavigation
+  16     333 alarms
+  17     247 management
+  18     218 bookmarks
+  19     187 menus
+  20     162 history
+  21     153 app
+  22     128 permissions
+  23     100 proxy
+  24      96 omnibox
+  25      91 sessions
+  26      91 sidebarAction
+  27      81 theme
+  28      80 privacy
+  29      65 identity
+  30      65 idle
+  31      63 browsingData
+  32      63 devtools
+  33      61 topSites
+  34      47 contextualIdentities
+  35      31 oldsafari
+  36      31 browserSettings
+  37      22 defer
+  38      21 declarativeContent
+  39      20 params
+  40      20 driver
+  41      18 desktopCapture
+  42      16 name
+  43      14 clipboard
+  44      14 contentScripts
+  45      13 gcm
+  46      13 tts
+  47      12 extensionTypes
+  48      12 find
+  49      10 pageCapture
+  50       9 manifest
+  51       8 js
+  52       7 google
+  53       6 experimental
+  54       6 chrome
+  55       5 rule
+  56       5 search
+  57       4 pipe
+  58       4 version
+  59       4 dom
+  60       4 event
+  61       4 startup
+  62       3 webstore
+  63       3 window
+  64       3 _tabInfo
+  65       3 data
+  66       3 scrolls
+  67       3 scroll
+  68       3 contentSettings
+  69       3 system
+  70       3 local
+  71       3 privatebrowsing
+  72       3 debugger
+  73       3 d
+  74       3 pkcs11
+  75       3 gwdang
+  76       3 download
+  77       2 sync
+  78       2 dns
+  79       2 es
+  80       2 contexMenus
+  81       2 min
+  82       2 googlecode
+  83       2 notification
+  84       2 style
+  85       2 fontSettings
+  86       2 es5
+  87       2 adtidy
+  88       2 whatismyip
+  89       2 tabCapture
+  90       2 tab
+  91       2 Tab
+  92       2 extensions
+  93       2 migration
+  94       2 sessionstore
+  95       2 lastElementChild
+  96       1 utils
+  97       1 runtome
+  98       1 events
+  99       1 realVersion
+ 100       1 target
+ 101       1 eimza
+ 102       1 promise
+ 103       1 global
+ 104       1 _API_
+ 105       1 lastError
+ 106       1 fileBrowserHandler
+ 107       1 forbiddenDomains
+ 108       1 config
+ 109       1 associatedWindow
+ 110       1 cookie
+ 111       1 classList
+ 112       1 plantsvszombies
+ 113       1 display
+ 114       1 vipnet
+ 115       1 browsers
+ 116       1 plugins
+ 117       1 appname
+ 118       1 fullversion
+ 119       1 agent
+ 120       1 correct
+ 121       1 cruxinfra
+ 122       1 co
+ 123       1 eu5
+ 124       1 cloud
+ 125       1 noyt
+ 126       1 sockets
+ 127       1 kurs
+ 128       1 configVars
+ 129       1 create
+ 130       1 remove
+ 131       1 constructor
+ 132       1 sns_nova
+ 133       1 currentURI
+ 134       1 nativemessaging
+ 135       1 core
+ 136       1 easylist
+ 137       1 api
+ 138       1 example
+ 139       1 cliqzSearchPrivate
+ 140       1 Window
+ 141       1 yandex
+ 142       1 usersnap
+ 143       1 Popup
+ 144       1 ConfManager
+ 145       1 NSbrowser
+ 146       1 contentScript
+ 147       1 menu
+ 148       1 monitor
+ 149       1 platform
+ 150       1 audioFeeds
+ 151       1 translation
+ 152       1 shell
+ 153       1 link
+ 154       1 videoFeeds
+ 155       1 taskbar
+ 156       1 preferences
+ 157       1 urlbar
+ 158       1 homepage
+ 159       1 feeds
+ 160       1 glitch
+ 161       1 helperApps
+ 162       1 browser
+ 163       1 bijiago
+ 164       1 2345
+ 165       1 dd
+ 166       1 360
+ 167       1 addMessageListener
+ 168       1 blockstack
+ 169       1 browsFerAction
+ 170       1 keyboard
+ 171       1 github
+ 172       1 contextmenus
+ 173       1 production
+ 174       1 options
+ 175       1 protocol
+ 176       1 ttsEngine
+
+Top Manifest Keys
+------------
+   1   10753 description
+   2    9593 icons
+   3    9394 permissions
+   4    7865 background
+   5    6914 browser_action
+   6    5837 content_scripts
+   7    5021 applications
+   8    3156 options_ui
+   9    3128 homepage_url
+  10    2595 author
+  11    2380 web_accessible_resources
+  12    2331 default_locale
+  13    1795 short_name
+  14    1118 content_security_policy
+  15     748 commands
+  16     727 chrome_url_overrides
+  17     520 page_action
+  18     331 minimum_chrome_version
+  19     317 developer
+  20     251 options_page
+  21     187 update_url
+  22     185 sidebar_action
+  23     132 optional_permissions
+  24     121 chrome_settings_overrides
+  25     115 omnibox
+  26     111 incognito
+  27     101 offline_enabled
+  28      81 externally_connectable
+  29      63 devtools_page
+  30      58 version_name
+  31      55 key
+  32      39 id
+  33      19 license
+  34      18 storage
+  35      18 title
+  36      13 minimum_opera_version
+  37      12 -ms-preload
+  38      11 sandbox
+  39       9 minimum_edge_version
+  40       8 protocol_handlers
+  41       7 app
+  42       7 oauth2
+  43       6 keywords
+  44       5 gecko
+  45       5 strict_min_version
+  46       4 homepage
+  47       4 converted_from_user_script
+  48       3 main
+  49       3 engines
+  50       3 extentions
+  51       2 browser
+  52       2 icon
+  53       2 repository
+  54       2 contributors
+  55       2 $schema
+  56       2 short-name
+  57       2 requirements
+  58       2 strict_max_version
+  59       1 static_data
+  60       1 file_browser_handlers
+  61       1 tts_engine
+  62       1 48
+  63       1 all_frames
+  64       1 comment-for-firefox
+  65       1 jetpackID
+  66       1 contentaccessible
+  67       1 web_accessible_resource
+  68       1 fullName
+  69       1 run_at
+  70       1 multiprocessCompatible
+  71       1 updateURL
+  72       1 supportmail
+  73       1 Author
+  74       1 container
+  75       1 api_console_project_id
+  76       1 minimum_firefox_version
+  77       1 disabled: browser_action
+  78       1 inprivate
+  79       1 shortname
+  80       1 browser_specific_settings
+  81       1 Description
+  82       1 _icons
+  83       1 _applications
+  84       1 _browser_action
+  85       1 desription
+  86       1 bugs
+  87       1 homepage-url
+  88       1 permissions_notes
+  89       1 // Keep keys in alphabetical order and before preferences.
+  90       1 lang
+  91       1 background_color
+  92       1 restURL
+  93       1 email
+  94       1 browser_style
+  95       1 icon_attribution
+  96       1 shortName
+  97       1 intents
+  98       1 background_page
+  99       1 ExtensionInfo
+ 100       1 offline
+ 101       1 launch
+ 102       1 settings
+ 103       1 current_locale
+ 104       1 last_update
+ 105       1 target
+ 106       1 application
+ 107       1 update_link
+ 108       1 content_security_policy_RELEASE
+ 109       1 content_security_policy_DEBUG
+ 110       1 default_title
+
+Top Permissions
+------------
+   1    5534 storage
+   2    4976 tabs
+   3    2776 activeTab
+   4    1919 contextMenus
+   5    1889 webRequest
+   6    1465 notifications
+   7    1345 webRequestBlocking
+   8     888 cookies
+   9     779 webNavigation
+  10     574 downloads
+  11     457 clipboardWrite
+  12     437 alarms
+  13     349 unlimitedStorage
+  14     322 nativeMessaging
+  15     300 management
+  16     249 bookmarks
+  17     212 menus
+  18     185 history
+  19     135 clipboardRead
+  20     112 identity
+  21     111 proxy
+  22     110 sessions
+  23     103 idle
+  24      97 privacy
+  25      88 theme
+  26      87 background
+  27      83 browsingData
+  28      80 topSites
+  29      70 contextualIdentities
+  30      53 geolocation
+  31      49 downloads.open
+  32      38 browserSettings
+  33      22 declarativeContent
+  34      18 tabHide
+  35      15 find
+  36      11 desktopCapture
+  37       9 downloads.shelf
+  38       8 contentSettings
+  39       7 pageCapture
+  40       6 tts
+  41       5 gcm
+  42       5 debugger
+  43       4 pkcs11
+  44       3 system.display
+  45       3 webview
+  46       3 fullscreen
+  47       2 dns
+  48       2 systemXHR
+  49       2 tabCapture
+  50       1 ttsEngine
+  51       1 download
+  52       1 blocking
+  53       1 identity.email
+  54       1 *.youbidder.com
+  55       1 audioCapture
+  56       1 videoCapture
+  57       1 clipboard
+  58       1 desktop-notification
+  59       1 power
+  60       1 runtime
+  61       1 tab
