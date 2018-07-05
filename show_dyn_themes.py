@@ -60,6 +60,8 @@ class Extension:
 
         data = codecs.open(manifest_file, 'r', 'utf-8-sig').read()
         self.manifest = json.loads(data)
+        data = codecs.open(apis_file, 'r', 'utf-8-sig').read()
+        self.apis = json.loads(data)
 
         # Count the permissions used
         for permission in self.manifest.get('permissions', []):
@@ -71,6 +73,7 @@ if __name__=='__main__':
     k = 0
     # Output header for CSV
     print('Name', end='')
+    print(',get(),set()', end='')
     for header in perms:
         print(',', header, end='')
     print()
@@ -94,6 +97,18 @@ if __name__=='__main__':
             data = codecs.open(dets_file, 'r', 'utf-8-sig').read()
             res = json.loads(data)
             print(res['Name'], end='')
+
+            # See if extension uses theme.get or theme.set
+            for api in ext.apis:
+                if api.startswith('browser.theme.get'):
+                    print(',1', end='')
+                else:
+                    print(',0', end='')
+
+                if api.startswith('browser.theme.set'):
+                    print(',1', end='')
+                else:
+                    print(',0', end='')
 
             ext_perms = ext.manifest.get('permissions', [])
             if 'theme' in ext_perms:
