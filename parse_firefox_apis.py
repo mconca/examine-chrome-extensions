@@ -1,8 +1,13 @@
 import codecs
 from collections import Counter
-import json
+import json, csv
 import pprint
 import os
+
+write_csv_file = True
+check_name_on_CWS = True
+CWS_name_set = set()
+
 
 importer = Counter({
     'total': 0,
@@ -34,12 +39,29 @@ STYLE_SET = [
 ]
 
 # Max number of addons to parse, None is all of them.
-#LIMIT = 5000
+#LIMIT = 100
 LIMIT = None
+
+def is_name_on_CWS(AMOName):
+    if len(CWS_name_set) == 0:
+        # First time thru, build the name database
+        for filename in os.listdir('extensions/chrome-details'):
+            if not filename.endswith('.json'):
+                continue
+
+            full = os.path.abspath(os.path.join('extensions/chrome-details', filename))
+            res = codecs.open(full, 'r', 'utf-8-sig').read()
+            dets = json.loads(res)
+            CWS_name_set.add(dets['Name'])
+
+    if AMOName in CWS_name_set:
+        return 'yes'
+    else:
+        return 'no'
 
 class Extension:
 
-    def __init__(self, manifest_file, apis_file):
+    def __init__(self, manifest_file, apis_file, dets_file):
         self.type = 'extension'
         self.usesBrowserStyle = False
         self.usesBrowserNS = False
@@ -53,6 +75,9 @@ class Extension:
         self.manifest = json.loads(data)
         data = codecs.open(apis_file, 'r', 'utf-8-sig').read()
         self.apis = json.loads(data)
+        data = codecs.open(dets_file, 'r', 'utf-8-sig').read()
+        self.details = json.loads(data)
+        self.details.update({'Name on CWS':'Unknown'})
 
         # Count the APIs used
         self.api_categories = set()
@@ -88,6 +113,9 @@ class Extension:
                     if ('browser_style' in self.manifest[man]) and (self.manifest[man]['browser_style'] == True):
                         self.usesBrowserStyle = True
 
+        if check_name_on_CWS:
+            self.details['Name on CWS'] = is_name_on_CWS(self.details['Name'])
+
 
 if __name__=='__main__':
     k = 0
@@ -100,10 +128,11 @@ if __name__=='__main__':
         full = os.path.abspath(
             os.path.join('extensions/firefox-manifests', filename))
         apis_file = full.replace('firefox-manifests', 'firefox-apis')
+        dets_file = full.replace('firefox-manifests', 'firefox-details')
 
         # Filter out ones that fail to import.
         try:
-            ext = Extension(full, apis_file)
+            ext = Extension(full, apis_file, dets_file)
         except ValueError:
             importer['error'] += 1
             continue
@@ -115,6 +144,15 @@ if __name__=='__main__':
         if LIMIT and k >= LIMIT:
             break
 
+    # Set up the CSV headers (assume first extension is like all others)
+    if write_csv_file:
+        print('Writing CSV file...')
+        fieldnames = exts[0].details.keys()
+        csv_outfile = open('firefox-webstore-details.csv', 'w', newline='')
+        writer = csv.DictWriter(csv_outfile, delimiter=',', fieldnames=fieldnames,
+                                restval='', quoting=csv.QUOTE_ALL)
+        writer.writeheader()
+
     for ext in exts:
         if ext.usesBrowserNS:
             importer['browser_namespace'] += 1
@@ -122,6 +160,13 @@ if __name__=='__main__':
             importer['no_apis'] += 1
         if ext.usesBrowserStyle:
             importer['browser_style'] += 1
+
+        if write_csv_file:
+            try:
+                writer.writerow(ext.details)
+            except:
+                # Usually fails because of a charset issue
+                print('Couldn\'t write row in CSV file')
 
     print('Importer stats')
     print('--------------')
