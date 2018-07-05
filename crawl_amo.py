@@ -14,11 +14,17 @@ firefox_detail_fields = {
     'Developer' : ['authors', 0, 'username']
 }
 
-results = set()
+try:
+    results = set(json.load(open(outfile)))
+    print('Loaded %d URLs', len(results))
+except:
+    results = set()
 sys.setrecursionlimit(200000)
 
-def fetch(url=None):
-    url = url or amo_server + '/api/v3/addons/search/?sort=created&type=extension'
+def fetch(sortOrder, url=None):
+
+    # Leave the sort parametere, it seems to prevent duplicate results from being returned.
+    url = url or (amo_server + '/api/v4/addons/search/?type=extension&page_size=50&app=firefox&sort=' + sortOrder)
     print('Fetching: {}'.format(url))
     res = requests.get(url)
     res.raise_for_status()
@@ -31,7 +37,6 @@ def fetch(url=None):
         # to be a file per OS.  Let's just use the first file
         # so, later, we don't overcount the APIs used in an extension.
         file_obj = current['files'][0]
-#        for file_obj in current['files']:
         if file_obj['is_webextension']:
 
             # Record URL to extension
@@ -59,9 +64,14 @@ def fetch(url=None):
             print('Got details for', id)
 
     if res_json['next']:
-        fetch(res_json['next'])
+        fetch(sortOrder, res_json['next'])
 
 
 if __name__=='__main__':
-    fetch()
+    # We run the query twice because AMO has an arbitrary limit of 25,000 results from
+    # a search query. So by querying the top 25K by users and top 25K by last date
+    # updated, I get the most popular extensions, as well as the most recent.
+    fetch('users')
+    fetch('updated')
     json.dump(sorted(list(results)),open(out_file,'w'), indent=2, sort_keys=True)
+    print('Output %d URLs', len(results))
