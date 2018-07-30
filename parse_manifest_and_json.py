@@ -615,19 +615,19 @@ if __name__=='__main__':
     print()
     print('Missing APIs')
     print('------------')
-    for k, v in apis_counter.most_common(100):
+    for k, v in apis_counter.most_common(150):
         print((' {:6d} {}'.format(v, k)))
 
     print()
     print('Missing permissions')
     print('-------------------')
-    for k, v in permissions_counter.most_common(100):
+    for k, v in permissions_counter.most_common(150):
         print((' {:6d} {}'.format(v, k)))
 
     print()
     print('Missing manifests')
     print('-------------------')
-    for k, v in manifests_counter.most_common(100):
+    for k, v in manifests_counter.most_common(150):
         print((' {:6d} {}'.format(v, k)))
 
     if False: #custom_counter:
