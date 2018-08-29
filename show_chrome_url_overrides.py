@@ -50,11 +50,11 @@ if __name__=='__main__':
             data = codecs.open(dets_file, 'r', 'utf-8-sig').read()
             res = json.loads(data)
             if not res['Name']:
-                res['Name'] = '??????????'
+                res['Name'] = filename
             try:
                 print(res['Name'] + ',', res['Users'])
             except:
-                print('??????????,', res['Users'])
+                print(filename + ',', res['Users'])
 
         k += 1
         if LIMIT and k >= LIMIT:
