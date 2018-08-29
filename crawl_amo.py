@@ -5,20 +5,17 @@ import sys
 
 root = os.path.join(os.path.abspath(os.curdir), 'extensions')
 amo_server = 'https://addons.mozilla.org'
-out_file = 'firefox-urls.json'
 firefox_detail_fields = {
+    'ID' : ['id'],
     'Name' : ['name', 'en-US'],    # only grabs US english names, ugh...
     'Users' : ['average_daily_users'],
     'Rating' : ['ratings', 'average'],
     'Num Ratings' : ['ratings', 'count'],
-    'Developer' : ['authors', 0, 'username']
+    'Developer' : ['authors', 0, 'username'],
+    'Product Page' : ['url'],   # Extension product page
+    'File' : ['current_version', 'files', 0, 'url']
 }
 
-try:
-    results = set(json.load(open(outfile)))
-    print('Loaded %d URLs', len(results))
-except:
-    results = set()
 sys.setrecursionlimit(200000)
 
 def fetch(sortOrder, url=None):
@@ -39,11 +36,9 @@ def fetch(sortOrder, url=None):
         file_obj = current['files'][0]
         if file_obj['is_webextension']:
 
-            # Record URL to extension
-            results.add(file_obj['url'])
-
             # Store off some details
-            id = str(file_obj['id'])
+#            id = str(file_obj['id'])
+            id = str(addon['id'])
             json_file = os.path.join(root, 'firefox-details', id + '.json')
             if (os.path.exists(json_file)):
                 print('Details %s already exists, skipping' % id)
@@ -73,5 +68,3 @@ if __name__=='__main__':
     # updated, I get the most popular extensions, as well as the most recent.
     fetch('users')
     fetch('updated')
-    json.dump(sorted(list(results)),open(out_file,'w'), indent=2, sort_keys=True)
-    print('Output %d URLs', len(results))
