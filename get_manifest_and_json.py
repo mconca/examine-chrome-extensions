@@ -4,6 +4,7 @@ import os, stat
 import json
 import shutil
 import sys
+import codecs
 from lxml import html
 from utils import download_file, examine, unzip_file
 
@@ -56,6 +57,7 @@ def get_extension(id, url, _type, download=True):
     if id in badURLs:
         return
 
+    curdir = os.getcwd()
     dest = tempfile.mkdtemp(dir=myTmp)
     os.chmod(dest, stat.S_IWRITE)
     os.chdir(dest)
@@ -71,6 +73,7 @@ def get_extension(id, url, _type, download=True):
             print(url)
             print('...unzip failed')
             badURLs.add(id)
+            os.chdir(curdir)
             return dest
 
     except (UnicodeDecodeError, requests.exceptions.HTTPError) as exc:
@@ -78,6 +81,7 @@ def get_extension(id, url, _type, download=True):
         print(url)
         print('...failed')
         badURLs.add(id)
+        os.chdir(curdir)
         return dest
 
     if copy_manifest:
@@ -93,14 +97,8 @@ def get_extension(id, url, _type, download=True):
         res = examine(dest)
         json.dump(res, open(json_file, 'w'))
 
+    os.chdir(curdir)
     return dest
-
-def del_error_func( func, path, exc_info):
-    # path contains the path of the file that couldn't be removed
-    # func is the delete function that initially failed
-    print('Deleting', path)
-    os.chmod( path, stat.S_IWRITE )
-    func( path )
 
 def get_details(id, details_url):
     res = {}
@@ -165,14 +163,21 @@ if __name__=='__main__':
                 numBad += 1
 
     elif source == 'firefox':
-        data = json.load(open('firefox-urls.json', 'r'))
-        for line in data:
-            id = line.split('/')[6]
+        for filename in os.listdir('extensions/firefox-details'):
+            if not filename.endswith('.json'):
+                continue
+
+            full = os.path.abspath(os.path.join('extensions/firefox-details', filename))
+            data = codecs.open(full, 'r', 'utf-8-sig').read()
+            details = json.loads(data)
+            line = details['File']
+
+            id = os.path.splitext(filename)[0]
             dest = get_extension(id, line, 'firefox')
             if dest:
                 print('Deleting temp files in...', dest)
                 try:
-                    shutil.rmtree(dest, onerror=del_error_func)
+                    shutil.rmtree(dest)
                 except:
                     print('failed.')
 
