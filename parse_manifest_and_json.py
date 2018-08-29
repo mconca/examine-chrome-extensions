@@ -628,7 +628,10 @@ if __name__=='__main__':
     print('Missing manifests')
     print('-------------------')
     for k, v in manifests_counter.most_common(150):
-        print((' {:6d} {}'.format(v, k)))
+        try:
+            print((' {:6d} {}'.format(v, k)))
+        except:
+            print('ILLEGAL CHARACTERS')
 
     if False: #custom_counter:
         print()
