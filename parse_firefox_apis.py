@@ -23,6 +23,46 @@ manifests_counter = Counter()
 usage_counter = Counter()
 category_counter = Counter()
 
+# Risk assessment of manifest entries and permissions
+HIGH_RISK_MANIFEST = [
+    'chrome_url_overrides',
+    'chrome_settings_overrides',
+    'content_scripts',
+    'content_security_policy'
+]
+HIGH_RISK_PERMISSIONS = [
+    'clipboardRead',
+    'cookies',
+    'downloads.open',
+    'geolocation',
+    'history',
+    'identity',
+    'nativeMessaging',
+    'pkcs11',
+    'privacy',
+    'proxy',
+    'runtime',
+    'tabHide',
+    'tabs',
+    'topSites',
+    'webNavigation',
+    'webRequest',
+    'webRequestBlocking'
+]
+MED_RISK_MANIFEST = [
+]
+MED_RISK_PERMISSIONS = [
+    'activeTab',
+    'bookmarks',
+    'downloads',
+    'find',
+    'management',
+    'search',
+    'sessions',
+    'storage'
+]
+
+
 # Manifest entries to ignore
 MAN_IGNORE = [
 'manifest_version',
@@ -39,7 +79,6 @@ STYLE_SET = [
 ]
 
 # Max number of addons to parse, None is all of them.
-#LIMIT = 100
 LIMIT = None
 
 def is_name_on_CWS(AMOName):
@@ -78,6 +117,7 @@ class Extension:
         data = codecs.open(dets_file, 'r', 'utf-8-sig').read()
         self.details = json.loads(data)
         self.details.update({'Name on CWS':'Unknown'})
+        self.details.update({'Risk':'Low'})
 
         # Count the APIs used
         self.api_categories = set()
@@ -103,10 +143,22 @@ class Extension:
                 permission = str(permission)
             permissions_counter[permission] += 1
 
+            # Make a risk assessment of this permission
+            if permission in HIGH_RISK_PERMISSIONS:
+                    self.details['Risk'] = 'High'
+            elif permission in MED_RISK_PERMISSIONS and self.details['Risk'] == 'Low':
+                    self.details['Risk'] = 'Med'
+
         # Count the manifest keys used
         for man in self.manifest.keys():
             if man not in MAN_IGNORE:
                 manifests_counter[man] += 1
+
+                # Make a risk assessment of this key
+                if man in HIGH_RISK_MANIFEST:
+                        self.details['Risk'] = 'High'
+                elif man in MED_RISK_MANIFEST and self.details['Risk'] == 'Low':
+                        self.details['Risk'] = 'Med'
 
                 # Let's count how many extentions use browser_style
                 if man in STYLE_SET:
@@ -115,6 +167,8 @@ class Extension:
 
         if check_name_on_CWS:
             self.details['Name on CWS'] = is_name_on_CWS(self.details['Name'])
+
+        
 
 
 if __name__=='__main__':
