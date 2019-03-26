@@ -147,7 +147,7 @@ if __name__=='__main__':
             if dest:
                 print('Deleting temp files in...', dest)
                 try:
-                    shutil.rmtree(dest, onerror=del_error_func)
+                    shutil.rmtree(dest)
                 except:
                     print('failed.')
 
