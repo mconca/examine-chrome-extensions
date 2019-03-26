@@ -1,537 +1,549 @@
 Importer stats
 --------------
- 133844 100.00% total
-  87160 65.12% extensions
-  31766 23.73% apps
-  14870 11.11% themes
-     48 0.04% error
+ 146791 100.00% total
+  92899 63.29% extensions
+  37078 25.26% apps
+  16768 11.42% themes
+     46 0.03% error
 
-   6478 7.43% missing_permissions
-  10230 11.74% missing_apis
-   5535 6.35% missing_manifests
+   7465 8.04% missing_permissions
+  11120 11.97% missing_apis
+   6123 6.59% missing_manifests
 
-  72538 83.22% easy_conversion
-   2618 3.00% browser_namespace
-  19055 21.86% no_apis
+  76979 82.86% easy_conversion
+   2938 3.16% browser_namespace
+  20185 21.73% no_apis
 
 Chrome API coverage
 -------------------
      95 95.00% top 100 API
-    228 91.20% top 250 API
+    229 91.60% top 250 API
 
 Top API usage
 ------------
-   1   25307 + chrome.tabs.create
-   2   20562 + chrome.runtime.onMessage.addListener
-   3   18577 + chrome.tabs.query
-   4   17516 + chrome.browserAction.onClicked.addListener
-   5   16229 + chrome.runtime.sendMessage
-   6   15744 + chrome.extension.getURL
-   7   12557 + chrome.tabs.executeScript
-   8   12293 + chrome.tabs.sendMessage
-   9   11512 + chrome.runtime.onInstalled.addListener
-  10   11240 + chrome.storage.sync.get
-  11   11193 + chrome.storage.sync.set
-  12   10466 + chrome.tabs.update
-  13    9846 + chrome.tabs.onUpdated.addListener
-  14    9636 + chrome.storage.local.get
-  15    9567 + chrome.storage.local.set
-  16    7825 + chrome.browserAction.setBadgeText
-  17    7778 + chrome.contextMenus.create
-  18    7120 + chrome.browserAction.setIcon
-  19    6558 + chrome.runtime.getManifest
-  20    6403 + chrome.extension.getBackgroundPage
-  21    5961 + chrome.tabs.getSelected
-  22    5614 + chrome.extension.onMessage.addListener
-  23    5524 + chrome.runtime.id
-  24    5411 + chrome.i18n.getMessage
-  25    5063 + chrome.runtime.setUninstallURL
-  26    4935 + chrome.notifications.create
-  27    4924 + chrome.runtime.lastError
-  28    4754 + chrome.extension.sendMessage
-  29    4686 + chrome.browserAction.setBadgeBackgroundColor
-  30    4171 + chrome.runtime.onMessageExternal.addListener
-  31    4165 + chrome.tabs.remove
-  32    4150 + chrome.pageAction.show
-  33    4015 + chrome.extension.onRequest.addListener
-  34    3703 + chrome.windows.create
-  35    3553 + chrome.runtime.connect
-  36    3428 + chrome.tabs.get
-  37    3370 + chrome.extension.sendRequest
-  38    3359 + chrome.runtime.onConnect.addListener
-  39    3350 + chrome.tabs.onActivated.addListener
-  40    3145 - chrome.desktopCapture.chooseDesktopMedia
-  41    3143 + chrome.tabs.onRemoved.addListener
-  42    3002 + chrome.storage.onChanged.addListener
-  43    2968 + chrome.webRequest.onBeforeRequest.addListener
-  44    2841 + chrome.browserAction.setTitle
-  45    2655 + chrome.tabs.onCreated.addListener
-  46    2592 + chrome.runtime.getURL
-  47    2571 + chrome.contextMenus.onClicked.addListener
-  48    2360 + chrome.notifications.clear
-  49    2323 + chrome.notifications.onClicked.addListener
-  50    2304 + chrome.windows.getAll
-  51    2282 + chrome.storage.local
-  52    2215 + chrome.cookies.get
-  53    2131 + chrome.app.getDetails
-  54    2110 + chrome.cookies.getAll
-  55    1980 + chrome.windows.getCurrent
-  56    1969 + chrome.tabs.reload
-  57    1855 + chrome.windows.update
-  58    1833 + chrome.alarms.create
-  59    1828 + chrome.alarms.onAlarm.addListener
-  60    1737 + chrome.cookies.set
-  61    1731 + chrome.contextMenus.removeAll
-  62    1715 + chrome.tabs.insertCSS
-  63    1689 + chrome.runtime.lastError.message
-  64    1665 + chrome.storage.local.remove
-  65    1496 + chrome.management.uninstallSelf
-  66    1470 + chrome.browserAction.setPopup
-  67    1459 + chrome.storage.sync
-  68    1453 + chrome.runtime.reload
-  69    1445 + chrome.webRequest.onBeforeSendHeaders.addListener
-  70    1433 + chrome.tabs.sendRequest
-  71    1415 + chrome.runtime.openOptionsPage
-  72    1383 + chrome.commands.onCommand.addListener
-  73    1284 + chrome.tabs.getAllInWindow
-  74    1284 + chrome.omnibox.onInputEntered.addListener
-  75    1283 + chrome.extension.connect
-  76    1283 + chrome.pageAction.onClicked.addListener
-  77    1277 + chrome.webRequest.onHeadersReceived.addListener
-  78    1263 + chrome.extension.onConnect.addListener
-  79    1233 + chrome.tabs.captureVisibleTab
-  80    1225 + chrome.cookies.remove
-  81    1222 + chrome.runtime.getBackgroundPage
-  82    1202 + chrome.storage.sync.remove
-  83    1175 + chrome.runtime.onStartup.addListener
-  84    1167 + chrome.storage.local.clear
-  85    1129 + chrome.management.getAll
-  86    1126 + chrome.downloads.download
-  87    1065 + chrome.windows.onFocusChanged.addListener
-  88    1052 + chrome.tabs.getCurrent
-  89    1035 + chrome.extension.getViews
-  90    1024 + chrome.topSites.get
-  91    1021 + chrome.notifications.onButtonClicked.addListener
-  92     946 + chrome.storage.sync.clear
-  93     940 + chrome.webRequest.onCompleted.addListener
-  94     931 + chrome.windows.remove
-  95     915 + chrome.windows.WINDOW_ID_CURRENT
-  96     910 - chrome.declarativeContent.onPageChanged.removeRules
-  97     908 - chrome.declarativeContent.onPageChanged.addRules
-  98     906 - chrome.declarativeContent.PageStateMatcher
-  99     888 - chrome.declarativeContent.ShowPageAction
- 100     864 + chrome.runtime.connectNative
- 101     842 + chrome.windows.get
- 102     818 + chrome.webNavigation.onBeforeNavigate.addListener
- 103     790 + chrome.windows.onRemoved.addListener
- 104     772 + chrome.tabs.onUpdated.removeListener
- 105     766 + chrome.webNavigation.onCompleted.addListener
- 106     766 + chrome.contextMenus.update
- 107     738 + chrome.pageAction.setIcon
- 108     712 + chrome.omnibox.onInputChanged.addListener
- 109     704 + chrome.bookmarks.getTree
- 110     689 + browser.tabs.create
- 111     681 + chrome.omnibox.setDefaultSuggestion
- 112     671 + chrome.pageAction.hide
- 113     668 + chrome.management.getSelf
- 114     640 + chrome.notifications.onClosed.addListener
- 115     639 + chrome.webNavigation.onCommitted.addListener
- 116     611 - chrome.management.onInstalled.addListener
- 117     602 - chrome.runtime.getPackageDirectoryEntry
- 118     588 - chrome.management.onEnabled.addListener
- 119     561 + chrome.history.search
- 120     560 - chrome.desktopCapture.cancelChooseDesktopMedia
- 121     559 + chrome.contextMenus.remove
- 122     558 + chrome.tabs.onSelectionChanged.addListener
- 123     532 + browser.runtime.onMessage.addListener
- 124     497 + browser.runtime.sendMessage
- 125     495 + chrome.pageAction.setTitle
- 126     493 + chrome.devtools.panels.create
- 127     485 + chrome.extension.lastError
- 128     483 + chrome.runtime.onMessage.removeListener
- 129     466 - chrome.proxy.settings.set
- 130     463 + chrome.permissions.request
- 131     459 + chrome.windows.onCreated.addListener
- 132     447 + chrome.cookies.onChanged.addListener
- 133     444 + chrome.browserAction.getBadgeText
- 134     442 + chrome.runtime.onUpdateAvailable.addListener
- 135     435 + browser.tabs.query
- 136     425 + chrome.alarms.clear
- 137     422 + chrome.omnibox.onInputCancelled.addListener
- 138     411 + chrome.runtime.onConnectExternal.addListener
- 139     394 + chrome.tabs.onReplaced.addListener
- 140     393 + chrome.management.setEnabled
- 141     391 + browser.storage.local.get
- 142     388 + chrome.runtime.sendNativeMessage
- 143     381 + chrome.runtime.onMessage
- 144     375 + chrome.i18n.getUILanguage
- 145     374 + browser.storage.local.set
- 146     372 + chrome.bookmarks.create
- 147     371 + chrome.browserAction.disable
- 148     368 + chrome.webRequest.onBeforeRequest.removeListener
- 149     360 + chrome.windows.getLastFocused
- 150     356 + chrome.tabs.move
- 151     356 + chrome.browserAction.enable
- 152     347 + chrome.webNavigation.onDOMContentLoaded.addListener
- 153     346 + chrome.tabs.connect
- 154     346 + chrome.webNavigation.onHistoryStateUpdated.addListener
- 155     337 + chrome.runtime.onInstalled
- 156     336 + chrome.windows.WINDOW_ID_NONE
- 157     327 + chrome.webRequest.onBeforeRedirect.addListener
- 158     325 + chrome.runtime.error
- 159     311 + browser.tabs.sendMessage
- 160     310 + browser.extension.getURL
- 161     289 + chrome.devtools.inspectedWindow.tabId
- 162     287 + chrome.permissions.contains
- 163     283 + chrome.identity.launchWebAuthFlow
- 164     273 + chrome.extension.onMessage
- 165     272 + chrome.extension.lastError.message
- 166     268 + chrome.runtime.getPlatformInfo
- 167     265 + chrome.tabs.onUpdated
- 168     263 + chrome.webRequest.onErrorOccurred.addListener
- 169     257 + chrome.devtools.inspectedWindow.eval
- 170     252 + chrome.downloads.onChanged.addListener
- 171     248 + chrome.runtime.onMessageExternal
- 172     245 + chrome.bookmarks.remove
- 173     243 - chrome.runtime.onSuspend.addListener
- 174     239 + chrome.webRequest.onAuthRequired.addListener
- 175     235 + browser.tabs.onUpdated.addListener
- 176     230 + chrome.pageAction.setPopup
- 177     229 + chrome.omnibox.onInputStarted.addListener
- 178     226 - chrome.tts.speak
- 179     225 + chrome.idle.onStateChanged.addListener
- 180     223 - chrome.management.onUninstalled.addListener
- 181     222 + chrome.webRequest.onBeforeSendHeaders.removeListener
- 182     219 + chrome.bookmarks.search
- 183     218 + chrome.management.get
- 184     217 + chrome.alarms.get
- 185     213 + chrome.alarms.clearAll
- 186     213 - chrome.proxy.settings.get
- 187     213 - chrome.notifications.update
- 188     210 + chrome.tabs.onAttached.addListener
- 189     210 + browser.runtime.getManifest
- 190     202 - chrome.runtime.requestUpdateCheck
- 191     201 + browser.tabs.executeScript
- 192     199 - chrome.management.onDisabled.addListener
- 193     199 + browser.tabs.update
- 194     199 + chrome.tabs.onHighlighted.addListener
- 195     196 + browser.browserAction.onClicked.addListener
- 196     191 + browser.runtime.onInstalled.addListener
- 197     191 + chrome.webNavigation.onReferenceFragmentUpdated.addListener
- 198     189 - chrome.management.uninstall
- 199     188 + chrome.tabs.onActiveChanged.addListener
- 200     184 + chrome.permissions.remove
- 201     182 + chrome.tabs.onRemoved.removeListener
- 202     179 - chrome.proxy.settings.clear
- 203     179 + chrome.browsingData.remove
- 204     178 + chrome.downloads.search
- 205     177 + chrome.tabs.highlight
- 206     174 + chrome.webNavigation.getAllFrames
- 207     172 + browser.browserAction.setIcon
- 208     171 + chrome.bookmarks.getChildren
- 209     168 + chrome.bookmarks.update
- 210     168 + chrome.tabs.onDetached.addListener
- 211     165 + browser.tabs.getCurrent
- 212     165 + browser.browserAction.setBadgeText
- 213     163 + browser.i18n.getMessage
- 214     159 + chrome.tabs.onMoved.addListener
- 215     156 + chrome.contextMenus.onClicked.removeListener
- 216     154 + chrome.identity.getRedirectURL
- 217     151 + chrome.webRequest.onHeadersReceived.removeListener
- 218     148 + chrome.webNavigation.onErrorOccurred.addListener
- 219     148 + browser.notifications.create
- 220     147 + chrome.bookmarks.onCreated.addListener
- 221     144 + chrome.idle.queryState
- 222     143 + chrome.webRequest.onResponseStarted.addListener
- 223     142 + browser.contextMenus.create
- 224     137 + chrome.notifications.getAll
- 225     137 - chrome.downloads.onDeterminingFilename.addListener
- 226     136 + chrome.history.getVisits
- 227     135 + browser.tabs.onActivated.addListener
- 228     135 + chrome.webNavigation.onCreatedNavigationTarget.addListener
- 229     134 + chrome.commands.getAll
- 230     133 + browser.tabs.get
- 231     132 + chrome.webRequest.onSendHeaders.addListener
- 232     132 + chrome.extension.inIncognitoContext
- 233     131 + chrome.runtime.onStartup
- 234     131 + browser.runtime.getURL
- 235     130 + chrome.idle.setDetectionInterval
- 236     129 + chrome.runtime.onConnect.removeListener
- 237     128 + chrome.bookmarks.get
- 238     126 + chrome.bookmarks.onRemoved.addListener
- 239     125 + chrome.bookmarks.removeTree
- 240     124 + chrome.downloads.onCreated.addListener
- 241     124 + browser.browserAction.setBadgeBackgroundColor
- 242     123 + browser.runtime.lastError
- 243     123 + chrome.devtools.panels.elements
- 244     122 + browser.storage.sync.get
- 245     120 - chrome.proxy.onProxyError.addListener
- 246     120 + chrome.devtools.network.onRequestFinished
- 247     120 - chrome.tabCapture.capture
- 248     119 + chrome.runtime.onConnect
- 249     119 + browser.tabs.remove
- 250     116 + chrome.runtime.onConnectExternal
+   1   27819 + chrome.tabs.create
+   2   22514 + chrome.runtime.onMessage.addListener
+   3   20461 + chrome.tabs.query
+   4   19428 + chrome.browserAction.onClicked.addListener
+   5   17203 + chrome.runtime.sendMessage
+   6   16885 + chrome.extension.getURL
+   7   13939 + chrome.runtime.onInstalled.addListener
+   8   13812 + chrome.tabs.executeScript
+   9   13127 + chrome.tabs.sendMessage
+  10   12062 + chrome.storage.sync.get
+  11   12052 + chrome.storage.sync.set
+  12   10529 + chrome.storage.local.get
+  13   10497 + chrome.storage.local.set
+  14   10358 + chrome.tabs.update
+  15   10249 + chrome.tabs.onUpdated.addListener
+  16    8067 + chrome.contextMenus.create
+  17    8052 + chrome.browserAction.setBadgeText
+  18    7233 + chrome.browserAction.setIcon
+  19    7175 + chrome.extension.getBackgroundPage
+  20    7048 + chrome.runtime.getManifest
+  21    6626 + chrome.runtime.setUninstallURL
+  22    6284 + chrome.runtime.id
+  23    6197 + chrome.tabs.getSelected
+  24    5808 + chrome.extension.onMessage.addListener
+  25    5497 + chrome.runtime.lastError
+  26    5472 + chrome.i18n.getMessage
+  27    5157 + chrome.notifications.create
+  28    5009 + chrome.tabs.remove
+  29    4827 + chrome.browserAction.setBadgeBackgroundColor
+  30    4758 + chrome.extension.sendMessage
+  31    4556 + chrome.runtime.onMessageExternal.addListener
+  32    4217 + chrome.pageAction.show
+  33    3952 + chrome.extension.onRequest.addListener
+  34    3888 + chrome.windows.create
+  35    3824 + chrome.runtime.connect
+  36    3632 + chrome.runtime.onConnect.addListener
+  37    3562 - chrome.desktopCapture.chooseDesktopMedia
+  38    3531 + chrome.tabs.onActivated.addListener
+  39    3496 + chrome.tabs.get
+  40    3285 + chrome.extension.sendRequest
+  41    3282 + chrome.tabs.onRemoved.addListener
+  42    3171 + chrome.storage.onChanged.addListener
+  43    3042 + chrome.webRequest.onBeforeRequest.addListener
+  44    2994 + chrome.runtime.getURL
+  45    2864 + chrome.browserAction.setTitle
+  46    2745 + chrome.contextMenus.onClicked.addListener
+  47    2625 + chrome.tabs.onCreated.addListener
+  48    2436 + chrome.notifications.onClicked.addListener
+  49    2420 + chrome.notifications.clear
+  50    2381 + chrome.storage.local
+  51    2364 + chrome.windows.getAll
+  52    2262 + chrome.cookies.get
+  53    2234 + chrome.tabs.reload
+  54    2224 + chrome.app.getDetails
+  55    2183 + chrome.cookies.getAll
+  56    2159 + chrome.windows.getCurrent
+  57    2099 + chrome.management.uninstallSelf
+  58    2030 + chrome.runtime.lastError.message
+  59    1993 + chrome.alarms.create
+  60    1987 + chrome.alarms.onAlarm.addListener
+  61    1975 + chrome.windows.update
+  62    1826 + chrome.tabs.insertCSS
+  63    1819 + chrome.contextMenus.removeAll
+  64    1805 + chrome.cookies.set
+  65    1768 + chrome.storage.local.remove
+  66    1646 + chrome.runtime.openOptionsPage
+  67    1571 + chrome.runtime.reload
+  68    1531 + chrome.webRequest.onBeforeSendHeaders.addListener
+  69    1485 + chrome.storage.sync
+  70    1471 + chrome.browserAction.setPopup
+  71    1461 + chrome.commands.onCommand.addListener
+  72    1435 + chrome.tabs.sendRequest
+  73    1429 + chrome.tabs.getAllInWindow
+  74    1378 + chrome.webNavigation.onCompleted.addListener
+  75    1344 + chrome.webRequest.onHeadersReceived.addListener
+  76    1327 + chrome.omnibox.onInputEntered.addListener
+  77    1314 + chrome.storage.sync.remove
+  78    1295 + chrome.tabs.captureVisibleTab
+  79    1295 + chrome.pageAction.onClicked.addListener
+  80    1281 + chrome.storage.local.clear
+  81    1272 + chrome.runtime.getBackgroundPage
+  82    1266 + chrome.extension.connect
+  83    1263 + chrome.extension.onConnect.addListener
+  84    1251 + chrome.cookies.remove
+  85    1237 + chrome.runtime.onStartup.addListener
+  86    1224 + chrome.downloads.download
+  87    1174 - chrome.declarativeContent.onPageChanged.removeRules
+  88    1173 - chrome.declarativeContent.onPageChanged.addRules
+  89    1170 - chrome.declarativeContent.PageStateMatcher
+  90    1153 - chrome.declarativeContent.ShowPageAction
+  91    1095 + chrome.tabs.getCurrent
+  92    1089 + chrome.windows.onFocusChanged.addListener
+  93    1086 + chrome.management.getAll
+  94    1064 + chrome.extension.getViews
+  95    1060 + chrome.topSites.get
+  96    1054 + chrome.notifications.onButtonClicked.addListener
+  97    1028 + chrome.storage.sync.clear
+  98     991 + chrome.webRequest.onCompleted.addListener
+  99     986 + chrome.windows.remove
+ 100     941 + chrome.runtime.connectNative
+ 101     925 + chrome.windows.WINDOW_ID_CURRENT
+ 102     859 + chrome.windows.onRemoved.addListener
+ 103     831 + chrome.tabs.onUpdated.removeListener
+ 104     820 + chrome.webNavigation.onBeforeNavigate.addListener
+ 105     819 + chrome.windows.get
+ 106     795 + chrome.contextMenus.update
+ 107     782 + browser.tabs.create
+ 108     761 + chrome.bookmarks.getTree
+ 109     749 + chrome.omnibox.onInputChanged.addListener
+ 110     724 + chrome.pageAction.setIcon
+ 111     682 + chrome.omnibox.setDefaultSuggestion
+ 112     671 + chrome.webNavigation.onCommitted.addListener
+ 113     663 + chrome.pageAction.hide
+ 114     654 + chrome.notifications.onClosed.addListener
+ 115     654 + browser.runtime.onMessage.addListener
+ 116     644 + chrome.management.getSelf
+ 117     639 - chrome.runtime.getPackageDirectoryEntry
+ 118     625 + browser.runtime.sendMessage
+ 119     606 + chrome.history.search
+ 120     604 - chrome.desktopCapture.cancelChooseDesktopMedia
+ 121     599 + chrome.contextMenus.remove
+ 122     551 + chrome.tabs.onSelectionChanged.addListener
+ 123     546 - chrome.management.onInstalled.addListener
+ 124     535 + browser.tabs.query
+ 125     531 + chrome.devtools.panels.create
+ 126     530 + chrome.runtime.onMessage.removeListener
+ 127     527 - chrome.management.onEnabled.addListener
+ 128     497 + chrome.extension.lastError
+ 129     487 + chrome.permissions.request
+ 130     481 + chrome.pageAction.setTitle
+ 131     478 + browser.storage.local.get
+ 132     471 + chrome.browserAction.getBadgeText
+ 133     468 + chrome.windows.onCreated.addListener
+ 134     462 + browser.storage.local.set
+ 135     459 + chrome.runtime.onConnectExternal.addListener
+ 136     457 + chrome.runtime.onUpdateAvailable.addListener
+ 137     456 + chrome.cookies.onChanged.addListener
+ 138     448 - chrome.proxy.settings.set
+ 139     437 + chrome.i18n.getUILanguage
+ 140     434 + chrome.alarms.clear
+ 141     418 + chrome.runtime.sendNativeMessage
+ 142     416 + chrome.omnibox.onInputCancelled.addListener
+ 143     411 + chrome.runtime.onMessage
+ 144     399 + chrome.management.setEnabled
+ 145     392 + chrome.browserAction.disable
+ 146     389 + chrome.tabs.onReplaced.addListener
+ 147     387 + chrome.webRequest.onBeforeRequest.removeListener
+ 148     385 + chrome.bookmarks.create
+ 149     382 + chrome.tabs.move
+ 150     382 + chrome.webNavigation.onHistoryStateUpdated.addListener
+ 151     378 + chrome.browserAction.enable
+ 152     375 + browser.tabs.sendMessage
+ 153     366 + browser.extension.getURL
+ 154     363 + chrome.windows.getLastFocused
+ 155     353 + chrome.tabs.connect
+ 156     347 + chrome.webRequest.onBeforeRedirect.addListener
+ 157     347 + chrome.webNavigation.onDOMContentLoaded.addListener
+ 158     341 + chrome.runtime.error
+ 159     337 + chrome.runtime.onInstalled
+ 160     333 + chrome.windows.WINDOW_ID_NONE
+ 161     310 + chrome.devtools.inspectedWindow.tabId
+ 162     305 + chrome.identity.launchWebAuthFlow
+ 163     294 + chrome.permissions.contains
+ 164     283 + browser.tabs.onUpdated.addListener
+ 165     282 + chrome.devtools.inspectedWindow.eval
+ 166     278 + chrome.runtime.getPlatformInfo
+ 167     276 + chrome.runtime.onMessageExternal
+ 168     274 + chrome.extension.lastError.message
+ 169     271 + chrome.webRequest.onErrorOccurred.addListener
+ 170     270 + chrome.extension.onMessage
+ 171     266 + chrome.tabs.onUpdated
+ 172     265 + browser.runtime.getManifest
+ 173     264 + chrome.alarms.clearAll
+ 174     254 + chrome.downloads.onChanged.addListener
+ 175     253 + chrome.management.get
+ 176     253 + chrome.bookmarks.remove
+ 177     252 + browser.browserAction.onClicked.addListener
+ 178     246 + browser.tabs.executeScript
+ 179     240 - chrome.runtime.onSuspend.addListener
+ 180     238 - chrome.management.onUninstalled.addListener
+ 181     237 + browser.tabs.update
+ 182     237 + chrome.bookmarks.search
+ 183     236 + chrome.idle.onStateChanged.addListener
+ 184     233 + chrome.pageAction.setPopup
+ 185     231 + browser.runtime.onInstalled.addListener
+ 186     231 + chrome.omnibox.onInputStarted.addListener
+ 187     229 - chrome.tts.speak
+ 188     229 + chrome.webRequest.onAuthRequired.addListener
+ 189     228 + browser.browserAction.setIcon
+ 190     226 - chrome.notifications.update
+ 191     222 + chrome.tabs.onAttached.addListener
+ 192     221 + chrome.webRequest.onBeforeSendHeaders.removeListener
+ 193     218 + chrome.alarms.get
+ 194     217 + chrome.tabs.onHighlighted.addListener
+ 195     210 + browser.browserAction.setBadgeText
+ 196     208 - chrome.management.onDisabled.addListener
+ 197     208 - chrome.proxy.settings.get
+ 198     204 - chrome.management.uninstall
+ 199     200 + chrome.webNavigation.onReferenceFragmentUpdated.addListener
+ 200     199 - chrome.runtime.requestUpdateCheck
+ 201     199 + chrome.tabs.highlight
+ 202     197 + browser.i18n.getMessage
+ 203     194 + chrome.permissions.remove
+ 204     192 + chrome.tabs.onActiveChanged.addListener
+ 205     191 + browser.notifications.create
+ 206     190 + chrome.webNavigation.getAllFrames
+ 207     190 + chrome.tabs.onRemoved.removeListener
+ 208     188 + browser.contextMenus.create
+ 209     185 + chrome.browsingData.remove
+ 210     184 + chrome.tabs.onDetached.addListener
+ 211     183 + chrome.bookmarks.getChildren
+ 212     181 + chrome.identity.getRedirectURL
+ 213     179 + chrome.bookmarks.update
+ 214     175 + browser.runtime.getURL
+ 215     175 + browser.storage.sync.get
+ 216     172 + chrome.downloads.search
+ 217     172 + browser.browserAction.setBadgeBackgroundColor
+ 218     168 + chrome.tabs.onMoved.addListener
+ 219     168 - chrome.proxy.settings.clear
+ 220     168 + browser.tabs.getCurrent
+ 221     166 + browser.storage.sync.set
+ 222     163 + chrome.contextMenus.onClicked.removeListener
+ 223     161 + browser.tabs.get
+ 224     157 + chrome.webRequest.onHeadersReceived.removeListener
+ 225     157 + browser.tabs.onActivated.addListener
+ 226     154 + chrome.bookmarks.onCreated.addListener
+ 227     150 - chrome.tabCapture.capture
+ 228     148 + chrome.webNavigation.onErrorOccurred.addListener
+ 229     148 + chrome.webRequest.onResponseStarted.addListener
+ 230     148 + chrome.runtime.onConnectExternal
+ 231     145 + chrome.idle.queryState
+ 232     145 + chrome.webNavigation.onCreatedNavigationTarget.addListener
+ 233     144 + chrome.notifications.getAll
+ 234     144 - chrome.downloads.onDeterminingFilename.addListener
+ 235     142 + browser.windows.create
+ 236     142 + browser.runtime.lastError
+ 237     141 + chrome.extension.inIncognitoContext
+ 238     141 + browser.tabs.remove
+ 239     140 + chrome.runtime.onConnect.removeListener
+ 240     137 + chrome.history.getVisits
+ 241     137 + browser.tabs.onRemoved.addListener
+ 242     136 + chrome.webRequest.onSendHeaders.addListener
+ 243     136 + chrome.devtools.network.onRequestFinished
+ 244     136 + chrome.devtools.panels.elements
+ 245     135 + chrome.commands.getAll
+ 246     135 + browser.runtime.openOptionsPage
+ 247     134 + chrome.idle.setDetectionInterval
+ 248     133 + chrome.bookmarks.onRemoved.addListener
+ 249     132 + chrome.bookmarks.get
+ 250     130 + chrome.runtime.onStartup
 
 Missing APIs
 ------------
-   3145 chrome.desktopCapture.chooseDesktopMedia
-    910 chrome.declarativeContent.onPageChanged.removeRules
-    908 chrome.declarativeContent.onPageChanged.addRules
-    906 chrome.declarativeContent.PageStateMatcher
-    888 chrome.declarativeContent.ShowPageAction
-    611 chrome.management.onInstalled.addListener
-    602 chrome.runtime.getPackageDirectoryEntry
-    588 chrome.management.onEnabled.addListener
-    560 chrome.desktopCapture.cancelChooseDesktopMedia
-    466 chrome.proxy.settings.set
-    243 chrome.runtime.onSuspend.addListener
-    226 chrome.tts.speak
-    223 chrome.management.onUninstalled.addListener
-    213 chrome.proxy.settings.get
-    213 chrome.notifications.update
-    202 chrome.runtime.requestUpdateCheck
-    199 chrome.management.onDisabled.addListener
-    189 chrome.management.uninstall
-    179 chrome.proxy.settings.clear
-    137 chrome.downloads.onDeterminingFilename.addListener
-    120 chrome.proxy.onProxyError.addListener
-    120 chrome.tabCapture.capture
-    110 chrome.extension.onClicked.addListener
-    107 chrome.experimental.cookies
+   3562 chrome.desktopCapture.chooseDesktopMedia
+   1174 chrome.declarativeContent.onPageChanged.removeRules
+   1173 chrome.declarativeContent.onPageChanged.addRules
+   1170 chrome.declarativeContent.PageStateMatcher
+   1153 chrome.declarativeContent.ShowPageAction
+    639 chrome.runtime.getPackageDirectoryEntry
+    604 chrome.desktopCapture.cancelChooseDesktopMedia
+    546 chrome.management.onInstalled.addListener
+    527 chrome.management.onEnabled.addListener
+    448 chrome.proxy.settings.set
+    240 chrome.runtime.onSuspend.addListener
+    238 chrome.management.onUninstalled.addListener
+    229 chrome.tts.speak
+    226 chrome.notifications.update
+    208 chrome.management.onDisabled.addListener
+    208 chrome.proxy.settings.get
+    204 chrome.management.uninstall
+    199 chrome.runtime.requestUpdateCheck
+    168 chrome.proxy.settings.clear
+    150 chrome.tabCapture.capture
+    144 chrome.downloads.onDeterminingFilename.addListener
+    119 chrome.proxy.onProxyError.addListener
+    113 chrome.extension.onClicked.addListener
+    108 chrome.experimental.cookies
+    100 chrome.storage.local.getBytesInUse
      97 chrome.extension.onMessage.removeListener
-     96 chrome.storage.local.getBytesInUse
-     92 chrome.tts.stop
-     89 chrome.manifest.content_scripts
-     85 chrome.notifications.getPermissionLevel
-     83 chrome.storage.sync.getBytesInUse
-     82 chrome.storage.sync.QUOTA_BYTES_PER_ITEM
-     78 chrome.debugger.sendCommand
-     75 chrome.tts.getVoices
-     75 chrome.downloads.setShelfEnabled
-     73 chrome.debugger.attach
-     72 chrome.debugger.detach
-     67 chrome.extension.onRequest.removeListener
-     65 chrome.debugger.onEvent.addListener
-     63 chrome.system.cpu.getInfo
-     60 chrome.storage.sync.QUOTA_BYTES
-     58 chrome.runtime.OnInstalledReason.INSTALL
-     56 chrome.pageCapture.saveAsMHTML
-     54 chrome.manifest.version
-     54 chrome.system.memory.getInfo
-     52 chrome.tabs.executeScriptAsync
-     51 chrome.storage.sync.MAX_ITEMS
-     50 chrome.system.display.getInfo
+     96 chrome.tts.stop
+     92 chrome.storage.sync.QUOTA_BYTES_PER_ITEM
+     91 chrome.debugger.sendCommand
+     89 chrome.notifications.getPermissionLevel
+     87 chrome.manifest.content_scripts
+     85 chrome.debugger.attach
+     82 chrome.debugger.detach
+     80 chrome.storage.sync.getBytesInUse
+     77 chrome.runtime.OnInstalledReason.INSTALL
+     74 chrome.tts.getVoices
+     73 chrome.debugger.onEvent.addListener
+     72 chrome.downloads.setShelfEnabled
+     71 chrome.system.cpu.getInfo
+     67 chrome.storage.sync.QUOTA_BYTES
+     66 chrome.system.memory.getInfo
+     62 chrome.extension.onRequest.removeListener
+     60 chrome.storage.sync.MAX_ITEMS
+     56 chrome.system.display.getInfo
+     55 chrome.pageCapture.saveAsMHTML
+     53 chrome.tabs.executeScriptAsync
+     48 chrome.tabs.TAB_ID_NONE
+     47 browser.runtime.onMessageExternal.addListener
      47 chrome.runtime.onSuspendCanceled.addListener
-     45 chrome.tabs.TAB_ID_NONE
-     44 chrome.extension.onMessageExternal.addListener
-     43 browser.runtime.onMessageExternal.addListener
-     43 chrome.webstore.install
-     40 chrome.devtools.inspectedWindow.getResources
-     38 chrome.devtools.panels.applyStyleSheet
-     38 chrome.bookmarks.onImportEnded.addListener
-     38 browser.js.map
-     38 chrome.storage.sync.MAX_WRITE_OPERATIONS_PER_HOUR
-     38 chrome.d.ts
-     37 chrome.devtools.inspectedWindow
-     37 chrome.permissions.onAdded.addListener
-     37 chrome.webNavigation.onCreatedNavigationTarget
-     37 chrome.storage.sync.MAX_WRITE_OPERATIONS_PER_MINUTE
-     36 chrome.i18n._setL10nData
-     36 chrome.i18n._getL10nData
-     35 chrome.plugin.helper
-     35 chrome.proxy.settings.onChange
+     47 chrome.devtools.inspectedWindow.getResources
+     47 browser.js.map
+     47 chrome.permissions.onAdded.addListener
+     47 chrome.webNavigation.onCreatedNavigationTarget
+     46 chrome.storage.sync.MAX_WRITE_OPERATIONS_PER_HOUR
+     45 chrome.storage.sync.MAX_WRITE_OPERATIONS_PER_MINUTE
+     43 chrome.devtools.inspectedWindow
+     43 chrome.extension.onMessageExternal.addListener
+     41 browser.windows.WINDOW_ID_NONE
+     39 chrome.devtools.panels.applyStyleSheet
+     39 chrome.bookmarks.onImportEnded.addListener
+     38 chrome.manifest.version
+     37 chrome.i18n._setL10nData
+     37 chrome.debugger.onDetach.addListener
+     36 chrome.webstore.install
+     36 chrome.tabCapture.onStatusChanged.addListener
+     36 chrome.plugin.helper
+     35 browser.runtime.lastError.message
+     35 chrome.i18n._getL10nData
+     35 chrome.d.ts
+     34 chrome.declarativeContent.RequestContentScript
+     34 chrome.bookmarks.onChildrenReordered.addListener
      33 chrome.tts.isSpeaking
      33 chrome.extension.connectNative
-     33 chrome.debugger.onDetach.addListener
-     32 chrome.bookmarks.onChildrenReordered.addListener
-     31 chrome.declarativeContent.RequestContentScript
-     31 browser.windows.WINDOW_ID_NONE
-     31 chrome.downloads.acceptDanger
+     33 chrome.contentSettings.plugins.set
+     30 browser.version.substr
      30 chrome.privacy.network.webRTCMultipleRoutesEnabled
-     30 chrome.storage.local.QUOTA_BYTES
-     29 browser.version.substr
-     29 browser.runtime.lastError.message
-     27 chrome.contentSettings.javascript.set
-     26 chrome.downloads.drag
-     25 chrome.tabCapture.onStatusChanged.addListener
-     23 chrome.declarativeWebRequest.onRequest.addRules
-     22 chrome.privacy.services.searchSuggestEnabled
-     22 chrome.runtime.onSuspend
-     22 browser.webNavigation.onCreatedNavigationTarget.addListener
+     29 chrome.proxy.settings.onChange
+     29 chrome.storage.local.QUOTA_BYTES
+     27 browser.webNavigation.onCreatedNavigationTarget.addListener
+     27 browser.permissions.request
+     27 browser.proxy.register
+     26 chrome.contentSettings.javascript.set
+     25 chrome.runtime.onSuspend
+     25 chrome.downloads.acceptDanger
+     25 chrome.declarativeWebRequest.onRequest.addRules
+     25 browser.storage.sync.remove
+     24 chrome.webRequest.ResourceType.WEBSOCKET
+     23 browser.es5.js.map
+     23 chrome.devtools.panels.openResource
+     22 chrome.tts.resume
      22 chrome.devtools.inspectedWindow.onResourceContentCommitted
-     22 browser.es5.js.map
-     22 chrome.contentSettings.images.set
-     22 chrome.contentSettings.cookies.set
+     22 browser.storage.sync.clear
+     21 chrome.developerPrivate.reload
+     21 chrome.tts.pause
      21 chrome.fontSettings.getFontList
      21 browser.management.getAll
-     21 browser.permissions.request
-     21 browser.proxy.register
+     21 chrome.contentSettings.images.set
+     21 chrome.contentSettings.cookies.set
      20 chrome.permissions.onRemoved.addListener
      20 chrome.system.storage.getInfo
-     19 chrome.tts.resume
-     19 chrome.cast.SessionRequest
-     19 chrome.cast.ApiConfig
-     19 chrome.proxy.settings
-     18 chrome.tts.pause
+     20 browser.webRequest.ResourceType
+     19 chrome.downloads.drag
+     19 chrome.privacy.services.searchSuggestEnabled
+     19 browser.migration.js
+     19 browser.webRequest.filterResponseData
+     19 chrome.example.echo
+     19 browser.permissions.contains
+     18 chrome.contentSettings.popups.set
+     18 chrome.runtime.id.replace
      18 browser.event.TAB_REMOVED
-     17 chrome.cast.initialize
-     17 chrome.cast.requestSession
-     17 chrome.example.echo
-     17 chrome.devtools.panels.openResource
-     17 chrome.ttsEngine.onSpeak.addListener
-     17 chrome.ttsEngine.onStop.addListener
-     16 chrome.developerPrivate.reload
-     16 chrome.declarativeWebRequest.RequestMatcher
-     16 chrome.360.cn
-     16 chrome.extension.getVersion
-     16 chrome.contentSettings.popups.set
-     16 browser.proxy.settings.set
+     18 chrome.runtime.id.substr
+     17 chrome.declarativeWebRequest.RequestMatcher
+     17 chrome.contentSettings.plugins.getResourceIdentifiers
+     17 browser.es5.js
+     17 chrome.cast.SessionRequest
+     17 chrome.cast.ApiConfig
+     17 chrome.input.ime.onKeyEvent
+     17 chrome.proxy.settings
+     16 chrome.runtime.onMessageExternal.removeListener
      16 browser.proxy.onProxyError.addListener
-     16 browser.es5.js
      16 chrome.sessions.getDevices
-     15 chrome.devtools.inspectedWindow.onResourceAdded
-     15 chrome.runtime.onMessageExternal.removeListener
-     15 browser.migration.js
+     16 browser.devtools.panels.create
+     16 chrome.ttsEngine.onSpeak.addListener
+     16 chrome.ttsEngine.onStop.addListener
+     15 chrome.fileBrowserHandler.onExecute.addListener
+     15 chrome.declarativeWebRequest.onRequest.removeRules
+     15 chrome.extension.getVersion
+     15 chrome.extension.version_
+     15 chrome.runtime.restart
+     15 chrome.runtime.OnInstalledReason.UPDATE
      15 browser.proxy.settings.get
      15 chrome._tabInfo.gatherFrameInfo
      15 chrome._tabInfo.notice
      15 chrome._tabInfo.info
-     15 browser.management.onEnabled.addListener
      15 browser.management.setEnabled
+     15 chrome.cast.initialize
+     15 chrome.cast.requestSession
      15 chrome.runtime.onUninstalled
      15 chrome.runtime.onUninstalled.addListener
-     15 chrome.webRequest.ResourceType.WEBSOCKET
-     15 chrome.input.ime.onKeyEvent
-     14 chrome.fileBrowserHandler.onExecute.addListener
-     14 chrome.declarativeWebRequest.onRequest.removeRules
-     14 chrome.extension.version_
-     14 browser.storage.sync.remove
-     14 chrome.runtime.Port
-     14 chrome.privacy.network.webRTCNonProxiedUdpEnabled
-     14 browser.storage.sync.clear
-     14 chrome.runtime.id.substr
+     15 browser.proxy.unregister
+     14 chrome.downloads.onDeterminingFilename
+     14 browser.proxy.settings.set
+     14 browser.management.onEnabled.addListener
      14 chrome.bookmarks.onImportBegan.addListener
-     14 chrome.manifest.externally_connectable.matches
-     14 chrome.storage.largeSync
-     13 chrome.downloads.onDeterminingFilename
-     13 chrome.extension.onConnectExternal.addListener
+     14 chrome.privacy.websites.thirdPartyCookiesAllowed
+     13 chrome.devtools.inspectedWindow.onResourceAdded
+     13 chrome.privacy.services.autofillEnabled
      13 chrome.contextMenus.ACTION_MENU_TOP_LEVEL_LIMIT
      13 browser.min.js
-     13 chrome.contentSettings.images.clear
-     13 chrome.privacy.websites.thirdPartyCookiesAllowed
-     12 chrome.runtime.lasterror
-     12 chrome.runtime.id.replace
-     12 chrome.cast.media.MediaInfo
-     12 chrome.cast.media.LoadRequest
-     12 browser.devtools.inspectedWindow.tabId
+     13 chrome.privacy.network.webRTCNonProxiedUdpEnabled
 
 Missing permissions
 -------------------
-   3189 desktopCapture
-   1301 declarativeContent
-    485 contentSettings
-    360 tts
-    291 tabCapture
-    282 debugger
-    206 pageCapture
-    153 system.cpu
-     90 downloads.shelf
-     86 system.display
-     85 system.memory
-     76 identity.email
-     59 ttsEngine
-     52 fontSettings
-     46 unlimited_storage
-     43 system.storage
-     41 input
-     30 declarativeWebRequest
-     26 fileBrowserHandler
-     16 processes
-     15 power
-     15 audioCapture
-     12 videoCapture
+   3610 desktopCapture
+   1766 declarativeContent
+    524 contentSettings
+    363 tts
+    326 tabCapture
+    314 debugger
+    214 pageCapture
+    156 system.cpu
+     98 identity.email
+     96 system.display
+     91 system.memory
+     89 downloads.shelf
+     65 ttsEngine
+     51 fontSettings
+     50 unlimited_storage
+     44 input
+     42 system.storage
+     33 declarativeWebRequest
+     27 fileBrowserHandler
+     22 power
+     21 audioCapture
+     15 processes
+     14 videoCapture
      11 webview
-      9 enterprise.platformKeys
-      9 printerProvider
+     11 printerProvider
+      8 enterprise.platformKeys
+      8 audio
+      8 fileSystem
+      7 enterprise.deviceAttributes
       7 wallpaper
       7 
-      7 fileSystem
-      5 app
-      5 audio
-      4 browser
+      6 browser
+      6 app
+      5 accessibilityFeatures.read
+      5 accessibilityFeatures.modify
       4 certificateProvider
-      4 enterprise.deviceAttributes
       4 platformKeys
       4 serial
+      4 browserSettings
       4 menus
       4 clipboard
       4 create
       4 experimental
-      4 system
+      4 tabHide
+      4 externally_connectable
       4 *
       3 {'fileSystem': ['write']}
       3 mdns
-      3 usb
       3 tab
+      3 fullscreen
+      3 displaySource
       3 keybinding
       3 location
       3 {'fileSystem': ['write', 'retainEntries', 'directory']}
-      3 signedInDevices
       2 streamsPrivate
-      2 accessibilityFeatures.read
-      2 accessibilityFeatures.modify
+      2 usb
+      2 activeTabs
       2 *steemit.com*
       2 fileSystemProvider
-      2 fullscreen
-      2 displaySource
+      2 ActiveTab
       2 dial
       2 cast
       2 cast.streaming
       2 networkingPrivate
       2 activetabs
-      2 tabHide
       2 Url do site*
-      2 browserSettings
-      2 app.window
       2 infobars
       2 {'socket': ['tcp-connect', 'tcp-listen']}
       1 socket
       1 usbDevices
       1 vpnProvider
+      1 bluetooth
+      1 *.cloudant.com/
       1 localStorage
-      1 activeTabs
       1 https: //*/*
+      1 messaging
       1 popup
       1 tabs*
       1 all_urls
       1 theme
       1 none
+      1 search
       1 mangement
       1 content.js
       1 notificationProvider
+      1 https:/*/*
+      1 http:/*/*
+      1 ftp:/*/*
+      1 chrome:/*/*
+      1 *:/*/*
       1 @ant-sites-string-list@
+      1 GenerateID
       1 mediaGalleries
       1 {'mediaGalleries': ['read', 'allAutoDetected']}
       1 {'usbDevices': [{'vendorId': 123, 'productId': 456}]}
-      1 *//*.aliexpress.com/*
-      1 *//*.chnhelp.com/*
       1 t
       1 a
       1 b
       1 s
       1 urls
+      1 download
+      1 alwaysOnTopWindows
       1 offroad
       1 setIcon
+      1 call_urls
+      1 active tab
       1 <all_url>
       1 http//gosnapshot.com/snapshot
+      1 system
       1 newtab
       1 productfinder/
       1 *//yousonnik.ru/*
       1 activetab
-      1 .mat-internet.eu
       1 all_frames
       1 //maps.googleapis.com
       1 permissions
+      1 acitveTab
       1 .4ltrpressonline.cengage.com
       1 accessibilityFeatures
       1 clipboardWrite 
@@ -540,121 +552,129 @@ Missing permissions
       1 commands.accessibility
       1 commandLinePrivate
       1 virtualKeyboardPrivate
-      1 externally_connectable
       1 *.youbidder.com
       1 *//ajax.googleapis.com/*
+      1 signedInDevices
       1 networking.config
       1 copresence
+      1 api.hectorlachambre.pro/*
       1 audio-capture
       1 www.staf.live
-      1 roosterteeth.com/schedule
       1 localstorage
       1 active_tab
       1 Storage
       1 www.bgu.ac.il
       1 effective_tld_names.dat
+      1 medium.com
       1 vamos ultilizar seu naveador para transmiss�o dos canais
       1 events
+      1 app.window
       1 *.craigslist.org
-      1 hid
-      1 u2fDevices
-      1 {'usbDevices': [{'vendorId': 4176, 'productId': 529}, {'vendorId': 4176, 'productId': 512}]}
-      1 dataReductionProxy
-      1 preferencesPrivate
+      1 www.iconfont.cn
 
 Missing manifests
 -------------------
-   4049 externally_connectable
-    292 converted_from_user_script
+   4558 externally_connectable
+    289 converted_from_user_script
+    214 oauth2
     214 sandbox
-    202 oauth2
-    156 container
-    132 api_console_project_id
-    117 background_page
-     99 chrome_accept_languages
-     31 input_components
-     25 tts_engine
-     21 -ms-preload
+    157 container
+    136 api_console_project_id
+    120 background_page
+    116 chrome_accept_languages
+     36 input_components
+     27 -ms-preload
+     27 tts_engine
+     25 shortname
      20 launch
-     20 shortname
      20 container_info
-     18 requirements
-     17 file_browser_handlers
-     16 start_url
-     16 display
-     15 minimum_opera_version
-     12 short name
-     11 sidebar_action
-     11 theme_color
-     11 background_color
+     19 display
+     19 start_url
+     18 file_browser_handlers
+     17 requirements
+     14 minimum_opera_version
+     13 sidebar_action
+     13 theme_color
+     13 background_color
+     13 icon
      11 id
+     10 sortname
+     10 short name
       9 persistent
-      9 icon
-      8 sortname
+      9 signature
+      8 urls
+      8 shortName
       8 short_name 
-      8 signature
       8 short_description
-      7 urls
       7 minimum_edge_version
-      7 nacl_modules
+      7 current_locale
+      7 exceptionLogging
+      7 orientation
       7 all_frames
       6 author_email
       6 language
       6 country
-      6 shortName
-      6 title
-      6 current_locale
+      6 timeZone
+      6 dependencies
       6 intents
-      6 orientation
+      5 homepage
+      5 gdrive_mime_types
+      5 nacl_modules
       5 default_local
       5 short-name
       4 license
-      4 homepage
+      4 title
+      4 browser_specific_settings
       4 external_update_url
       4 automation
+      4 scripts
+      4 permission
       3 mime_types
-      3 browser_specific_settings
-      3 default_popup
-      3 gdrive_mime_types
-      3 plugins
+      3 bluetooth
+      3 js
       3 prefer_related_applications
       3 related_applications
-      3 debug
       3 chrome_ui_overrides
-      3 package_name
+      3 event_rules
       3 browser_actions
       3  app 
-      3 permission
-      2 bluetooth
+      3 server_name
       2 display_in_launcher
       2 kiosk_enabled
       2 shot_name
+      2 css
       2 gecko
       2 _comment
       2 repository
+      2 default_popup
+      2 plugins
       2 pages
+      2 debug
       2 tuid
+      2 oauthScopes
       2 Background
       2 licenses
       2 file_system_provider_capabilities
       2 content_script
-      2 creator
-      2 scripts
+      2 extNameCode
+      2 offline
       2 Short Name
-      2 event_rules
       2 Description
+      2 lang
+      2 scope
       2 Short name
       2 accId
       2 accCode
       2 keywords
+      2 default_title
       2 discription
       2 $schema
-      2 js
       2 service
       2 email
       2 matches
       1 inprivate
       1 Key
+      1 logo
       1 web
       1 background.persistent
       1 _version
@@ -664,28 +684,30 @@ Missing manifests
       1 offered_by
       1 home_page_url
       1 debug_mode
+      1 _license
       1 endpointUrl
       1 icons.png
       1 logos
       1 accepts_tls_channel_id
-      1 path
-      1 type
-      1 allowed_origins
       1 nickname
       1 desription
-      1 env
+      1 url
+      1 type
       1 dev
       1 settings
       1 content scripts
       1 position
       1 search_url
       1 scrreminder
+      1 stripe
+      1 firebase
       1 buildName
       1 launch_path
       1 include_globs
+      1 creator
       1 main_version
       1 label
-      1 Scope
+      1 premissions
       1 removed
       1 alias
       1 arc_metadata
@@ -693,7 +715,6 @@ Missing manifests
       1 //note
       1 short_:name
       1 platforms
-      1 __update_url
       1 comment1
       1 comment2
       1 comment3
@@ -702,15 +723,4 @@ Missing manifests
       1 comment6
       1 comment8
       1 comment9
-      1 decreiption
-      1 gcm_sender_id
-      1 inject
-      1 home_url
-      1 short_nane
-      1 spellcheck
-      1 mixpane_api_key
-ILLEGAL CHARACTERS
-      1 content-Security-Policy
-      1 default_title
-      1 browser
-      1 dashboardHost
+      1 dir
