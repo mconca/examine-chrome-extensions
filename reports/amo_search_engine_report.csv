@@ -1,0 +1,208 @@
+Name,Users,ID,search name,is_default,search URL
+---------------------
+All Weather Search , 5 , 1000396 , Yahoo Web, True , https://services.allweathersearch.com/search/?q={searchTerms}
+kbo Startpage , 1 , 1001311 , Yahoo Web, True , https://services.allweathersearch.com/search/?q={searchTerms}
+Search for Recipe , 2 , 1002129 , Yahoo Web, True , https://services.searchforrecipe.com/crx/search/?q={searchTerms}
+Jobsrch , 0 , 1002774 , Yahoo Web, True , https://services.jobsrch.org/search/?q={searchTerms}
+Coupons Flash , 757 , 1003054 , www.couponsflash.co's Web Search, True , https://www.couponsflash.co/search.html?type=search&id=MTI3MTU&searchff=1#q={searchTerms}
+Free Movies Search Engine , 10 , 1003099 , Avalba, True , https://__MSG_Avalba_Moveis_default_search__/search/?q={searchTerms}
+Speed Test Now , 4 , 1003296 , www.speedtestnow.co's Web Search, True , https://www.speedtestnow.co/search.html?type=search&id=MTI3MTA&searchff=1#q={searchTerms}
+Lamborghini New Tab & Free Movies , 1 , 1003418 , Avalba, True , https://avalba.com/search/?q={searchTerms}
+Wegive , 0 , 1004200 , Avalba, True , https://avalba.com/search/?q={searchTerms}
+Easy Recipes Search , 0 , 1004224 , Yahoo Web, True , https://services.easyrecipessearch.com/crx/search/?q={searchTerms}
+Search Recipes , 2 , 1004227 , Yahoo Web, True , https://services.search.recipes/crx/search/?q={searchTerms}
+Beautiful Girls Wallpapers - New Tab , 5 , 1004610 , Avalba, True , https://avalba.com/search/?q={searchTerms}
+Accurate Weather Today , 0 , 1005273 , www.accurateweathertoday.com's Web Search, True , https://www.accurateweathertoday.com/search.html?type=search&id=MTI3MzU&searchff=1#q={searchTerms}
+Search For Weather , 2 , 1005565 , SearchWeb, True , https://services.searchforweather.com/crx/search/?q={searchTerms}
+Trustnav Safesearch , 3 , 1005595 , Trustnav safe search, True , https://safesearch.trustnav.com/?src=ext&action=search&q={searchTerms}
+YaTab , 1 , 1006133 , search.yatab.net, True , https://yatab.net/search.php?q={searchTerms}
+Mue , 0 , 1006335 , search.yatab.net, True , https://yatab.net/search.php?q={searchTerms}
+Azizi search engine , 0 , 1006781 , Azizi Search, True , https://demo.azizisearch.com/starter/google/web/search?q={searchTerms}
+Get Recipes , 6 , 1007189 , Yahoo Web, True , https://services.get-svc.recipes/crx/search/?q={searchTerms}
+101Sweets , 0 , 1007198 , Yahoo Web, True , https://services.101sweets-svc.com/crx/search/?q={searchTerms}
+A Photographic Start - New Tab Page , 11 , 1007225 , Yahoo Web, True , https://services.101sweets-svc.com/crx/search/?q={searchTerms}
+Power Search for Firefox , 6 , 1007245 , SearchInChrome, True , https://searchinchrome.com/search?q={searchTerms}&aid=59&sb=1
+Safelinks , 1 , 1007695 , Safelinks Search, True , https://search.coinup.org/search.php?tyt=3015&query={searchTerms}
+Confound Comments , 1 , 1007797 , Safelinks Search, True , https://search.coinup.org/search.php?tyt=3015&query={searchTerms}
+Search Administrator for Firefox , 10 , 1008069 , Search Administrator, True , https://www.searchadministrator.com/search?q={searchTerms}&aid=53
+Vault Safe Search for Firefox , 3 , 1008333 , Vault Safe Search, True , https://www.vaultsafesearch.com/yhs/search?p={searchTerms}&sb=omnibox
+Search Secure , 5005 , 1009498 , www.searchsecurepro.co's Web Search, True , https://www.searchsecurepro.co/search.html?type=search&id=MTI3NTQ#q={searchTerms}
+Search Secure , 5099 , 1009504 , www.searchsecureplus.co's Web Search, True , https://www.searchsecureplus.co/search.html?type=search&id=MTI3NTU#q={searchTerms}
+Search Secure , 373 , 1009508 , www.searchsecureprime.co's Web Search, True , https://www.searchsecureprime.co/search.html?type=search&id=MTI3NTY#q={searchTerms}
+Vanilla Dashboard , 5 , 1010172 , www.searchsecureprime.co's Web Search, True , https://www.searchsecureprime.co/search.html?type=search&id=MTI3NTY#q={searchTerms}
+Sweet Private Search , 1 , 1010269 , Sweet Search, True , https://www.usesweet.com/?q={searchTerms}
+Daily Recipe Ideas , 0 , 1010324 , www.dailyrecipeideas.co's Web Search, True , https://www.dailyrecipeideas.co/search.html?type=search&id=MTI3NjM&searchff=1#q={searchTerms}
+Dictionary Pro , 0 , 1010366 , www.dictionarypro.co's Web Search, True , https://www.dictionarypro.co/search.html?type=search&id=MTI3NjQ&searchff=1#q={searchTerms}
+Photo for New Tab , 1 , 1010492 , www.dictionarypro.co's Web Search, True , https://www.dictionarypro.co/search.html?type=search&id=MTI3NjQ&searchff=1#q={searchTerms}
+Solar Village , 27 , 1011045 , Solar Village Search, True , https://www.thesolarvillage.org/search/?q={searchTerms}&addon=firefox&addonversion=4.0.5
+Pdf.Studio , 1 , 1011149 , Yahoo Web, True , https://services.mypdf-svc.studio/crx/search/?q={searchTerms}
+MyAstroFinder , 1 , 1011482 , www.myastrofinder.co's Web Search, True , https://www.myastrofinder.co/search.html?type=search&id=MTI3Njk&searchff=1#q={searchTerms}
+Package Tracker , 27 , 1011556 , www.package-tracker.co's Web Search, True , https://www.package-tracker.co/search.html?type=search&id=MTI3NzA&searchff=1#q={searchTerms}
+Convert Doc Online , 20 , 1011561 , www.convertdoconline.com's Web Search, True , https://www.convertdoconline.com/search.html?type=search&id=MTI3NzE&searchff=1#q={searchTerms}
+Daily Recipe Now , 1 , 1011665 , www.dailyrecipenow.com's Web Search, True , https://www.dailyrecipenow.com/search.html?type=search&id=MTI3NzI&searchff=1#q={searchTerms}
+Lukall , 1 , 1011824 , lukall, True , https://www.lukall.com/search?q={searchTerms}
+1012063.json , 1 , 1012063 , lukall, True , https://www.lukall.com/search?q={searchTerms}
+Search Security , 1 , 1012157 , www.searchsecurity.co's Web Search, True , https://www.searchsecurity.co/search.html?type=search&id=MTI3Njc#q={searchTerms}
+Jiimba Private Search Engine , 2 , 1012290 , Jiimba, True , https://www.jiimba.com/?q={searchTerms}&time_range=&safesearch=0&categories=general
+Tad , 3 , 1012451 , Jiimba, True , https://www.jiimba.com/?q={searchTerms}&time_range=&safesearch=0&categories=general
+Net Speed Ninja , 49 , 1012527 , www.netspeedninja.co's Web Search, True , https://www.netspeedninja.co/search.html?type=search&id=MTI3Nzk&searchff=1#q={searchTerms}
+Free Directions Finder , 2 , 1012628 , www.freedirectionsfinder.com's Web Search, True , https://www.freedirectionsfinder.com/search.html?type=search&id=MTI3ODE&searchff=1#q={searchTerms}
+FindWeather , 1 , 1012860 , Yahoo Web, True , https://services.findweather-svc.com/search/?q={searchTerms}
+Charitab , 1 , 1012885 , Yahoo Web, True , https://services.findweather-svc.com/search/?q={searchTerms}
+Horoscope Finder , 1 , 1013623 , www.horoscopefinder.co's Web Search, True , https://www.horoscopefinder.co/search.html?type=search&id=MTI3OTE&searchff=1#q={searchTerms}
+ArcadeTab , 0 , 1014130 , Yahoo Web, True , https://services.arcadetab-svc.com/crx/search/?q={searchTerms}
+1014166.json , 1 , 1014166 , with iHeartDogs, True , https://api.joona.io/search/basic?q={searchTerms}
+Daily Weather Forecast , 0 , 1014272 , www.dailyweatherforecast.co's Web Search, True , https://www.dailyweatherforecast.co/search.html?type=search&id=MTI4MDc&searchff=1#q={searchTerms}
+Search Encrypt Ad Blocker , 15 , 1014356 , Search Encrypt, True , https://www.searchencrypt.com/encsearch?q={searchTerms}
+MyMailTab , 2 , 1014499 , Yahoo Web, True , https://services.mymailtab.com/crx/search/?q={searchTerms}
+Givero - the charitable search engine , 1 , 1014822 , Givero, True , https://www.givero.com/search?q={searchTerms}
+Forbes Personalized News , 6 , 1014904 , Forbes, True , https://chrome.forbes.com/hapi/omniSearch?q={searchTerms}
+Launch , 1 , 1014960 , Launch, True , https://launch.am/?q={searchTerms}
+MapSrch , 0 , 1015101 , Yahoo Web, True , https://services.mapsrch-svc.com/crx/search/?q={searchTerms}
+GetPdfTotal , 1 , 1015364 , Yahoo Web, True , https://services.mapsrch-svc.com/crx/search/?q={searchTerms}
+Travel Directions , 0 , 1015812 , www.traveldirections.co's Web Search, True , https://www.traveldirections.co/search.html?type=search&id=MTI4MTQ&searchff=1#q={searchTerms}
+Forecast Froggy , 1 , 1016275 , www.forecastfroggy.com's Web Search, True , https://www.forecastfroggy.com/search.html?type=search&id=MTI4MTg&searchff=1#q={searchTerms}
+Live Weather Check , 0 , 1016361 , www.liveweathercheck.com's Web Search, True , https://www.liveweathercheck.com/search.html?type=search&id=MTI4MjA&searchff=1#q={searchTerms}
+Daily Mail Tab , 1 , 1016364 , www.dailymailtab.com's Web Search, True , https://www.dailymailtab.com/search.html?type=search&id=MTI4MTk&searchff=1#q={searchTerms}
+Directions Finder Now , 1 , 1016374 , www.directionsfindernow.com's Web Search, True , https://www.directionsfindernow.com/search.html?type=search&id=MTI4MjE&searchff=1#q={searchTerms}
+Forbes News Search , 1 , 1016473 , Forbes Search, True , https://chrome.forbes.com/hapi/omniSearch?q={searchTerms}
+My Metric Converter , 0 , 1016761 , www.mymetricconverter.com's Web Search, True , https://www.mymetricconverter.com/search.html?type=search&id=MTI3ODg&searchff=1#q={searchTerms}
+YouTube search engine , 11 , 1017125 , YouTube, False , https://www.youtube.com/results?search_query={searchTerms}
+123Movies , 3 , 1017188 , Avalba, True , https://avalba.com/search/?q={searchTerms}
+Smart File Converter , 2 , 1018789 , www.smartfileconverter.com's Web Search, True , https://www.smartfileconverter.com/search.html?type=search&id=MTI4Mjk&searchff=1#q={searchTerms}
+Manuals Search , 0 , 1019984 , Yahoo Web, True , https://services.manualsearch-svc.org/crx/search/?q={searchTerms}
+Yahoo Toolbar and New Tab , 77284 , 2032 , Yahoo, True , https://search.yahoo.com/search?p={searchTerms}&fr=yset_ff_hp_cnewtab&type=default
+GMX MailCheck for Firefox , 13848 , 229925 , GMX, False , https://suche.gmx.net/web/result?origin=mc_splugin_ff&enc=UTF-8&q={searchTerms}
+Ecosia — The search engine that plants trees! , 272422 , 261472 , Ecosia Search, True , https://www.ecosia.org/search?q={searchTerms}&addon=firefox&addonversion=4.0.4
+My Homepage , 4073 , 324507 , Ecosia Search, True , https://www.ecosia.org/search?q={searchTerms}&addon=firefox&addonversion=4.0.4
+WEB.DE MailCheck for Firefox , 18699 , 375375 , WEB.DE, False , https://suche.web.de/web/result?origin=mc_splugin_ff&enc=UTF-8&q={searchTerms}
+DuckDuckGo Privacy Essentials , 645162 , 385621 , DuckDuckGo, True , https://duckduckgo.com/?q={searchTerms}
+mail.com MailCheck for Firefox , 1764 , 410856 , mail.com, False , https://search.mail.com/web/result?origin=mc_splugin_ff&enc=UTF-8&q={searchTerms}
+Multi Web Search , 1202 , 535334 , __MSG_extension_name__, True , https://www.s3blog.org/multiwebsearch/search/?s={searchTerms}
+Qwant , 153064 , 544242 , Qwant, True , https://www.qwant.com/?q={searchTerms}&client=ext-firefox-sb
+DIRECT PDF DOWNLOAD , 14243 , 568146 , Socopoco, True , https://socopoco.com/searchweb.php?q={searchTerms}
+New Tab by Yahoo , 6394 , 616242 , Yahoo, True , https://search.yahoo.com/search?p={searchTerms}&fr=yset_ff_hp_cnewtab&type=default
+New Tab Override (WebExtension) , 96700 , 626810 , Yahoo, True , https://search.yahoo.com/search?p={searchTerms}&fr=yset_ff_hp_cnewtab&type=default
+638970.json , 95128 , 638970 , Yahoo, True , https://search.yahoo.com/search?p={searchTerms}&fr=yset_ff_hp_cnewtab&type=default
+Baboom Search , 2 , 655986 , Baboom Search, True , http://search.baboom.audio/?st=ds&q={searchTerms}
+Yahoo Search Addon , 7249 , 664088 , Yahoo, True , https://search.yahoo.com/yhs/search?p={searchTerms}&hsimp=yhs-102&hspart=mozilla&type=dss
+Search Incognito , 16372 , 673513 , SearchIncognito, True , https://www.searchincognito.com/encsearch?q={searchTerms}
+New Tab StartXXL , 78 , 686721 , StartXXL, True , https://www.startxxl.com/__MSG_searchQuery__{searchTerms}
+Search and New Tab by Yahoo , 104002 , 689182 , Yahoo, True , https://search.yahoo.com/search?p={searchTerms}&fr=yset_ff_hp_cnewtab&type=default
+692288.json , 2845 , 692288 , Amazon, False , https://www.meinedeals.de/wp-content/plugins/meinedeals-redirect-filter/addon-search.php?q={searchTerms}
+693507.json , 19713 , 693507 , Web + Videos, True , https://www.startxxl.com/fastsearch.html?ref=ytu&q={searchTerms}
+Grammalecte [fr] , 17430 , 701168 , Grammalecte, False , https://www.dicollecte.org/dictionary.php?prj=fr&lemma={searchTerms}
+ZimRim Extension , 1 , 715415 , ZimRim.com, True , http://www.zimrim.com/#/zh?q={searchTerms}
+ZimRim Search Extension , 1 , 718279 , ZimRim.com, True , http://www.zimrim.com/#/zh?q={searchTerms}
+Search and Wider Mail by Yahoo , 6935 , 727603 , Yahoo, True , https://search.yahoo.com/search?p={searchTerms}&fr=yset_ff_syc_widemail&type=default
+Search Encrypt , 233513 , 740555 , Search Encrypt, True , https://www.searchencrypt.com/encsearch?q={searchTerms}
+Discrete Search , 14652 , 742240 , Discrete Search, True , https://www.discretesearch.com/encsearch?q={searchTerms}
+748773.json , 5382 , 748773 , SM.de, True , https://www.sm.de/?q={searchTerms}
+New Tab Homepage , 93418 , 777 , SM.de, True , https://www.sm.de/?q={searchTerms}
+Findx Default Search , 26 , 779768 , Findx, True , https://www.findx.com/web?q={searchTerms}
+SearchSafe.org , 14 , 789955 , Search Safe, False , https://www.searchsafe.co/encsearch?q={searchTerms}
+Momentum , 20737 , 793541 , Search Safe, False , https://www.searchsafe.co/encsearch?q={searchTerms}
+Swobbl , 12 , 813087 , Swobbl.eu, True , https://www.swobbl.eu/web?q={searchTerms}
+Board: Papier for Firefox , 109 , 826676 , Swobbl.eu, True , https://www.swobbl.eu/web?q={searchTerms}
+Bookmark Manager and Home page - myMark.me , 105 , 836881 , Swobbl.eu, True , https://www.swobbl.eu/web?q={searchTerms}
+LEGA B Start , 3 , 849577 , Swobbl.eu, True , https://www.swobbl.eu/web?q={searchTerms}
+Unofficial DuckDuckGo Plus , 65 , 849901 , DuckDuckGo Search, True , https://duckduckgo.com/?q={searchTerms}
+Google.co.jp search , 166 , 855074 , Google.co.jp, False , https://www.google.co.jp/search?&q={searchTerms}
+Quad - New Tab Page , 5 , 860835 , Google.co.jp, False , https://www.google.co.jp/search?&q={searchTerms}
+861170.json , 1 , 861170 , Google.co.jp, False , https://www.google.co.jp/search?&q={searchTerms}
+862418.json , 0 , 862418 , Google.co.jp, False , https://www.google.co.jp/search?&q={searchTerms}
+Google Browse by Name search engine , 110 , 865371 , Browse by Name, True , https://www.google.com/search?sourceid=navclient&gfns=1&q={searchTerms}
+SearchMe123 , 4 , 867193 , Browse by Name, True , https://www.google.com/search?sourceid=navclient&gfns=1&q={searchTerms}
+Bing Search Engine , 1112 , 879513 , Bing Search, True , https://www.bing.com/search?FORM=U504DF&PC=U504&q={searchTerms}
+GlobalTab , 7 , 880011 , Bing Search, True , https://www.bing.com/search?FORM=U504DF&PC=U504&q={searchTerms}
+Classroom Quickview , 3 , 884458 , Bing Search, True , https://www.bing.com/search?FORM=U504DF&PC=U504&q={searchTerms}
+886170.json , 0 , 886170 , sov2ex, False , https://www.sov2ex.com/?q={searchTerms}
+Qwant Basic , 2587 , 886385 , Qwant, True , https://www.qwant.com/?q={searchTerms}&client=ext-firefox-light-sb
+Lilo - Search engine , 56339 , 889197 , Lilo, True , https://search.lilo.org/results.php?q={searchTerms}
+MSN Homepage and Bing Search Engine , 13380 , 892949 , Bing Search, True , https://www.bing.com/search?FORM=U506DF&PC=U506&q={searchTerms}
+HSTS Preload list search engine , 7 , 894765 , HSTS Preload List, False , https://hstspreload.org/?domain={searchTerms}
+Fantastic Start , 8 , 895041 , HSTS Preload List, False , https://hstspreload.org/?domain={searchTerms}
+MSN Homepage , 16093 , 895608 , HSTS Preload List, False , https://hstspreload.org/?domain={searchTerms}
+896781.json , 444 , 896781 , Ecosia, True , https://www.ecosia.org/search?q={searchTerms}&addon=firefox&addonversion=4.0.0
+896782.json , 800 , 896782 , Qwant, True , https://www.qwant.com/?q={searchTerms}
+Bing Homepage , 113 , 897755 , Qwant, True , https://www.qwant.com/?q={searchTerms}
+Bing Homepage and Search Engine , 52 , 897757 , Bing Search, True , https://www.bing.com/search?FORM=U510DF&PC=U510&q={searchTerms}
+New Tab Homepage Focus2 , 16 , 899667 , Bing Search, True , https://www.bing.com/search?FORM=U510DF&PC=U510&q={searchTerms}
+Startpage.com — Private Search Engine , 121364 , 899962 , __MSG_searchEngineName__, True , https://www.startpage.com/do/dsearch?query={searchTerms}&cat=web&pl=ext-ff&language=__MSG_extensionUrlLanguage__
+902493.json , 3 , 902493 , Naver, False , https://search.naver.com/search.naver?query={searchTerms}
+Giphy Search , 280 , 902575 , Giphy, False , https://www.giphy.com/search/?q={searchTerms}
+Reddit search engine , 67 , 903841 , Reddit, False , https://www.reddit.com/search?q={searchTerms}&amp;sort=relevance&amp;t=all
+Peekier search engine , 42 , 905460 , Peekier, True , https://peekier.com/#!{searchTerms}
+Transience Homepage , 1 , 906401 , Peekier, True , https://peekier.com/#!{searchTerms}
+Eloquent - New Tab Page , 3 , 908507 , Peekier, True , https://peekier.com/#!{searchTerms}
+Yay! Another Speed dial! , 608 , 908898 , Peekier, True , https://peekier.com/#!{searchTerms}
+921495.json , 7 , 921495 , Youtube, False , https://www.youtube.com/results?search_query={searchTerms}
+Presearch.org - Start With Us , 3668 , 922405 , Youtube, False , https://www.youtube.com/results?search_query={searchTerms}
+SocialNewPages-test , 1 , 923276 , SocialNewPages, True , https://search.socialnewpagessearch.com/?src=SocialNewPages_FF_ds&q={searchTerms}
+97things on New Tabs , 1 , 924266 , SocialNewPages, True , https://search.socialnewpagessearch.com/?src=SocialNewPages_FF_ds&q={searchTerms}
+Wirecutter Search Provider , 3 , 927704 , Wirecutter, False , https://thewirecutter.com/?s={searchTerms}
+Aloha , 2 , 929285 , Wirecutter, False , https://thewirecutter.com/?s={searchTerms}
+Tesla Start , 104 , 930294 , Tesla search, True , https://start.teslabrowser.com/search?q={searchTerms}&l=__MSG_lang_code__&e=__MSG_search_engine__
+Google US Search Provider , 191 , 930437 , Google US, True , https://www.google.com/search?gws_rd=cr&gl=US&q={searchTerms}
+Subtle Tab , 146 , 931792 , Google US, True , https://www.google.com/search?gws_rd=cr&gl=US&q={searchTerms}
+gootheweb Homepage , 36 , 935569 , Google US, True , https://www.google.com/search?gws_rd=cr&gl=US&q={searchTerms}
+939887.json , 21 , 939887 , Google US, True , https://www.google.com/search?gws_rd=cr&gl=US&q={searchTerms}
+Google Drive Search , 25 , 940859 , GDrive, False , https://drive.google.com/drive/u/0/search?q={searchTerms}
+MetaGer Suche , 643 , 943175 , MetaGer, True , https://metager.de/meta/meta.ger3?lang=all&focus=web&encoding=utf8&eingabe={searchTerms}
+946462.json , 1 , 946462 , MetaGer, True , https://metager.de/meta/meta.ger3?lang=all&focus=web&encoding=utf8&eingabe={searchTerms}
+Search Monster , 0 , 950361 , Search Monster, True , https://search.searchmonster.net/?s={searchTerms}&type=web&stype=all&src=sm_link&medium=sm&country_loc=US&flag=2
+Fanatics Search , 9993 , 953361 , Fanatics Search, True , https://www.moviesfanatic.com/search?sid=816&aid={APPID}&itype=u&src=ds&p={searchTerms}&tm=0
+Bobble , 5 , 954870 , Fanatics Search, True , https://www.moviesfanatic.com/search?sid=816&aid={APPID}&itype=u&src=ds&p={searchTerms}&tm=0
+Privacy Labrador , 25 , 959246 , Google by Privacy Labrador, False , https://www.google.com/search?&q={searchTerms}
+MapsTab , 3948 , 959744 , Yahoo, True , https://services.srchweb.org/search/?q={searchTerms}
+NelliTab - New Tab Page , 109 , 961155 , Yahoo, True , https://services.srchweb.org/search/?q={searchTerms}
+Qwant Lite , 2755 , 961237 , Qwant Lite Extension, True , https://lite.qwant.com/?q={searchTerms}&client=ext-firefox-sb
+Eazy Search , 3566 , 968402 , Eazyzip Tab, True , https://www.blpsearch.com/search?sid=785&src=ds&aid={APPID}&itype=u&p={searchTerms}&tm=0
+Pics 4Newtab Search , 1 , 968403 , 4Newtab Search, True , https://www.blpsearch.com/search?sid=689&aid={APPID}&itype=u&src=ds&p={searchTerms}&tm=0
+969488.json , 17 , 969488 , GIPHY, False , https://giphy.com/search?q={searchTerms}
+Power Search New Tab , 106 , 972853 , SearchInChrome, True , https://www.searchinchrome.com/search?q={searchTerms}&aid=60&sr=def-search&sb=1
+TIH DS Search , 1 , 975161 , 4Newtab Search, True , https://www.blpsearch.com/search?sid=703&aid={APPID}&itype=u&src=ds&p={searchTerms}&tm=0
+4Newtab Search , 1 , 975165 , Search 4 Newtab, True , https://www.blpsearch.com/search?sid=693&aid={APPID}&itype=u&src=ds&p={searchTerms}&tm=0
+Mod Search , 0 , 975724 , modSearch, True , https://modsearch.pro/go/?q={searchTerms}
+Classical Search Bar , 254 , 976824 , CSB, True , https://6905b838-e843-4ee3-9df0-b4c79673b21c.invalid/search?searchTerms={searchTerms}
+YW Search Optimizer , 92 , 977315 , Search Optimizer, True , https://www.blpsearch.com/search?sid=832&aid={APPID}&itype=u&src=ds&p={searchTerms}&tm=0
+980188.json , 41 , 980188 , Search Optimizer, True , https://www.blpsearch.com/search?sid=832&aid={APPID}&itype=u&src=ds&p={searchTerms}&tm=0
+Flixtab Search , 16040 , 981154 , Flixtab Search, True , https://www.blpsearch.com/search?sid=792&aid={APPID}&itype=u&src=ds&p={searchTerms}&tm=0
+Orchid browser theme and new tab search page , 1 , 981214 , Flixtab Search, True , https://www.blpsearch.com/search?sid=792&aid={APPID}&itype=u&src=ds&p={searchTerms}&tm=0
+GoSearch , 21 , 981502 , GoSearch, True , https://www.homesearchalgo.com/search?sid=786&src=ds&q={searchTerms}
+HomeSearch , 4 , 981518 , HomeSearch, True , https://www.homesearchalgo.com/search?sid=773&src=ds&q={searchTerms}
+MovieZoneSearch Add-On , 12 , 981547 , MovieZoneSearch Add-On, True , https://www.homesearchalgo.com/search?sid=791&src=ds&q={searchTerms}
+981592.json , 3 , 981592 , Trustnav safe search, True , https://safesearch.trustnav.com/?src=ext&action=search&q={searchTerms}
+Speed Dial , 1939 , 982423 , Speed Search, True , https://www.addonsearch.net/?q={searchTerms}
+983130.json , 133 , 983130 , Ecogine, True , https://ecogine.org/?q={searchTerms}
+Tall Guys Free search , 1 , 983518 , TallGuysFree Search, False , https://tallguysfree.com/qsearch.php?q={searchTerms}
+Search4Musix , 3192 , 983573 , Search4Musix, True , https://www.blpsearch.com/search?sid=841&src=ds&p={searchTerms}
+TabPage , 2 , 984045 , Search4Musix, True , https://www.blpsearch.com/search?sid=841&src=ds&p={searchTerms}
+Daily Finance Pal , 0 , 984077 , Search4Musix, True , https://www.blpsearch.com/search?sid=841&src=ds&p={searchTerms}
+QxSearch , 367 , 984597 , QxSearch, True , https://qxsearch.com/search.php?q={searchTerms}
+Snif.gr - Price Comparison , 2 , 985339 , Snif, False , https://www.snif.gr/products.php?search={searchTerms}
+Ecovene - Search for a better world , 0 , 985770 , Ecovene, True , https://ecovene.org/search?q={searchTerms}&addon=firefox&addonversion=1.0.1
+Multilevel Speed Dial , 49 , 986576 , Ecovene, True , https://ecovene.org/search?q={searchTerms}&addon=firefox&addonversion=1.0.1
+988201.json , 34 , 988201 , Lezago Go, True , https://go.lezago.com/s?q={searchTerms}&utm_source=default-search
+MyFavoriteRecipes New Tab , 0 , 988779 , Bing, True , https://www.bing.com/search?q={searchTerms}
+YouCare - The charitable search engine , 429 , 988803 , YouCare, True , https://youcare.world/all?abds&q={searchTerms}
+Gexsi – The search engine for a better world , 108 , 989018 , Gexsi, True , https://search.gexsi.com/search?q={searchTerms}
+AOL Homepage , 67 , 989730 , Gexsi, True , https://search.gexsi.com/search?q={searchTerms}
+Bungadoo , 1 , 990077 , Gexsi, True , https://search.gexsi.com/search?q={searchTerms}
+SK Rapid Start , 16 , 990142 , Gexsi, True , https://search.gexsi.com/search?q={searchTerms}
+990365.json , 2 , 990365 , Página Personalizada, True , https://www.paginapersonalizada.com/busca.php?q={searchTerms}
+Giggle , 1 , 992571 , Página Personalizada, True , https://www.paginapersonalizada.com/busca.php?q={searchTerms}
+Custom New Tab By MFans , 0 , 992655 , Bing, True , https://www.bing.com/search?q={searchTerms}
+Onion search engine adder , 181 , 995114 , Onion search engine, True , https://onionsearchengine.com/search.php?search={searchTerms}&submit=Search&rt=std
+SamSearch UK , 0 , 995812 , SamSearch, True , https://www.samsearch.co.uk/web?q={searchTerms}
+SamSearch India , 0 , 995813 , SamSearch, True , https://www.samsearch.in/web?q={searchTerms}
+Avalba - Motorë Kërkimi në Shqip , 0 , 996452 , Avalba, True , https://al.avalba.com/search/?q={searchTerms}
+NomadPage , 1 , 996505 , Avalba, True , https://al.avalba.com/search/?q={searchTerms}
+Speed Test Ace , 25 , 997116 , www.speedtestace.co's Web Search, True , https://www.speedtestace.co/search.html?type=search&id=MTIzNTk&searchff=1#q={searchTerms}
+Directions Found , 103 , 997232 , www.directionsfound.com's Web Search, True , https://www.directionsfound.com/search.html?type=search&id=MTI2ODM&searchff=1#q={searchTerms}
+Qwant Junior , 1016 , 997845 , Qwant Junior, True , https://www.qwantjunior.com/?q={searchTerms}&client=ext-firefox-sb
+Avalba - Search Engine , 3 , 997970 , Avalba, True , https://__MSG_Avalba_default_search__/search/?q={searchTerms}
+Pink Wallpapers HD - New Tab , 5 , 998170 , Avalba, True , https://__MSG_Avalba_Pink_default_search__/search/?q={searchTerms}
+998892.json , 3 , 998892 , Avalba, True , https://__MSG_Avalba_Pink_default_search__/search/?q={searchTerms}
+Weather Search , 2 , 999291 , Yahoo, True , https://extensionslabs.com/hapi/omniSearch?q={searchTerms}
+Package Tracker Express , 7 , 999324 , www.packagetrackerexpress.com's Web Search, True , https://www.packagetrackerexpress.com/search.html?type=search&id=MTI2OTA&searchff=1#q={searchTerms}
