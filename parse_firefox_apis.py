@@ -118,6 +118,7 @@ class Extension:
         self.details = json.loads(data)
         self.details.update({'Name on CWS':'Unknown'})
         self.details.update({'Risk':'Low'})
+        self.details.update({'Uses Sync':'No'})
 
         # Count the APIs used
         self.api_categories = set()
@@ -126,7 +127,12 @@ class Extension:
                 # Does this extension use the browser namespace?
                 if api.startswith('browser.'):
                     self.usesBrowserNS = True
+                
                 usage_counter[api.split('.', 1)[-1]] += 1  # only add the part after the namespace
+
+                # Does this extension use storage.sync
+                if api.startswith('browser.storage.sync') or api.startswith('chrome.storage.sync'):
+                    self.details['Uses Sync'] = 'Yes'
 
                 # Let's count up the major API categories, too
                 self.api_categories.add(api.split('.', 2)[1])
